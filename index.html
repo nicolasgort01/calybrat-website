@@ -1038,6 +1038,56 @@ const IND = [
   title:{es:'Dashboard de Operación',en:'Operations Dashboard'},
   sub:{es:'Planta Yumbo y Planta Itagüí · corte de hoy 4:12 p.m.',en:'Yumbo & Itagüí plants · as of today 4:12 p.m.'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🏭',n:{es:'Producción',en:'Production'}},{i:'📦',n:{es:'Materias primas',en:'Raw materials'}},{i:'💰',n:{es:'Ventas',en:'Sales'}},{i:'📋',n:{es:'Cartera',en:'Receivables'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Planta Yumbo y Planta Itagüí · turnos del día',en:'Yumbo & Itagüí plants · today\'s shifts'},
+    kpis:[
+      {l:{es:'OEE Yumbo',en:'Yumbo OEE'},v:'84%',d:{es:'↑ 2 pp vs agosto',en:'↑ 2 pp vs August'},t:'ok',c:'c'},
+      {l:{es:'OEE Itagüí',en:'Itagüí OEE'},v:'71%',d:{es:'meta 82%',en:'target 82%'},t:'err',c:'e'},
+      {l:{es:'Unidades hoy',en:'Units today'},v:'1.240',d:{es:'turno día · ↑ 6%',en:'day shift · ↑ 6%'},t:'ok',c:'g'},
+      {l:{es:'Alistamiento prom.',en:'Avg. changeover'},v:'34 min',d:{es:'Itagüí 47 · Yumbo 22',en:'Itagüí 47 · Yumbo 22'},t:'warn',c:''}],
+    chart:{t:{es:'Unidades producidas por día · esta semana',en:'Units produced per day · this week'},v:{es:'Ambas plantas combinadas',en:'Both plants combined'},
+      bars:[210,238,195,260,221,248,268],lbls:['L','M','M','J','V','S','D']},
+    alert:{es:'Itagüí promedia <b>47 min</b> de alistamiento por cambio de referencia contra <b>22 min</b> en Yumbo — cerrar la brecha vale cerca de <b>$31M/mes</b> en producción adicional.',en:'Itagüí averages <b>47 min</b> per changeover vs <b>22 min</b> in Yumbo — closing the gap is worth about <b>$31M/month</b> in extra output.'},
+    rank:{t:{es:'Rendimiento por línea',en:'Performance by line'},items:[
+      {n:{es:'Corte',en:'Cutting'},v:'91%',p:91},{n:{es:'Soldadura',en:'Welding'},v:'78%',p:78},
+      {n:{es:'Ensamble',en:'Assembly'},v:'66%',p:66},{n:{es:'Pintura',en:'Painting'},v:'54%',p:54}]} },
+  { sub:{es:'Stock crítico y consumo proyectado',en:'Critical stock and projected consumption'},
+    kpis:[
+      {l:{es:'Lámina CR cal.18',en:'18-ga CR sheet'},v:'14%',d:{es:'cubre 6 días',en:'covers 6 days'},t:'err',c:'e'},
+      {l:{es:'Acero inoxidable',en:'Stainless steel'},v:'61%',d:{es:'cubre 24 días',en:'covers 24 days'},t:'ok',c:''},
+      {l:{es:'Consumo semanal',en:'Weekly consumption'},v:'18,4 t',d:{es:'↑ 9% vs prom.',en:'↑ 9% vs avg'},t:'warn',c:'c'},
+      {l:{es:'OCs pendientes',en:'Open POs'},v:'4',d:{es:'por $92M',en:'worth $92M'},t:'warn',c:''}],
+    chart:{t:{es:'Consumo de lámina CR · últimas 8 semanas',en:'CR sheet consumption · last 8 weeks'},v:{es:'Alza sostenida desde julio',en:'Steady rise since July'},
+      bars:[9.2,10.1,9.8,11.4,12.6,13.1,14.8,15.2],lbls:['S30','S31','S32','S33','S34','S35','S36','S37']},
+    alert:{es:'<b>Lámina CR calibre 18</b> al 14% de stock — cubre 6 días y el proveedor entrega en 9. Hay 3 OPs que la necesitan.',en:'<b>18-gauge CR sheet</b> at 14% stock — covers 6 days, supplier lead time is 9. Three work orders need it.'},
+    rank:{t:{es:'Insumos críticos por cobertura',en:'Critical inputs by coverage'},items:[
+      {n:{es:'Lámina CR cal.18',en:'18-ga CR sheet'},v:{es:'6 días',en:'6 days'},p:20},{n:{es:'Pintura poliuretano',en:'Polyurethane paint'},v:{es:'11 días',en:'11 days'},p:37},
+      {n:{es:'Electrodos soldadura',en:'Welding electrodes'},v:{es:'18 días',en:'18 days'},p:60},{n:{es:'Acero inoxidable',en:'Stainless steel'},v:{es:'24 días',en:'24 days'},p:80}]} },
+  { sub:{es:'Cotizaciones y pedidos industriales',en:'Industrial quotes and orders'},
+    kpis:[
+      {l:{es:'Ventas del mes',en:'Monthly sales'},v:'$412M',d:{es:'↑ 9.2% vs agosto',en:'↑ 9.2% vs August'},t:'ok',c:'g'},
+      {l:{es:'Cotizaciones activas',en:'Active quotes'},v:'31',d:{es:'por $680M',en:'worth $680M'},t:'ok',c:''},
+      {l:{es:'Tasa de cierre',en:'Close rate'},v:'38%',d:{es:'↓ 5 pp',en:'↓ 5 pp'},t:'warn',c:'c'},
+      {l:{es:'Margen cotizado',en:'Quoted margin'},v:'21%',d:{es:'vs 23.4% ejecutado',en:'vs 23.4% actual'},t:'err',c:''}],
+    chart:{t:{es:'Ventas cotizadas vs cerradas · 8 semanas',en:'Quoted vs closed sales · 8 weeks'},v:{es:'La brecha crece desde el alza del acero',en:'Gap widening since steel prices rose'},
+      bars:[48,52,61,58,66,71,64,74],lbls:['S30','S31','S32','S33','S34','S35','S36','S37']},
+    alert:{es:'Cotizaron <b>23 órdenes</b> con el precio viejo de la lámina antes del alza de agosto — ya salen con el precio corregido, pero explican la caída de margen del mes.',en:'<b>23 orders</b> were quoted at the old sheet-metal price before the August increase — new quotes are corrected, but this explains this month\'s margin drop.'},
+    rank:{t:{es:'Ventas por cliente industrial',en:'Sales by industrial client'},items:[
+      {n:{es:'Aceros del Cauca',en:'Aceros del Cauca'},v:'$86M',p:100},{n:{es:'Ensamblajes JR',en:'Ensamblajes JR'},v:'$64M',p:74},
+      {n:{es:'Metalúrgica Andina',en:'Metalúrgica Andina'},v:'$51M',p:59},{n:{es:'Talleres Unidos',en:'Talleres Unidos'},v:'$38M',p:44}]} },
+  { sub:{es:'Cartera de clientes industriales',en:'Industrial client receivables'},
+    kpis:[
+      {l:{es:'Cartera total',en:'Total receivables'},v:'$187M',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Cartera vencida',en:'Overdue AR'},v:'$34M',d:{es:'18% del total',en:'18% of total'},t:'err',c:'e'},
+      {l:{es:'DSO',en:'DSO'},v:'52 días',d:{es:'meta 40',en:'target 40'},t:'warn',c:'c'},
+      {l:{es:'Clientes en mora',en:'Clients overdue'},v:'5',d:{es:'de 34 activos',en:'of 34 active'},t:'err',c:''}],
+    chart:{t:{es:'Cartera vencida por antigüedad',en:'Overdue AR by age'},v:{es:'Concentrada en 31-60 días',en:'Concentrated at 31-60 days'},
+      bars:[8,14,9,3],lbls:['1-30','31-60','61-90','+90']},
+    alert:{es:'<b>Metalúrgica Andina</b> concentra $14M de cartera vencida a 61 días — es el 41% del total vencido y sigue recibiendo despachos.',en:'<b>Metalúrgica Andina</b> holds $14M overdue at 61 days — 41% of total overdue AR, and still receiving shipments.'},
+    rank:{t:{es:'Cartera vencida por cliente',en:'Overdue AR by client'},items:[
+      {n:{es:'Metalúrgica Andina',en:'Metalúrgica Andina'},v:'$14M',p:100},{n:{es:'Talleres Unidos',en:'Talleres Unidos'},v:'$9M',p:64},
+      {n:{es:'Ensamblajes JR',en:'Ensamblajes JR'},v:'$6M',p:43},{n:{es:'Grupo Ferretero Sur',en:'Grupo Ferretero Sur'},v:'$3M',p:21}]} }
+  ],
   kpis:[
     {l:{es:'Ventas del mes',en:'Monthly sales'},v:'$412M',d:{es:'↑ 9.2% vs agosto',en:'↑ 9.2% vs August'},t:'ok',c:'g'},
     {l:{es:'Margen bruto',en:'Gross margin'},v:'23.4%',d:{es:'↓ 1.1 pp · alza del acero',en:'↓ 1.1 pp · steel prices'},t:'err',c:''},
@@ -1070,6 +1120,56 @@ const IND = [
   title:{es:'Dashboard Comercial',en:'Commercial Dashboard'},
   sub:{es:'14 rutas activas · 428 clientes tienda a tienda',en:'14 active routes · 428 store-to-store clients'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'💰',n:{es:'Ventas',en:'Sales'}},{i:'🚚',n:{es:'Rutas',en:'Routes'}},{i:'📦',n:{es:'Inventario',en:'Inventory'}},{i:'📋',n:{es:'Cartera',en:'Receivables'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Facturación por categoría del mes',en:'Monthly billing by category'},
+    kpis:[
+      {l:{es:'Ventas del mes',en:'Monthly sales'},v:'$389M',d:{es:'↑ 12.4% vs anterior',en:'↑ 12.4% vs last month'},t:'ok',c:'g'},
+      {l:{es:'Ticket promedio',en:'Average ticket'},v:'$79K',d:{es:'↓ vs meta $95K',en:'↓ vs $95K target'},t:'warn',c:''},
+      {l:{es:'Pedidos del mes',en:'Orders this month'},v:'4.920',d:{es:'↑ 6%',en:'↑ 6%'},t:'ok',c:''},
+      {l:{es:'Clientes activos',en:'Active clients'},v:'428',d:{es:'de 512 registrados',en:'of 512 registered'},t:'ok',c:'c'}],
+    chart:{t:{es:'Ventas por categoría del mes',en:'Sales by category this month'},v:{es:'Lácteos lidera, bebidas crece más rápido',en:'Dairy leads, beverages growing fastest'},
+      bars:[142,121,98,74,54],lbls:['Lácteos','Bebidas','Snacks','Otros','Aseo']},
+    alert:{es:'La línea de <b>bebidas funcionales</b> ya es el 17% de la venta y crece 38% en 90 días — pero solo se ofrece en 2 de las 14 rutas.',en:'The <b>functional beverages</b> line is already 17% of sales and growing 38% in 90 days — but only offered on 2 of 14 routes.'},
+    rank:{t:{es:'Ventas por categoría',en:'Sales by category'},items:[
+      {n:{es:'Lácteos',en:'Dairy'},v:'$142M',p:100},{n:{es:'Bebidas',en:'Beverages'},v:'$121M',p:85},
+      {n:{es:'Snacks',en:'Snacks'},v:'$98M',p:69},{n:{es:'Aseo',en:'Cleaning'},v:'$54M',p:38}]} },
+  { sub:{es:'Cumplimiento y rentabilidad por ruta',en:'On-time delivery and profitability by route'},
+    kpis:[
+      {l:{es:'Entregas a tiempo',en:'On-time delivery'},v:'91%',d:{es:'↑ 4 pp',en:'↑ 4 pp'},t:'ok',c:'c'},
+      {l:{es:'Costo por entrega',en:'Cost per delivery'},v:'$18,4K',d:{es:'↑ 7% combustible',en:'↑ 7% fuel'},t:'warn',c:''},
+      {l:{es:'Ruta más rentable',en:'Most profitable route'},v:{es:'Ruta 3',en:'Route 3'},d:{es:'$21.4M margen',en:'$21.4M margin'},t:'ok',c:'g'},
+      {l:{es:'Ruta en pérdida',en:'Route losing money'},v:{es:'Ruta 7',en:'Route 7'},d:{es:'-$2.6M',en:'-$2.6M'},t:'err',c:'e'}],
+    chart:{t:{es:'Entregas a tiempo por ruta',en:'On-time delivery by route'},v:{es:'Ruta 7 muy por debajo',en:'Route 7 far below'},
+      bars:[95,91,88,84,61],lbls:['R3','R1','R9','R5','R7']},
+    alert:{es:'La <b>Ruta 7</b> tiene 118 km de recorrido, el ticket promedio más bajo ($79K) y acumula 41% de las devoluciones del mes — hoy pierde plata en cada despacho.',en:'<b>Route 7</b> covers 118 km, has the lowest average ticket ($79K) and accounts for 41% of monthly returns — it loses money on every dispatch today.'},
+    rank:{t:{es:'Kilómetros recorridos por ruta',en:'Kilometers driven by route'},items:[
+      {n:{es:'Ruta 7 · Sur',en:'Route 7 · South'},v:'118 km',p:100},{n:{es:'Ruta 9 · Occidente',en:'Route 9 · West'},v:'94 km',p:80},
+      {n:{es:'Ruta 5 · Oriente',en:'Route 5 · East'},v:'81 km',p:69},{n:{es:'Ruta 1 · Norte',en:'Route 1 · North'},v:'62 km',p:53}]} },
+  { sub:{es:'Cobertura y rotación por categoría',en:'Coverage and turnover by category'},
+    kpis:[
+      {l:{es:'Días de inventario',en:'Days of inventory'},v:'16',d:{es:'meta 20',en:'target 20'},t:'warn',c:'c'},
+      {l:{es:'SKUs bajo mínimo',en:'SKUs below minimum'},v:'7',d:{es:'de 84 activos',en:'of 84 active'},t:'err',c:'e'},
+      {l:{es:'Quiebres del mes',en:'Stockouts this month'},v:'3',d:{es:'',en:''},t:'err',c:''},
+      {l:{es:'Rotación',en:'Turnover'},v:'4,2x',d:{es:'mensual',en:'monthly'},t:'ok',c:'g'}],
+    chart:{t:{es:'Cobertura de inventario por categoría (días)',en:'Inventory coverage by category (days)'},v:{es:'Lácteos en riesgo',en:'Dairy at risk'},
+      bars:[9,14,22,18,26],lbls:['Lácteos','Bebidas','Snacks','Aseo','Otros']},
+    alert:{es:'<b>Lácteos</b> tiene solo 9 días de cobertura y es la categoría de mayor rotación — riesgo de quiebre antes de la próxima reposición.',en:'<b>Dairy</b> has only 9 days of cover and is the fastest-moving category — stockout risk before the next restock.'},
+    rank:{t:{es:'SKUs con menor cobertura',en:'SKUs with lowest coverage'},items:[
+      {n:{es:'Yogurt Natural 1L',en:'Plain Yogurt 1L'},v:{es:'4 días',en:'4 days'},p:13},{n:{es:'Queso Campesino 500g',en:'Fresh Cheese 500g'},v:{es:'6 días',en:'6 days'},p:20},
+      {n:{es:'Jugo Cítrico 1L',en:'Citrus Juice 1L'},v:{es:'7 días',en:'7 days'},p:23},{n:{es:'Leche Entera 1L',en:'Whole Milk 1L'},v:{es:'9 días',en:'9 days'},p:30}]} },
+  { sub:{es:'Cobros y clientes en mora',en:'Collections and overdue clients'},
+    kpis:[
+      {l:{es:'Cartera total',en:'Total receivables'},v:'$79M',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Cartera vencida',en:'Overdue AR'},v:'$11M',d:{es:'14% del total',en:'14% of total'},t:'err',c:'e'},
+      {l:{es:'DSO',en:'DSO'},v:'28 días',d:{es:'meta 21',en:'target 21'},t:'warn',c:'c'},
+      {l:{es:'Clientes en mora',en:'Clients overdue'},v:'3',d:{es:'+30 días',en:'30+ days'},t:'err',c:''}],
+    chart:{t:{es:'Cartera vencida por antigüedad',en:'Overdue AR by age'},v:{es:'Concentrada en 46-60 días',en:'Concentrated at 46-60 days'},
+      bars:[3.2,5.1,1.8,0.9],lbls:['31-45','46-60','61-90','+90']},
+    alert:{es:'<b>La Villa del Norte</b> lleva 62 días vencido con $3.1M y le siguieron despachando a crédito tres veces después de entrar en mora.',en:'<b>La Villa del Norte</b> is 62 days overdue on $3.1M and got three more credit shipments after going overdue.'},
+    rank:{t:{es:'Cartera vencida por cliente',en:'Overdue AR by client'},items:[
+      {n:{es:'La Villa del Norte',en:'La Villa del Norte'},v:'$3.1M',p:100},{n:{es:'Tienda Central',en:'Tienda Central'},v:'$1.8M',p:58},
+      {n:{es:'Mercado Popular',en:'Mercado Popular'},v:'$940K',p:30},{n:{es:'Depósito Familiar',en:'Depósito Familiar'},v:'$600K',p:19}]} }
+  ],
   kpis:[
     {l:{es:'Ventas del mes',en:'Monthly sales'},v:'$389M',d:{es:'↑ 12.4% vs anterior',en:'↑ 12.4% vs last month'},t:'ok',c:'g'},
     {l:{es:'Cartera vencida',en:'Overdue AR'},v:'$11M',d:{es:'3 clientes · +30 días',en:'3 clients · 30+ days'},t:'err',c:'e'},
@@ -1102,6 +1202,56 @@ const IND = [
   title:{es:'Dashboard Omnicanal',en:'Omnichannel Dashboard'},
   sub:{es:'7 canales · 3 países · sell-in vs sell-out',en:'7 channels · 3 countries · sell-in vs sell-out'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🛒',n:{es:'Canales',en:'Channels'}},{i:'📈',n:{es:'Sell-out',en:'Sell-out'}},{i:'📦',n:{es:'Inventario',en:'Inventory'}},{i:'📣',n:{es:'Marketing',en:'Marketing'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Utilidad real por canal de venta',en:'Real profit by sales channel'},
+    kpis:[
+      {l:{es:'Venta D2C',en:'D2C sales'},v:'$118M',d:{es:'margen 46%',en:'46% margin'},t:'ok',c:'g'},
+      {l:{es:'Venta Éxito',en:'Éxito sales'},v:'$142M',d:{es:'margen 22%',en:'22% margin'},t:'warn',c:''},
+      {l:{es:'Venta Rappi',en:'Rappi sales'},v:'$58M',d:{es:'↑ 22%',en:'↑ 22%'},t:'ok',c:'c'},
+      {l:{es:'Tiendas naturistas',en:'Health stores'},v:'$34M',d:{es:'↓ 4%',en:'↓ 4%'},t:'err',c:''}],
+    chart:{t:{es:'Participación de canal en la utilidad total',en:'Channel share of total profit'},v:{es:'D2C domina la utilidad, no el volumen',en:'D2C dominates profit, not volume'},
+      bars:[54,22,12,7,5],lbls:['D2C','Éxito','Carulla','Rappi','Nat.']},
+    alert:{es:'Cada peso movido de retail a D2C vale más del doble en utilidad — el freno es el CAC, ya en $38K y subiendo.',en:'Every peso shifted from retail to D2C is worth more than double in profit — the limit is CAC, now at $38K and rising.'},
+    rank:{t:{es:'Utilidad por canal',en:'Profit by channel'},items:[
+      {n:'D2C',v:'$54M',p:100},{n:'Éxito',v:'$31M',p:57},
+      {n:'Carulla',v:'$19M',p:35},{n:'Rappi',v:'$12M',p:22}]} },
+  { sub:{es:'Rotación en góndola por referencia',en:'Shelf turnover by SKU'},
+    kpis:[
+      {l:{es:'Sell-out Éxito',en:'Éxito sell-out'},v:'78%',d:{es:'del sell-in',en:'of sell-in'},t:'ok',c:''},
+      {l:{es:'Días en góndola',en:'Days on shelf'},v:'11',d:{es:'referencia estrella',en:'hero SKU'},t:'err',c:'e'},
+      {l:{es:'Quiebres del mes',en:'Stockouts this month'},v:'4',d:{es:'',en:''},t:'err',c:''},
+      {l:{es:'Rotación promedio',en:'Average turnover'},v:'3,2x',d:{es:'mensual',en:'monthly'},t:'ok',c:'c'}],
+    chart:{t:{es:'Sell-out semanal en Éxito',en:'Weekly sell-out at Éxito'},v:{es:'Cae por quiebre de Granola',en:'Drops from Granola stockout'},
+      bars:[88,91,84,52,61,74,80],lbls:['S31','S32','S33','S34','S35','S36','S37']},
+    alert:{es:'<b>Éxito</b> tiene 11 días de inventario de tu referencia estrella. Si no despachas esta semana, pierdes el espacio en góndola.',en:'<b>Éxito</b> has 11 days of inventory of your hero SKU. Ship this week or you lose the shelf space.'},
+    rank:{t:{es:'Sell-out por referencia (Éxito)',en:'Sell-out by SKU (Éxito)'},items:[
+      {n:{es:'Barra Proteica x12',en:'Protein Bar x12'},v:'94%',p:94},{n:{es:'Mantequilla de maní',en:'Peanut Butter'},v:'81%',p:81},
+      {n:{es:'Mix Frutos Secos',en:'Nut Mix'},v:'68%',p:68},{n:{es:'Granola Premium 500g',en:'Premium Granola 500g'},v:'52%',p:52}]} },
+  { sub:{es:'Cobertura por referencia y bodega',en:'Coverage by SKU and warehouse'},
+    kpis:[
+      {l:{es:'Días de inventario',en:'Days of inventory'},v:'22',d:{es:'2 refs por agotarse',en:'2 SKUs about to stock out'},t:'warn',c:'e'},
+      {l:{es:'SKUs críticos',en:'Critical SKUs'},v:'2',d:{es:'',en:''},t:'err',c:''},
+      {l:{es:'Inventario total',en:'Total inventory'},v:'$214M',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Bodega con exceso',en:'Warehouse with surplus'},v:{es:'Cali',en:'Cali'},d:{es:'40 días de sobra',en:'40 days to spare'},t:'ok',c:'g'}],
+    chart:{t:{es:'Cobertura de inventario por SKU (días)',en:'Inventory coverage by SKU (days)'},v:{es:'Granola y Barra en riesgo',en:'Granola and Protein Bar at risk'},
+      bars:[9,13,28,35,44],lbls:['Granola','B.Prot.','M.Frutos','Mant.','B.Veg.']},
+    alert:{es:'Dos referencias se agotan en menos de 15 días: Granola Premium (9 días) y Barra Proteica x12 (13 días). Producción tarda 18.',en:'Two SKUs run out within 15 days: Premium Granola (9 days) and Protein Bar x12 (13 days). Production takes 18.'},
+    rank:{t:{es:'Referencias con menor cobertura',en:'SKUs with lowest coverage'},items:[
+      {n:{es:'Granola Premium 500g',en:'Premium Granola 500g'},v:{es:'9 días',en:'9 days'},p:20},{n:{es:'Barra Proteica x12',en:'Protein Bar x12'},v:{es:'13 días',en:'13 days'},p:30},
+      {n:{es:'Mix Frutos Secos',en:'Nut Mix'},v:{es:'28 días',en:'28 days'},p:64},{n:{es:'Mantequilla de maní',en:'Peanut Butter'},v:{es:'35 días',en:'35 days'},p:80}]} },
+  { sub:{es:'Adquisición y retorno por canal digital',en:'Acquisition and return by digital channel'},
+    kpis:[
+      {l:{es:'CAC',en:'CAC'},v:'$38K',d:{es:'↑ 12%',en:'↑ 12%'},t:'err',c:''},
+      {l:{es:'ROAS',en:'ROAS'},v:'3,1x',d:{es:'↓ vs 3.8x',en:'↓ vs 3.8x'},t:'warn',c:''},
+      {l:{es:'Inversión mensual',en:'Monthly spend'},v:'$89M',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Tráfico web',en:'Web traffic'},v:'↑ 14%',d:{es:'vs mes anterior',en:'vs last month'},t:'ok',c:'g'}],
+    chart:{t:{es:'CAC por canal · mes actual',en:'CAC by channel · this month'},v:{es:'Meta es el más caro',en:'Meta is the priciest'},
+      bars:[52,38,29,21],lbls:['Meta','Google','TikTok','Email']},
+    alert:{es:'El CAC en Meta subió a $52K, el más caro de los 4 canales — ya representa el 61% de la inversión total en pauta.',en:'Meta CAC rose to $52K, the priciest of the 4 channels — already 61% of total ad spend.'},
+    rank:{t:{es:'ROAS por canal',en:'ROAS by channel'},items:[
+      {n:'Email',v:'6.8x',p:100},{n:'Google',v:'4.1x',p:60},
+      {n:'TikTok',v:'3.2x',p:47},{n:'Meta',v:'2.1x',p:31}]} }
+  ],
   kpis:[
     {l:{es:'Venta total mes',en:'Total monthly sales'},v:'$614M',d:{es:'↑ 18% vs anterior',en:'↑ 18% vs last month'},t:'ok',c:'g'},
     {l:{es:'Margen D2C',en:'D2C margin'},v:'46%',d:{es:'vs 22% en retail',en:'vs 22% in retail'},t:'ok',c:'c'},
@@ -1134,6 +1284,56 @@ const IND = [
   title:{es:'Dashboard de Ocupación',en:'Occupancy Dashboard'},
   sub:{es:'El Poblado, Medellín · pronóstico a 30 días',en:'El Poblado, Medellín · 30-day forecast'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🛏️',n:{es:'Ocupación',en:'Occupancy'}},{i:'💵',n:{es:'Tarifas',en:'Rates'}},{i:'🌐',n:{es:'Canales',en:'Channels'}},{i:'🍽️',n:{es:'A&B',en:'F&B'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Ocupación por día y tipo de habitación',en:'Occupancy by day and room type'},
+    kpis:[
+      {l:{es:'Ocupación hoy',en:'Occupancy today'},v:'82%',d:{es:'↑ 6 pp vs sep 2025',en:'↑ 6 pp vs Sep 2025'},t:'ok',c:'c'},
+      {l:{es:'Fin de semana',en:'Weekend'},v:'91%',d:{es:'',en:''},t:'ok',c:'g'},
+      {l:{es:'Entre semana',en:'Weekdays'},v:'68%',d:{es:'',en:''},t:'warn',c:''},
+      {l:{es:'No-shows',en:'No-shows'},v:'14%',d:{es:'de reservas sin garantía',en:'of unguaranteed bookings'},t:'err',c:'e'}],
+    chart:{t:{es:'Ocupación por día de la semana',en:'Occupancy by day of week'},v:{es:'Jueves subvalorado',en:'Thursday underpriced'},
+      bars:[58,58,65,71,89,88,91],lbls:['D','L','M','X','J','V','S']},
+    alert:{es:'Los <b>jueves</b> promedian 89% de ocupación todo el mes — están subvalorados frente a su tarifa actual.',en:'<b>Thursdays</b> average 89% occupancy all month — clearly underpriced at the current rate.'},
+    rank:{t:{es:'Ocupación por tipo de habitación',en:'Occupancy by room type'},items:[
+      {n:{es:'Suite Jardín',en:'Garden Suite'},v:'94%',p:94},{n:{es:'Deluxe Vista',en:'Deluxe View'},v:'88%',p:88},
+      {n:{es:'Estándar',en:'Standard'},v:'79%',p:79},{n:'301-306',v:'61%',p:61}]} },
+  { sub:{es:'Oportunidad de precio por fecha',en:'Rate opportunity by date'},
+    kpis:[
+      {l:{es:'ADR',en:'ADR'},v:'$412K',d:{es:'↑ 8% vs anterior',en:'↑ 8% vs last month'},t:'ok',c:'g'},
+      {l:{es:'RevPAR',en:'RevPAR'},v:'$338K',d:{es:'↑ 15% año a año',en:'↑ 15% YoY'},t:'ok',c:''},
+      {l:{es:'ADR directo',en:'Direct ADR'},v:'$441K',d:{es:'vs $389K en OTAs',en:'vs $389K on OTAs'},t:'ok',c:'c'},
+      {l:{es:'ADR canales OTA',en:'OTA channel ADR'},v:'$389K',d:{es:'',en:''},t:'warn',c:''}],
+    chart:{t:{es:'ADR por segmento de fecha',en:'ADR by date segment'},v:{es:'Puentes muy por encima',en:'Long weekends far above'},
+      bars:[350,380,412,480,620],lbls:[{es:'Baja',en:'Low'},{es:'Media',en:'Mid'},{es:'Alta',en:'High'},{es:'F.Semana',en:'Weekend'},{es:'Puente',en:'L.Weekend'}]},
+    alert:{es:'El <b>puente del 12 de octubre</b> está al 97% y sigues vendiendo a tarifa de temporada baja. Subir 15% deja <b>$8.4M</b> extra sin perder ocupación.',en:'The <b>Oct 12 long weekend</b> is at 97% and you are still selling at low-season rates. A 15% increase adds <b>$8.4M</b> without losing occupancy.'},
+    rank:{t:{es:'Oportunidad de ajuste de tarifa',en:'Rate adjustment opportunity'},items:[
+      {n:{es:'Puente 12 oct',en:'Oct 12 weekend'},v:'+15%',p:100},{n:{es:'Jueves',en:'Thursdays'},v:'+8%',p:53},
+      {n:{es:'Fin de semana',en:'Weekend'},v:'+4%',p:27},{n:{es:'Dom/Lun',en:'Sun/Mon'},v:'-5%',p:20}]} },
+  { sub:{es:'Ingreso neto y costo por canal de venta',en:'Net revenue and cost by sales channel'},
+    kpis:[
+      {l:{es:'Comisión OTA total',en:'Total OTA commission'},v:'$47M',d:{es:'18% del ingreso',en:'18% of revenue'},t:'err',c:'e'},
+      {l:{es:'% ingreso directo',en:'% direct revenue'},v:'41%',d:{es:'',en:''},t:'ok',c:'c'},
+      {l:{es:'Booking.com',en:'Booking.com'},v:'30%',d:{es:'del ingreso',en:'of revenue'},t:'warn',c:''},
+      {l:{es:'Comisión Expedia',en:'Expedia commission'},v:'20%',d:{es:'la más alta',en:'the highest'},t:'err',c:''}],
+    chart:{t:{es:'Ingreso neto por canal',en:'Net revenue by channel'},v:{es:'Directo lidera sin comisión',en:'Direct leads with zero commission'},
+      bars:[96,71,54,29,12],lbls:[{es:'Directo',en:'Direct'},'Booking',{es:'Corp.',en:'Corp.'},'Airbnb','Expedia']},
+    alert:{es:'El canal directo tiene ADR más alto ($441K vs $389K) <i>y</i> cero comisión. Mover 10 puntos de Booking a directo vale cerca de $14M al mes.',en:'Direct has a higher ADR ($441K vs $389K) <i>and</i> zero commission. Shifting 10 points from Booking to direct is worth about $14M/month.'},
+    rank:{t:{es:'Costo de comisión por canal',en:'Commission cost by channel'},items:[
+      {n:'Expedia',v:'20%',p:100},{n:'Airbnb',v:'18%',p:90},
+      {n:'Booking',v:'17%',p:85},{n:{es:'Corporativo',en:'Corporate'},v:'8%',p:40}]} },
+  { sub:{es:'Ingreso y costo de alimentos y bebidas',en:'F&B revenue and cost'},
+    kpis:[
+      {l:{es:'Ingreso F&B mes',en:'Monthly F&B revenue'},v:'$62M',d:{es:'',en:''},t:'ok',c:'g'},
+      {l:{es:'Costo desayuno real',en:'Real breakfast cost'},v:'$28K',d:{es:'por huésped',en:'per guest'},t:'err',c:''},
+      {l:{es:'Precio en paquete',en:'Package price'},v:'$22K',d:{es:'por huésped',en:'per guest'},t:'warn',c:''},
+      {l:{es:'Cubiertos servidos',en:'Covers served'},v:'2.140',d:{es:'este mes',en:'this month'},t:'ok',c:''}],
+    chart:{t:{es:'Ingreso F&B por servicio',en:'F&B revenue by service'},v:{es:'Desayuno domina',en:'Breakfast dominates'},
+      bars:[38,14,10],lbls:[{es:'Desayuno',en:'Breakfast'},{es:'Almuerzo',en:'Lunch'},{es:'Room service',en:'Room service'}]},
+    alert:{es:'El desayuno cuesta $28K por huésped pero se cobra a $22K dentro del paquete — pierdes $6K por cada huésped que lo toma.',en:'Breakfast costs $28K per guest but is priced at $22K inside the package — you lose $6K per guest who takes it.'},
+    rank:{t:{es:'Consumo F&B por outlet',en:'F&B revenue by outlet'},items:[
+      {n:{es:'Restaurante principal',en:'Main restaurant'},v:'$38M',p:100},{n:{es:'Bar terraza',en:'Terrace bar'},v:'$14M',p:37},
+      {n:{es:'Room service',en:'Room service'},v:'$10M',p:26}]} }
+  ],
   kpis:[
     {l:{es:'Ocupación',en:'Occupancy'},v:'82%',d:{es:'↑ 6 pp vs sep 2025',en:'↑ 6 pp vs Sep 2025'},t:'ok',c:'c'},
     {l:{es:'ADR',en:'ADR'},v:'$412K',d:{es:'↑ 8% vs anterior',en:'↑ 8% vs last month'},t:'ok',c:'g'},
@@ -1166,6 +1366,56 @@ const IND = [
   title:{es:'Dashboard de Operación',en:'Operations Dashboard'},
   sub:{es:'4 sedes · corte del servicio de almuerzo',en:'4 locations · as of lunch service'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🍜',n:{es:'Menú',en:'Menu'}},{i:'🪑',n:{es:'Ocupación',en:'Covers'}},{i:'🛵',n:{es:'Delivery',en:'Delivery'}},{i:'🧾',n:{es:'Costos',en:'Costs'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Desempeño por plato · las 4 sedes',en:'Dish performance · all 4 locations'},
+    kpis:[
+      {l:{es:'Platos activos',en:'Active dishes'},v:'42',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Plato estrella',en:'Star dish'},v:{es:'Bandeja',en:'Platter'},d:{es:'$18.4M/mes',en:'$18.4M/month'},t:'ok',c:'g'},
+      {l:{es:'Plato en pérdida',en:'Losing dish'},v:{es:'Cazuela',en:'Casserole'},d:{es:'19% margen',en:'19% margin'},t:'err',c:'e'},
+      {l:{es:'Ticket promedio',en:'Average ticket'},v:'$68K',d:{es:'↑ $4K vs anterior',en:'↑ $4K vs last month'},t:'ok',c:''}],
+    chart:{t:{es:'Ventas por plato (top 8)',en:'Sales by dish (top 8)'},v:{es:'Bandeja de la casa lidera',en:'House Platter leads'},
+      bars:[92,81,74,58,52,44,31,19],lbls:[{es:'Bandeja',en:'Platter'},{es:'Arroz',en:'Rice'},{es:'Pollo',en:'Chicken'},{es:'Ceviche',en:'Ceviche'},{es:'Sancocho',en:'Sancocho'},{es:'Pasta',en:'Pasta'},{es:'Lomo',en:'Tenderloin'},{es:'Cazuela',en:'Casserole'}]},
+    alert:{es:'La <b>Cazuela de mariscos</b> es el plato más caro de producir ($41K de insumo) y deja apenas 19% de margen. Sacarla y empujar la Bandeja gana cerca de $3.8M/mes.',en:'The <b>Seafood Casserole</b> is the priciest to produce ($41K in inputs) and leaves only 19% margin. Dropping it for the Platter gains about $3.8M/month.'},
+    rank:{t:{es:'Platos más pedidos (unidades/semana)',en:'Most ordered dishes (units/week)'},items:[
+      {n:{es:'Bandeja de la casa',en:'House Platter'},v:'340',p:100},{n:{es:'Arroz de la huerta',en:'Garden Rice'},v:'298',p:88},
+      {n:{es:'Pollo en salsa',en:'Chicken in Sauce'},v:'265',p:78},{n:{es:'Cazuela de mariscos',en:'Seafood Casserole'},v:'98',p:29}]} },
+  { sub:{es:'Rotación de mesa por sede y franja',en:'Table turns by location and time slot'},
+    kpis:[
+      {l:{es:'Rotación mesa (almuerzo)',en:'Table turns (lunch)'},v:'2,4x',d:{es:'meta 3x',en:'target 3x'},t:'warn',c:'c'},
+      {l:{es:'Cubiertos hoy',en:'Covers today'},v:'890',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Tiempo promedio mesa',en:'Avg. table time'},v:'52 min',d:{es:'',en:''},t:'warn',c:''},
+      {l:{es:'Ocupación pico',en:'Peak occupancy'},v:'96%',d:{es:'',en:''},t:'ok',c:'g'}],
+    chart:{t:{es:'Cubiertos por franja horaria',en:'Covers by time slot'},v:{es:'Almuerzo domina',en:'Lunch dominates'},
+      bars:[12,24,88,61,19,34,79,48],lbls:['9a','11a','1p','3p','5p','7p','9p','11p']},
+    alert:{es:'La sede <b>Laureles</b> tiene rotación de mesa de 1.7x en almuerzo contra 2.9x en Envigado — mismo tamaño de salón, mitad del rendimiento.',en:'<b>Laureles</b> turns tables at 1.7x during lunch vs 2.9x in Envigado — same dining room size, half the throughput.'},
+    rank:{t:{es:'Rotación de mesa por sede',en:'Table turns by location'},items:[
+      {n:'Envigado',v:'2.9x',p:100},{n:{es:'Poblado',en:'Poblado'},v:'2.6x',p:90},
+      {n:{es:'Sur',en:'South'},v:'2.1x',p:72},{n:'Laureles',v:'1.7x',p:59}]} },
+  { sub:{es:'Venta y margen por plataforma de domicilios',en:'Delivery sales and margin by platform'},
+    kpis:[
+      {l:{es:'Venta delivery',en:'Delivery sales'},v:'$61M',d:{es:'25% de la venta',en:'25% of sales'},t:'ok',c:'g'},
+      {l:{es:'Margen delivery',en:'Delivery margin'},v:'14%',d:{es:'vs 38% en salón',en:'vs 38% dine-in'},t:'err',c:'e'},
+      {l:{es:'Comisión plataforma',en:'Platform commission'},v:'27%',d:{es:'',en:''},t:'warn',c:''},
+      {l:{es:'Pedidos del mes',en:'Orders this month'},v:'2.180',d:{es:'',en:''},t:'ok',c:''}],
+    chart:{t:{es:'Venta delivery por plataforma',en:'Delivery sales by platform'},v:{es:'Rappi domina el volumen',en:'Rappi dominates volume'},
+      bars:[34,21,6],lbls:['Rappi','Didi Food','iFood']},
+    alert:{es:'El delivery llena la franja muerta de 3 a 5 p.m., donde la cocina ya está pagada — pero deja solo 14% de margen tras comisión y empaque.',en:'Delivery fills the dead 3–5 p.m. window when the kitchen is already paid for — but leaves only 14% margin after commission and packaging.'},
+    rank:{t:{es:'Platos más pedidos en delivery',en:'Most ordered dishes on delivery'},items:[
+      {n:{es:'Bandeja de la casa',en:'House Platter'},v:'$14.2M',p:100},{n:{es:'Arroz de la huerta',en:'Garden Rice'},v:'$9.8M',p:69},
+      {n:{es:'Pollo en salsa',en:'Chicken in Sauce'},v:'$7.1M',p:50},{n:{es:'Ceviche',en:'Ceviche'},v:'$4.4M',p:31}]} },
+  { sub:{es:'Food cost y desperdicio por sede',en:'Food cost and waste by location'},
+    kpis:[
+      {l:{es:'Food cost',en:'Food cost'},v:'34,2%',d:{es:'meta 30%',en:'target 30%'},t:'err',c:'e'},
+      {l:{es:'Desperdicio',en:'Waste'},v:'4,1%',d:{es:'registrado',en:'recorded'},t:'err',c:''},
+      {l:{es:'Costo laboral',en:'Labor cost'},v:'28%',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Sede con mayor food cost',en:'Highest food cost location'},v:{es:'Laureles',en:'Laureles'},d:{es:'41%',en:'41%'},t:'err',c:''}],
+    chart:{t:{es:'Food cost por sede',en:'Food cost by location'},v:{es:'Laureles muy por encima',en:'Laureles far above'},
+      bars:[31,33,30,41],lbls:['Envigado','Poblado','Sur','Laureles']},
+    alert:{es:'El food cost subió 4.2 pp en 60 días. El 70% viene de dos platos que no se han repreciado desde marzo: Lomo al vino y Cazuela de mariscos.',en:'Food cost rose 4.2 pp in 60 days. 70% comes from two dishes unpriced since March: Wine Tenderloin and Seafood Casserole.'},
+    rank:{t:{es:'Insumos con mayor alza de precio',en:'Inputs with the biggest price rise'},items:[
+      {n:{es:'Mariscos',en:'Seafood'},v:'+22%',p:100},{n:{es:'Carnes rojas',en:'Red meat'},v:'+14%',p:64},
+      {n:{es:'Lácteos',en:'Dairy'},v:'+9%',p:41},{n:{es:'Verduras',en:'Vegetables'},v:'+5%',p:23}]} }
+  ],
   kpis:[
     {l:{es:'Venta del mes',en:'Monthly sales'},v:'$248M',d:{es:'↑ 6.8% vs agosto',en:'↑ 6.8% vs August'},t:'ok',c:'g'},
     {l:{es:'Food cost',en:'Food cost'},v:'34.2%',d:{es:'meta 30% · ↑ proteínas',en:'target 30% · protein up'},t:'err',c:'e'},
@@ -1198,6 +1448,56 @@ const IND = [
   title:{es:'Dashboard Asistencial y Financiero',en:'Clinical & Financial Dashboard'},
   sub:{es:'6 especialidades · 4 EPS contratadas',en:'6 specialties · 4 payer contracts'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🗓️',n:{es:'Agenda',en:'Scheduling'}},{i:'🧾',n:{es:'Facturación',en:'Billing'}},{i:'⚠️',n:{es:'Glosas',en:'Claim denials'}},{i:'👥',n:{es:'Talento',en:'Staff'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Ocupación e inasistencia por anticipación',en:'Fill rate and no-shows by lead time'},
+    kpis:[
+      {l:{es:'Ocupación de agenda',en:'Schedule fill rate'},v:'88%',d:{es:'↑ 3 pp',en:'↑ 3 pp'},t:'ok',c:'c'},
+      {l:{es:'Inasistencia',en:'No-show rate'},v:'12,4%',d:{es:'≈$96M perdidos',en:'≈$96M lost'},t:'err',c:'e'},
+      {l:{es:'Citas hoy',en:'Appointments today'},v:'214',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Inasist. +21 días',en:'No-show 21+ days out'},v:'23%',d:{es:'vs 4% en <7 días',en:'vs 4% under 7 days'},t:'warn',c:''}],
+    chart:{t:{es:'Inasistencia por anticipación de la cita',en:'No-shows by booking lead time'},v:{es:'Crece con la anticipación',en:'Rises with lead time'},
+      bars:[4,9,15,23],lbls:['<7d','7-14d','15-21d','+21d']},
+    alert:{es:'Un recordatorio por WhatsApp a 48 horas recuperaría cerca de la mitad de los $96M al mes que se pierden por inasistencia.',en:'A WhatsApp reminder at 48 hours would recover about half of the $96M/month lost to no-shows.'},
+    rank:{t:{es:'Ocupación de agenda por especialidad',en:'Fill rate by specialty'},items:[
+      {n:{es:'Ortopedia',en:'Orthopedics'},v:'96%',p:96},{n:{es:'Medicina interna',en:'Internal medicine'},v:'91%',p:91},
+      {n:{es:'Ginecología',en:'Gynecology'},v:'87%',p:87},{n:{es:'Pediatría',en:'Pediatrics'},v:'82%',p:82}]} },
+  { sub:{es:'Facturación y días de pago por EPS',en:'Billing and payment days by payer'},
+    kpis:[
+      {l:{es:'Facturación del mes',en:'Monthly billing'},v:'$1.240M',d:{es:'↑ 7% vs agosto',en:'↑ 7% vs August'},t:'ok',c:'g'},
+      {l:{es:'Facturado a EPS A',en:'Billed to Payer A'},v:'$412M',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Facturado a EPS C',en:'Billed to Payer C'},v:'$298M',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Recaudo efectivo',en:'Cash collected'},v:'79%',d:{es:'de lo facturado',en:'of billed'},t:'warn',c:'c'}],
+    chart:{t:{es:'Facturación por EPS',en:'Billing by payer'},v:{es:'EPS A concentra el mayor volumen',en:'Payer A holds the largest volume'},
+      bars:[412,298,341,189],lbls:['EPS A','EPS B','EPS C','EPS D']},
+    alert:{es:'La <b>EPS C</b> paga a 118 días en promedio, casi el doble que el resto — representa el 24% de la facturación mensual.',en:'<b>Payer C</b> pays at 118 days on average, almost double the rest — 24% of monthly billing.'},
+    rank:{t:{es:'Días promedio de pago por EPS',en:'Average payment days by payer'},items:[
+      {n:'EPS C',v:'118d',p:100},{n:'EPS A',v:'71d',p:60},
+      {n:'EPS D',v:'58d',p:49},{n:'EPS B',v:'44d',p:37}]} },
+  { sub:{es:'Glosas por causa y especialidad',en:'Denials by cause and specialty'},
+    kpis:[
+      {l:{es:'Glosas pendientes',en:'Open denials'},v:'$187M',d:{es:'15% de lo facturado',en:'15% of billed'},t:'err',c:'e'},
+      {l:{es:'Por vencer en 9 días',en:'Due in 9 days'},v:'$47M',d:{es:'',en:''},t:'err',c:''},
+      {l:{es:'Causa principal',en:'Main cause'},v:{es:'Soporte clínico',en:'Clinical support'},d:{es:'62%',en:'62%'},t:'warn',c:''},
+      {l:{es:'Concentradas en',en:'Concentrated in'},v:{es:'3 profesionales',en:'3 practitioners'},d:{es:'',en:''},t:'err',c:''}],
+    chart:{t:{es:'Glosas por causa',en:'Denials by cause'},v:{es:'Soporte clínico domina',en:'Clinical support dominates'},
+      bars:[62,18,12,8],lbls:[{es:'Soporte clínico',en:'Clinical support'},{es:'Codificación',en:'Coding'},{es:'Pertinencia',en:'Pertinence'},{es:'Tarifas',en:'Rates'}]},
+    alert:{es:'El 62% de las glosas del trimestre viene de una sola causa: soporte clínico incompleto en ortopedia — $116M concentrados en 3 profesionales.',en:'62% of this quarter\'s denials come from one cause: incomplete clinical support in orthopedics — $116M concentrated in 3 practitioners.'},
+    rank:{t:{es:'Glosas por especialidad',en:'Denials by specialty'},items:[
+      {n:{es:'Ortopedia',en:'Orthopedics'},v:'$116M',p:100},{n:{es:'Ginecología',en:'Gynecology'},v:'$34M',p:29},
+      {n:{es:'Medicina interna',en:'Internal medicine'},v:'$22M',p:19},{n:{es:'Pediatría',en:'Pediatrics'},v:'$9M',p:8}]} },
+  { sub:{es:'Productividad y riesgo por profesional',en:'Productivity and risk by practitioner'},
+    kpis:[
+      {l:{es:'Profesionales activos',en:'Active practitioners'},v:'34',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Ocupación por profesional',en:'Fill rate per practitioner'},v:'82%',d:{es:'',en:''},t:'ok',c:'c'},
+      {l:{es:'Concentran 62% de glosas',en:'Hold 62% of denials'},v:'3',d:{es:'profesionales',en:'practitioners'},t:'err',c:'e'},
+      {l:{es:'Ausentismo del personal',en:'Staff absenteeism'},v:'3,1%',d:{es:'',en:''},t:'ok',c:''}],
+    chart:{t:{es:'Consultas por profesional (promedio semanal)',en:'Consultations per practitioner (weekly avg)'},v:{es:'',en:''},
+      bars:[62,58,54,49,44,38],lbls:['A','B','C','D','E','F']},
+    alert:{es:'3 profesionales concentran el 62% de las glosas por soporte clínico incompleto — $116M en riesgo este trimestre.',en:'3 practitioners hold 62% of denials from incomplete clinical support — $116M at risk this quarter.'},
+    rank:{t:{es:'Profesionales con mayor facturación',en:'Practitioners with highest billing'},items:[
+      {n:{es:'Ortopedia · Dr. A',en:'Orthopedics · Dr. A'},v:'$214M',p:100},{n:{es:'Medicina interna · Dra. B',en:'Internal med. · Dr. B'},v:'$168M',p:78},
+      {n:{es:'Ginecología · Dr. C',en:'Gynecology · Dr. C'},v:'$121M',p:57},{n:{es:'Pediatría · Dra. D',en:'Pediatrics · Dr. D'},v:'$74M',p:35}]} }
+  ],
   kpis:[
     {l:{es:'Facturación del mes',en:'Monthly billing'},v:'$1.240M',d:{es:'↑ 7% vs agosto',en:'↑ 7% vs August'},t:'ok',c:'g'},
     {l:{es:'Glosas pendientes',en:'Open denials'},v:'$187M',d:{es:'15% de lo facturado',en:'15% of billed'},t:'err',c:'e'},
@@ -1230,6 +1530,56 @@ const IND = [
   title:{es:'Dashboard de Proyectos',en:'Projects Dashboard'},
   sub:{es:'Bogotá, Medellín y Barranquilla · presupuesto vs real',en:'Bogotá, Medellín & Barranquilla · budget vs actual'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🏗️',n:{es:'Obras',en:'Projects'}},{i:'💵',n:{es:'Presupuesto',en:'Budget'}},{i:'📦',n:{es:'Materiales',en:'Materials'}},{i:'👷',n:{es:'Nómina',en:'Payroll'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Avance físico vs programado por obra',en:'Physical vs planned progress by project'},
+    kpis:[
+      {l:{es:'Avance físico general',en:'Overall physical progress'},v:'61%',d:{es:'vs 66% programado',en:'vs 66% planned'},t:'warn',c:'c'},
+      {l:{es:'Más atrasada',en:'Most behind'},v:{es:'Torre Aurora',en:'Torre Aurora'},d:{es:'-8 pts',en:'-8 pts'},t:'err',c:'e'},
+      {l:{es:'Más avanzada',en:'Most advanced'},v:{es:'Reserva',en:'Reserva'},d:{es:'94%',en:'94%'},t:'ok',c:'g'},
+      {l:{es:'Obras activas',en:'Active projects'},v:'5',d:{es:'',en:''},t:'',c:''}],
+    chart:{t:{es:'Avance semanal acumulado · Torre Aurora',en:'Cumulative weekly progress · Torre Aurora'},v:{es:'Estancada desde S34',en:'Stalled since W34'},
+      bars:[38,42,47,51,54,56,58],lbls:['S31','S32','S33','S34','S35','S36','S37']},
+    alert:{es:'<b>Torre Aurora</b> lleva 8 puntos de atraso y ya consumió el 71% del presupuesto con 58% de avance. Proyección de sobrecosto: $340M.',en:'<b>Torre Aurora</b> is 8 points behind and has burned 71% of budget at 58% progress. Projected overrun: $340M.'},
+    rank:{t:{es:'Avance vs programado por obra',en:'Progress vs plan by project'},items:[
+      {n:{es:'Reserva',en:'Reserva'},v:'94%',p:94},{n:{es:'Mirador',en:'Mirador'},v:'81%',p:81},
+      {n:{es:'Bosques',en:'Bosques'},v:'72%',p:72},{n:{es:'Aurora',en:'Aurora'},v:'58%',p:58}]} },
+  { sub:{es:'Ejecución presupuestal por obra',en:'Budget execution by project'},
+    kpis:[
+      {l:{es:'Ejecutado del año',en:'Executed YTD'},v:'$8.400M',d:{es:'68% del presupuesto',en:'68% of budget'},t:'ok',c:'g'},
+      {l:{es:'Desviación promedio',en:'Average overrun'},v:'+7,2%',d:{es:'sobre presupuesto',en:'over budget'},t:'err',c:'e'},
+      {l:{es:'Sobrecosto Aurora',en:'Aurora overrun'},v:'$340M',d:{es:'proyectado',en:'projected'},t:'err',c:''},
+      {l:{es:'Presupuesto disponible',en:'Budget remaining'},v:'$3.960M',d:{es:'',en:''},t:'ok',c:''}],
+    chart:{t:{es:'Ejecución presupuestal por obra (%)',en:'Budget execution by project (%)'},v:{es:'Aurora y Reserva al límite',en:'Aurora and Reserva at the limit'},
+      bars:[71,68,64,71,52],lbls:['Reserva','Mirador','Bosques','Aurora','Sendero']},
+    alert:{es:'El sobrecosto de Aurora se concentra en acero de refuerzo (+$180M por el alza de julio) y mano de obra extra (+$97M en horas extra que no recuperaron el atraso).',en:'Aurora\'s overrun sits in rebar (+$180M from July\'s price rise) and extra labor (+$97M in overtime that did not close the delay).'},
+    rank:{t:{es:'Sobrecosto proyectado por obra',en:'Projected overrun by project'},items:[
+      {n:{es:'Torre Aurora',en:'Torre Aurora'},v:'$340M',p:100},{n:{es:'Bosques del Norte',en:'Bosques del Norte'},v:'$62M',p:18},
+      {n:{es:'Sendero Verde',en:'Sendero Verde'},v:'$28M',p:8},{n:{es:'Edificio Mirador',en:'Mirador Building'},v:'$9M',p:3}]} },
+  { sub:{es:'Consumo y alza de precio de materiales',en:'Material consumption and price rise'},
+    kpis:[
+      {l:{es:'Alza acero refuerzo',en:'Rebar price rise'},v:'+$180M',d:{es:'sobre lo cotizado',en:'over quoted price'},t:'err',c:'e'},
+      {l:{es:'Cemento en stock',en:'Cement in stock'},v:'22 días',d:{es:'de cobertura',en:'coverage'},t:'ok',c:''},
+      {l:{es:'OCs pendientes',en:'Open POs'},v:'6',d:{es:'',en:''},t:'warn',c:''},
+      {l:{es:'Costo materiales del mes',en:'Monthly material cost'},v:'$2.100M',d:{es:'',en:''},t:'',c:''}],
+    chart:{t:{es:'Alza de precio acero de refuerzo · 2026',en:'Rebar price rise · 2026'},v:{es:'$/tonelada',en:'$/ton'},
+      bars:[2.1,2.2,2.4,2.9,3.1,3.3],lbls:[{es:'Ene',en:'Jan'},{es:'Feb',en:'Feb'},{es:'Mar',en:'Mar'},{es:'Abr',en:'Apr'},{es:'May',en:'May'},{es:'Jun',en:'Jun'}]},
+    alert:{es:'El acero de refuerzo subió de $2.1M a $3.3M por tonelada desde enero — Torre Aurora se cotizó con el precio de enero y ya perdió $180M por esto.',en:'Rebar rose from $2.1M to $3.3M per ton since January — Torre Aurora was quoted at the January price and has already lost $180M from this.'},
+    rank:{t:{es:'Consumo de acero por obra (toneladas)',en:'Rebar consumption by project (tons)'},items:[
+      {n:{es:'Torre Aurora',en:'Torre Aurora'},v:'420t',p:100},{n:{es:'Bosques del Norte',en:'Bosques del Norte'},v:'310t',p:74},
+      {n:{es:'Conjunto Reserva',en:'Reserva Complex'},v:'280t',p:67},{n:{es:'Edificio Mirador',en:'Mirador Building'},v:'190t',p:45}]} },
+  { sub:{es:'Costo de nómina por obra y rendimiento',en:'Payroll cost by project and output'},
+    kpis:[
+      {l:{es:'Nómina de obra',en:'Site payroll'},v:'$412M',d:{es:'218 personas',en:'218 workers'},t:'',c:''},
+      {l:{es:'Personas en obra',en:'Site workers'},v:'218',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Horas extra Aurora',en:'Aurora overtime'},v:'$97M',d:{es:'sin recuperar atraso',en:'delay not recovered'},t:'err',c:'e'},
+      {l:{es:'% nómina de Aurora',en:'% payroll on Aurora'},v:'29%',d:{es:'para 12% del avance',en:'for 12% of progress'},t:'err',c:''}],
+    chart:{t:{es:'Nómina por obra',en:'Payroll by project'},v:{es:'Aurora concentra la mayor cuadrilla',en:'Aurora holds the largest crew'},
+      bars:[118,94,81,71,48],lbls:['Aurora','Reserva','Bosques','Mirador','Sendero']},
+    alert:{es:'Aurora tiene la cuadrilla más grande y el menor rendimiento por persona de las cinco obras: 29% de la nómina para el 12% del avance del mes.',en:'Aurora has the largest crew and the lowest output per person of the five projects: 29% of payroll for 12% of the month\'s progress.'},
+    rank:{t:{es:'Costo de nómina por obra',en:'Payroll cost by project'},items:[
+      {n:{es:'Torre Aurora',en:'Torre Aurora'},v:'$118M',p:100},{n:{es:'Conjunto Reserva',en:'Reserva Complex'},v:'$94M',p:80},
+      {n:{es:'Bosques del Norte',en:'Bosques del Norte'},v:'$81M',p:69},{n:{es:'Edificio Mirador',en:'Mirador Building'},v:'$71M',p:60}]} }
+  ],
   kpis:[
     {l:{es:'Ejecutado del año',en:'Executed YTD'},v:'$8.400M',d:{es:'68% del presupuesto',en:'68% of budget'},t:'ok',c:'g'},
     {l:{es:'Desviación promedio',en:'Average overrun'},v:'+7.2%',d:{es:'sobre presupuesto',en:'over budget'},t:'err',c:'e'},
@@ -1262,6 +1612,56 @@ const IND = [
   title:{es:'Dashboard de Rentabilidad',en:'Profitability Dashboard'},
   sub:{es:'22 contratos activos · horas facturables',en:'22 active contracts · billable hours'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'📁',n:{es:'Contratos',en:'Contracts'}},{i:'⏱️',n:{es:'Horas',en:'Hours'}},{i:'💰',n:{es:'Facturación',en:'Billing'}},{i:'👥',n:{es:'Equipo',en:'Team'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Consumo de horas por contrato',en:'Hours burned by contract'},
+    kpis:[
+      {l:{es:'Contratos activos',en:'Active contracts'},v:'22',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Contratos en pérdida',en:'Contracts losing money'},v:'3',d:{es:'',en:''},t:'err',c:'e'},
+      {l:{es:'Margen promedio',en:'Average margin'},v:'31%',d:{es:'↓ 4 pp',en:'↓ 4 pp'},t:'warn',c:'c'},
+      {l:{es:'Mayor riesgo',en:'Highest risk'},v:{es:'Retail Colombia',en:'Retail Colombia'},d:{es:'-6%',en:'-6%'},t:'err',c:''}],
+    chart:{t:{es:'Horas consumidas vs vendidas por contrato (%)',en:'Hours burned vs sold by contract (%)'},v:{es:'Tres contratos sobre el 90%',en:'Three contracts above 90%'},
+      bars:[131,94,89,68],lbls:['Retail Col.','T.Uribe','L.Andina','A.Norte']},
+    alert:{es:'Retail Colombia, Logística Andina y Textiles Uribe no tienen control de alcance formal — el equipo sigue atendiendo pedidos fuera de contrato.',en:'Retail Colombia, Logística Andina and Textiles Uribe have no formal scope control — the team keeps taking out-of-contract requests.'},
+    rank:{t:{es:'Contratos por consumo de horas vendidas',en:'Contracts by % of sold hours burned'},items:[
+      {n:{es:'Retail Colombia',en:'Retail Colombia'},v:'131%',p:100},{n:{es:'Textiles Uribe',en:'Textiles Uribe'},v:'94%',p:72},
+      {n:{es:'Logística Andina',en:'Logística Andina'},v:'89%',p:68},{n:{es:'Alimentos del Norte',en:'Alimentos del Norte'},v:'68%',p:52}]} },
+  { sub:{es:'Utilización del equipo por consultor',en:'Team utilization by consultant'},
+    kpis:[
+      {l:{es:'Tasa facturable',en:'Billable rate'},v:'64%',d:{es:'meta 72%',en:'target 72%'},t:'warn',c:'c'},
+      {l:{es:'Horas facturables',en:'Billable hours'},v:'3.120',d:{es:'este mes',en:'this month'},t:'ok',c:''},
+      {l:{es:'Horas no facturables',en:'Non-billable hours'},v:'1.780',d:{es:'',en:''},t:'err',c:''},
+      {l:{es:'Sobreasignados',en:'Overallocated'},v:'2',d:{es:'+160% de asignación',en:'160%+ allocation'},t:'err',c:'e'}],
+    chart:{t:{es:'Utilización por consultor',en:'Utilization by consultant'},v:{es:'Dos en rojo, tres subutilizados',en:'Two in the red, three underused'},
+      bars:[187,163,78,71,64,45,38,29],lbls:['A.Restrepo','J.Mesa','C3','C4','C5','C6','C7','C8']},
+    alert:{es:'Ana Restrepo (187%) y Julián Mesa (163%) están sobreasignados mientras 3 consultores están bajo 45% de facturación — rebalancear vale $52M/mes.',en:'Ana Restrepo (187%) and Julián Mesa (163%) are overallocated while 3 consultants sit below 45% utilization — rebalancing is worth $52M/month.'},
+    rank:{t:{es:'Consultores con mayor sobreasignación',en:'Most overallocated consultants'},items:[
+      {n:'Ana Restrepo',v:'187%',p:100},{n:'Julián Mesa',v:'163%',p:87},
+      {n:{es:'Carlos Peña',en:'Carlos Peña'},v:'142%',p:76},{n:{es:'Daniela Ruiz',en:'Daniela Ruiz'},v:'128%',p:68}]} },
+  { sub:{es:'Ingresos facturados y pipeline del trimestre',en:'Billed revenue and quarterly pipeline'},
+    kpis:[
+      {l:{es:'Ingresos del mes',en:'Monthly revenue'},v:'$486M',d:{es:'↑ 11% vs agosto',en:'↑ 11% vs August'},t:'ok',c:'g'},
+      {l:{es:'Pipeline a 90 días',en:'90-day pipeline'},v:'$1.120M',d:{es:'cobertura 2.3x',en:'2.3x coverage'},t:'ok',c:''},
+      {l:{es:'Meta trimestral',en:'Quarterly target'},v:'$1.500M',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Proyección de cierre',en:'Projected close'},v:'$1.470M',d:{es:'-2% vs meta',en:'-2% vs target'},t:'warn',c:'c'}],
+    chart:{t:{es:'Ingresos facturados por mes · trimestre',en:'Billed revenue by month · quarter'},v:{es:'',en:''},
+      bars:[380,410,486],lbls:[{es:'Mes 1',en:'Month 1'},{es:'Mes 2',en:'Month 2'},{es:'Mes 3',en:'Month 3'}]},
+    alert:{es:'Cerrar la propuesta de Alimentos del Norte ($180M, en decisión hace 12 días) pone al trimestre arriba de la meta por sí sola.',en:'Closing the Alimentos del Norte proposal ($180M, pending decision for 12 days) puts the quarter over target on its own.'},
+    rank:{t:{es:'Pipeline por propuesta (90 días)',en:'Pipeline by proposal (90 days)'},items:[
+      {n:{es:'Grupo Financiero Andino',en:'Grupo Financiero Andino'},v:'$410M',p:100},{n:{es:'Retail Sur Consultoría',en:'Retail Sur Consulting'},v:'$260M',p:63},
+      {n:{es:'Alimentos del Norte',en:'Alimentos del Norte'},v:'$180M',p:44},{n:{es:'Otras 4 propuestas',en:'4 other proposals'},v:'$270M',p:66}]} },
+  { sub:{es:'Carga y costo del equipo',en:'Team load and cost'},
+    kpis:[
+      {l:{es:'Consultores activos',en:'Active consultants'},v:'34',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Sobreasignados',en:'Overallocated'},v:'4',d:{es:'+120%',en:'120%+'},t:'err',c:'e'},
+      {l:{es:'Subutilizados',en:'Underutilized'},v:'3',d:{es:'-45%',en:'under 45%'},t:'warn',c:''},
+      {l:{es:'Costo de equipo mes',en:'Monthly team cost'},v:'$298M',d:{es:'',en:''},t:'',c:''}],
+    chart:{t:{es:'Distribución de asignación del equipo',en:'Team allocation distribution'},v:{es:'34 consultores, muestra de 10',en:'34 consultants, sample of 10'},
+      bars:[187,163,142,128,78,71,64,45,38,29],lbls:['C1','C2','C3','C4','C5','C6','C7','C8','C9','C10']},
+    alert:{es:'Rebalancear la carga entre los sobreasignados y los subutilizados recupera cerca de $52M/mes en horas facturables.',en:'Rebalancing load between the overallocated and the underutilized recovers about $52M/month in billable hours.'},
+    rank:{t:{es:'Consultores subutilizados',en:'Underutilized consultants'},items:[
+      {n:{es:'Consultor G',en:'Consultant G'},v:'38%',p:38},{n:{es:'Consultor H',en:'Consultant H'},v:'41%',p:41},
+      {n:{es:'Consultor I',en:'Consultant I'},v:'44%',p:44}]} }
+  ],
   kpis:[
     {l:{es:'Ingresos del mes',en:'Monthly revenue'},v:'$486M',d:{es:'↑ 11% vs agosto',en:'↑ 11% vs August'},t:'ok',c:'g'},
     {l:{es:'Tasa facturable',en:'Billable rate'},v:'64%',d:{es:'meta 72%',en:'target 72%'},t:'warn',c:'c'},
@@ -1294,6 +1694,56 @@ const IND = [
   title:{es:'Dashboard de Cosecha y Costos',en:'Harvest & Cost Dashboard'},
   sub:{es:'Aguacate hass y cítricos · ciclo 2026',en:'Hass avocado & citrus · 2026 cycle'},
   mods:[{i:'📊',n:{es:'Dashboard',en:'Dashboard'}},{i:'🌾',n:{es:'Cosecha',en:'Harvest'}},{i:'💧',n:{es:'Insumos',en:'Inputs'}},{i:'🚢',n:{es:'Exportación',en:'Export'}},{i:'👷',n:{es:'Jornales',en:'Labor'}},{i:'✦',n:{es:'Agente IA',en:'AI Agent'}}],
+  mv:[
+  { sub:{es:'Rendimiento y calidad por predio',en:'Yield and quality by farm'},
+    kpis:[
+      {l:{es:'Producción del ciclo',en:'Cycle output'},v:'842 t',d:{es:'↑ 14% vs 2025',en:'↑ 14% vs 2025'},t:'ok',c:'c'},
+      {l:{es:'Rendimiento/ha',en:'Yield/ha'},v:'1,36 t',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Pico de cosecha',en:'Harvest peak'},v:{es:'Agosto',en:'August'},d:{es:'96 t',en:'96 t'},t:'ok',c:'g'},
+      {l:{es:'Rechazo en empaque',en:'Packhouse rejects'},v:'11,2%',d:{es:'meta 7%',en:'target 7%'},t:'err',c:'e'}],
+    chart:{t:{es:'Rendimiento por predio (t/ha)',en:'Yield by farm (t/ha)'},v:{es:'San José muy por debajo',en:'San José far below'},
+      bars:[2.1,1.8,1.4,0.9],lbls:[{es:'La Esperanza',en:'La Esperanza'},{es:'El Retiro',en:'El Retiro'},{es:'Buenavista',en:'Buenavista'},{es:'San José',en:'San José'}]},
+    alert:{es:'El rechazo en empaque subió a 11.2% y el 64% viene del predio San José. Cada punto de rechazo cuesta cerca de $37M al ciclo.',en:'Packhouse rejects rose to 11.2% and 64% comes from the San José farm. Each rejection point costs about $37M per cycle.'},
+    rank:{t:{es:'Producción por predio (toneladas)',en:'Output by farm (tons)'},items:[
+      {n:{es:'La Esperanza',en:'La Esperanza'},v:'378t',p:100},{n:{es:'El Retiro',en:'El Retiro'},v:'252t',p:67},
+      {n:{es:'Buenavista',en:'Buenavista'},v:'156t',p:41},{n:{es:'San José',en:'San José'},v:'56t',p:15}]} },
+  { sub:{es:'Composición y alza de costo por insumo',en:'Input cost composition and price rise'},
+    kpis:[
+      {l:{es:'Costo por tonelada',en:'Cost per ton'},v:'$2,9M',d:{es:'↑ 8% · fertilizantes',en:'↑ 8% · fertilizer'},t:'err',c:''},
+      {l:{es:'Alza fertilizantes',en:'Fertilizer price rise'},v:'+31%',d:{es:'vs 2025',en:'vs 2025'},t:'err',c:'e'},
+      {l:{es:'Riego y energía',en:'Irrigation & energy'},v:'9%',d:{es:'del costo',en:'of cost'},t:'ok',c:''},
+      {l:{es:'Costo total del ciclo',en:'Total cycle cost'},v:'$2.442M',d:{es:'',en:''},t:'warn',c:'c'}],
+    chart:{t:{es:'Composición del costo por tonelada',en:'Cost composition per ton'},v:{es:'Jornales y fertilizantes dominan',en:'Labor and fertilizer dominate'},
+      bars:[41,29,14,9,7],lbls:[{es:'Jornales',en:'Labor'},{es:'Fertiliz.',en:'Fertilizer'},{es:'Empaque',en:'Packing'},{es:'Riego',en:'Irrigation'},{es:'Otros',en:'Other'}]},
+    alert:{es:'Comprar el fertilizante del próximo ciclo antes de diciembre, según el histórico de precios, ahorraría cerca de $62M.',en:'Buying next cycle\'s fertilizer before December would save roughly $62M based on price history.'},
+    rank:{t:{es:'Alza de insumos vs 2025',en:'Input price rise vs 2025'},items:[
+      {n:{es:'Fertilizantes',en:'Fertilizer'},v:'+31%',p:100},{n:{es:'Empaque',en:'Packing'},v:'+12%',p:39},
+      {n:{es:'Riego y energía',en:'Irrigation & energy'},v:'+6%',p:19},{n:{es:'Jornales',en:'Labor'},v:'+4%',p:13}]} },
+  { sub:{es:'Margen por destino de venta',en:'Margin by sales destination'},
+    kpis:[
+      {l:{es:'% fruta exportada',en:'% fruit exported'},v:'68%',d:{es:'',en:''},t:'ok',c:'g'},
+      {l:{es:'Precio exportación',en:'Export price'},v:'$4,4M/t',d:{es:'',en:''},t:'ok',c:''},
+      {l:{es:'Precio local',en:'Local price'},v:'$2,6M/t',d:{es:'',en:''},t:'warn',c:''},
+      {l:{es:'Margen neto export.',en:'Net export margin'},v:'$3,5M/t',d:{es:'',en:''},t:'ok',c:'c'}],
+    chart:{t:{es:'Volumen exportado por destino',en:'Exported volume by destination'},v:{es:'EE.UU. concentra el volumen',en:'US holds the volume'},
+      bars:[62,24,14],lbls:[{es:'EE.UU.',en:'US'},{es:'Europa',en:'Europe'},{es:'Medio Oriente',en:'Middle East'}]},
+    alert:{es:'Solo el 68% de la fruta pasa calibre exportación. Bajar el rechazo de 11% a 7% valdría cerca de $148M al ciclo.',en:'Only 68% of the fruit makes export grade. Cutting rejects from 11% to 7% would be worth about $148M per cycle.'},
+    rank:{t:{es:'Margen por destino de venta',en:'Margin by sales destination'},items:[
+      {n:{es:'Exportación EE.UU.',en:'US export'},v:'$3,5M/t',p:100},{n:{es:'Exportación Europa',en:'Europe export'},v:'$3,2M/t',p:91},
+      {n:{es:'Plaza local',en:'Local market'},v:'$2,6M/t',p:74}]} },
+  { sub:{es:'Costo de jornal por predio',en:'Labor cost by farm'},
+    kpis:[
+      {l:{es:'Costo de jornales',en:'Labor cost'},v:'41%',d:{es:'del costo total',en:'of total cost'},t:'',c:''},
+      {l:{es:'Jornaleros activos',en:'Active field workers'},v:'86',d:{es:'',en:''},t:'',c:''},
+      {l:{es:'Jornal en San José',en:'San José day rate'},v:'+18%',d:{es:'vs otros predios',en:'vs other farms'},t:'err',c:'e'},
+      {l:{es:'Jornales del ciclo',en:'Cycle labor cost'},v:'$1.001M',d:{es:'',en:''},t:'warn',c:'c'}],
+    chart:{t:{es:'Costo de jornal por predio (miles COP/día)',en:'Day rate by farm (thousand COP/day)'},v:{es:'San José el más caro',en:'San José the priciest'},
+      bars:[210,198,205,248],lbls:[{es:'La Esperanza',en:'La Esperanza'},{es:'El Retiro',en:'El Retiro'},{es:'Buenavista',en:'Buenavista'},{es:'San José',en:'San José'}]},
+    alert:{es:'El jornal en San José cuesta 18% más que en los otros predios por la distancia a la cabecera municipal.',en:'San José\'s day rate costs 18% more than the other farms due to distance from town.'},
+    rank:{t:{es:'Jornaleros por predio',en:'Field workers by farm'},items:[
+      {n:{es:'La Esperanza',en:'La Esperanza'},v:'28',p:100},{n:{es:'Buenavista',en:'Buenavista'},v:'24',p:86},
+      {n:{es:'El Retiro',en:'El Retiro'},v:'20',p:71},{n:{es:'San José',en:'San José'},v:'14',p:50}]} }
+  ],
   kpis:[
     {l:{es:'Producción del ciclo',en:'Cycle output'},v:'842 t',d:{es:'↑ 14% vs 2025',en:'↑ 14% vs 2025'},t:'ok',c:'c'},
     {l:{es:'Costo por tonelada',en:'Cost per ton'},v:'$2.9M',d:{es:'↑ 8% · fertilizantes',en:'↑ 8% · fertilizer'},t:'err',c:''},
@@ -1499,7 +1949,7 @@ function applyLang(l){
     b.setAttribute('aria-label', l === 'es' ? 'Switch to English' : 'Cambiar a español');
   });
   buildMarquee(); buildChips(); buildIndCards(); buildSectorSelect();
-  renderIndustry(currentInd, true);
+  renderIndustry(currentInd, true, currentModIx);
 }
 function toggleLang(){ applyLang(lang === 'es' ? 'en' : 'es'); }
 
@@ -1582,6 +2032,7 @@ function genericFor(nameRaw){
 /* ── 3. STUDIO ENGINE ────────────────────────────────────────────── */
 
 let currentInd = 'distribucion';
+let currentModIx = 0;
 let customInd  = null;
 let typeTimer  = null;
 
@@ -1629,9 +2080,39 @@ function buildSectorSelect(){
   if (keep) sel.value = keep;
 }
 
-function renderIndustry(id, keepScroll){
+/* paint the center dashboard panel for one module of an industry.
+   ix 0 is always the industry's own Dashboard fields; ix 1..n-2 pull
+   from d.mv (per-module content); the last module (Agente IA) never
+   calls this — clicking it focuses the agent column instead. */
+function paintModule(d, ix){
+  const view = (ix === 0 || !d.mv) ? d : (d.mv[ix-1] || d);
+
+  Q('#mainTitle').textContent = ix === 0 ? L(d.title) : L(d.mods[ix].n);
+  Q('#mainSub').textContent   = L(view.sub);
+
+  Q('#kpis').innerHTML = view.kpis.map(k=>
+    `<div class="mk"><div class="mk-l">${L(k.l)}</div><div class="mk-v ${k.c||''}">${L(k.v)}</div>
+     <div class="mk-d ${k.t?'d-'+k.t:''}">${L(k.d)}</div></div>`).join('');
+
+  Q('#chartT').textContent = L(view.chart.t);
+  Q('#chartV').textContent = L(view.chart.v);
+  const mx = Math.max(...view.chart.bars);
+  Q('#bars').innerHTML = view.chart.bars.map((b,i)=>
+    `<i class="bar${b===mx?' hi':''}" style="--h:${Math.round(b/mx*96)}%;animation-delay:${i*.055}s"></i>`).join('');
+  Q('#barLbls').innerHTML = view.chart.lbls.map(t=>`<span>${L(t)}</span>`).join('');
+
+  Q('#alertX').innerHTML = L(view.alert);
+  Q('#rankT').textContent = L(view.rank.t);
+  Q('#rankList').innerHTML = view.rank.items.map(r=>
+    `<div class="rk"><span class="rk-n">${L(r.n)}</span>
+     <span class="rk-b"><i style="width:${r.p}%"></i></span>
+     <span class="rk-v">${L(r.v)}</span></div>`).join('');
+}
+
+function renderIndustry(id, keepScroll, modIx){
   const d = getInd(id);
   currentInd = d.id;
+  currentModIx = modIx || 0;
   clearTimeout(typeTimer);
 
   /* chip state */
@@ -1642,38 +2123,27 @@ function renderIndustry(id, keepScroll){
   Q('#sbName').textContent   = L(d.co);
   Q('#sbSector').textContent = L(d.sector);
   Q('#sbSrc').textContent    = L(d.src);
+  const lastIx = d.mods.length - 1;
   Q('#sbNav').innerHTML = d.mods.map((m,ix)=>
-    `<button class="sn${ix===0?' on':''}"><em>${m.i}</em>${L(m.n)}</button>`).join('');
-  Q('#sbNav').querySelectorAll('.sn').forEach(b=>b.addEventListener('click',()=>{
+    `<button class="sn${ix===currentModIx?' on':''}"><em>${m.i}</em>${L(m.n)}</button>`).join('');
+  Q('#sbNav').querySelectorAll('.sn').forEach((b,ix)=>b.addEventListener('click',()=>{
     Q('#sbNav').querySelectorAll('.sn').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');
+    currentModIx = ix;
+    if (ix === lastIx) {
+      const ai = document.querySelector('.app-ai');
+      ai.scrollIntoView({behavior: prefersReduced() ? 'auto' : 'smooth', block:'nearest', inline:'center'});
+      if (!prefersReduced()) ai.animate(
+        [{boxShadow:'inset 0 0 0 0 var(--gold-e)'},{boxShadow:'inset 0 0 0 3px var(--gold-e)'},{boxShadow:'inset 0 0 0 0 var(--gold-e)'}],
+        {duration:900});
+    } else {
+      paintModule(d, ix);
+    }
   }));
 
   /* header + url */
   Q('#studioUrl').textContent = 'app.calybrat.com/' + (d.custom ? 'demo' : d.id);
-  Q('#mainTitle').textContent = L(d.title);
-  Q('#mainSub').textContent   = L(d.sub);
-
-  /* kpis */
-  Q('#kpis').innerHTML = d.kpis.map(k=>
-    `<div class="mk"><div class="mk-l">${L(k.l)}</div><div class="mk-v ${k.c||''}">${k.v}</div>
-     <div class="mk-d ${k.t?'d-'+k.t:''}">${L(k.d)}</div></div>`).join('');
-
-  /* chart */
-  Q('#chartT').textContent = L(d.chart.t);
-  Q('#chartV').textContent = L(d.chart.v);
-  const mx = Math.max(...d.chart.bars);
-  Q('#bars').innerHTML = d.chart.bars.map((b,ix)=>
-    `<i class="bar${b===mx?' hi':''}" style="--h:${Math.round(b/mx*96)}%;animation-delay:${ix*.055}s"></i>`).join('');
-  Q('#barLbls').innerHTML = d.chart.lbls.map(t=>`<span>${L(t)}</span>`).join('');
-
-  /* alert + ranking */
-  Q('#alertX').innerHTML = L(d.alert);
-  Q('#rankT').textContent = L(d.rank.t);
-  Q('#rankList').innerHTML = d.rank.items.map(r=>
-    `<div class="rk"><span class="rk-n">${L(r.n)}</span>
-     <span class="rk-b"><i style="width:${r.p}%"></i></span>
-     <span class="rk-v">${r.v}</span></div>`).join('');
+  paintModule(d, currentModIx === lastIx ? 0 : currentModIx);
 
   /* agent */
   const body = Q('#aiBody');
