@@ -79,6 +79,19 @@ main,nav,footer{position:relative;z-index:1}
 .sec-hd.ctr .lbl{justify-content:center}
 .sec-hd.ctr .sub{margin-left:auto;margin-right:auto}
 
+/* Tab shell for the merged explore section (demo/problem/how/modules/cases/industries) */
+.tabbar-wrap{margin-bottom:48px}
+.tabbar{display:flex;gap:5px;flex-wrap:wrap;padding:6px;background:var(--s1);border:1px solid var(--line);border-radius:var(--rl);position:relative;z-index:1}
+.tabbtn{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13.5px;font-weight:600;color:var(--m);padding:11px 20px;border-radius:14px;transition:all .18s var(--ease);white-space:nowrap}
+.tabbtn:hover{color:var(--t)}
+.tabbtn.on{background:linear-gradient(135deg,var(--gold-b),var(--gold) 62%,var(--gold-dk));color:#12160f;box-shadow:0 6px 18px -8px rgba(224,169,78,.55)}
+.tabpanel[hidden]{display:none!important}
+@media(max-width:860px){
+  .tabbar{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabbar::-webkit-scrollbar{display:none}
+  .tabbtn{flex-shrink:0}
+}
+
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--fd);font-size:14.5px;font-weight:600;letter-spacing:-.005em;padding:13px 26px;border-radius:var(--r);transition:all .22s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
 .btn-p{background:linear-gradient(135deg,var(--gold-b),var(--gold) 62%,var(--gold-dk));color:#12160f;box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 10px 30px -12px rgba(224,169,78,.6)}
@@ -562,7 +575,18 @@ main,nav,footer{position:relative;z-index:1}
 </section>
 
 <!-- ══ LIVE STUDIO ══════════════════════════════════════════════ -->
-<section class="sec studio" id="studio">
+<section class="sec studio tabsec" id="explora">
+  <div class="wrap tabbar-wrap">
+    <div class="tabbar" id="tabBar">
+      <button class="tabbtn on" data-tab="studio" data-i18n="tab_studio">Demo en vivo</button>
+      <button class="tabbtn" data-tab="problema" data-i18n="tab_problema">El problema</button>
+      <button class="tabbtn" data-tab="producto" data-i18n="tab_producto">Cómo funciona</button>
+      <button class="tabbtn" data-tab="modulos" data-i18n="tab_modulos">Módulos</button>
+      <button class="tabbtn" data-tab="casos" data-i18n="tab_casos">Casos</button>
+      <button class="tabbtn" data-tab="industrias" data-i18n="tab_industrias">Industrias</button>
+    </div>
+  </div>
+  <div class="tabpanel" data-tab="studio" id="studio">
   <div class="wrap">
     <div class="sec-hd ctr rv">
       <span class="lbl" data-i18n="st_lbl">Demo interactivo</span>
@@ -640,10 +664,10 @@ main,nav,footer{position:relative;z-index:1}
 
     <p class="studio-note rv" data-i18n-html="st_note">⚠ <b>Datos de demostración</b> generados para ilustrar el producto. En tu implementación, cada cifra viene de tus fuentes reales.</p>
   </div>
-</section>
+  </div>
 
-<!-- ══ PROBLEM ══════════════════════════════════════════════════ -->
-<section class="sec" id="problema">
+  <!-- ══ PROBLEM ══════════════════════════════════════════════════ -->
+  <div class="tabpanel" data-tab="problema" id="problema" hidden>
   <div class="wrap split">
     <div class="rv">
       <span class="lbl" data-i18n="p_lbl">El problema real</span>
@@ -678,10 +702,10 @@ main,nav,footer{position:relative;z-index:1}
       </div>
     </div>
   </div>
-</section>
+  </div>
 
-<!-- ══ HOW IT WORKS ═════════════════════════════════════════════ -->
-<section class="sec" id="producto" style="border-top:1px solid var(--line)">
+  <!-- ══ HOW IT WORKS ═════════════════════════════════════════════ -->
+  <div class="tabpanel" data-tab="producto" id="producto" hidden>
   <div class="wrap">
     <div class="sec-hd ctr rv">
       <span class="lbl tl" data-i18n="f_lbl">Cómo funciona</span>
@@ -706,10 +730,10 @@ main,nav,footer{position:relative;z-index:1}
       </div>
     </div>
   </div>
-</section>
+  </div>
 
-<!-- ══ MODULES ══════════════════════════════════════════════════ -->
-<section class="sec" id="modulos" style="border-top:1px solid var(--line)">
+  <!-- ══ MODULES ══════════════════════════════════════════════════ -->
+  <div class="tabpanel" data-tab="modulos" id="modulos" hidden>
   <div class="wrap">
     <div class="sec-hd rv">
       <span class="lbl" data-i18n="m_lbl">Módulos</span>
@@ -729,10 +753,10 @@ main,nav,footer{position:relative;z-index:1}
       <div class="md hero-md"><span class="md-i">✦</span><div class="md-t" data-i18n="mo9_t">Agente IA</div><div class="md-d" data-i18n="mo9_d">El módulo que cambia todo. Pregunta en español, cruza áreas, detecta patrones y te dice qué hacer — no solo qué pasó.</div><div class="md-tags"><span class="mt" data-i18n="mt_nl">Lenguaje natural</span><span class="mt" data-i18n="mt_prop">Proactivo</span></div></div>
     </div>
   </div>
-</section>
+  </div>
 
-<!-- ══ CASES ════════════════════════════════════════════════════ -->
-<section class="sec" id="casos" style="border-top:1px solid var(--line)">
+  <!-- ══ CASES ════════════════════════════════════════════════════ -->
+  <div class="tabpanel" data-tab="casos" id="casos" hidden>
   <div class="wrap">
     <div class="sec-hd rv">
       <span class="lbl tl" data-i18n="c_lbl">Lo que hemos construido</span>
@@ -740,24 +764,6 @@ main,nav,footer{position:relative;z-index:1}
       <p class="sub" data-i18n="c_sub">Cada implementación empieza entendiendo cómo funciona el negocio por dentro. Estos son algunos de los sistemas que hemos diseñado y puesto a andar.</p>
     </div>
     <div class="cases">
-      <div class="cs rv">
-        <div class="cs-top"><div class="cs-ic">🥗</div><div><div class="cs-n">Paranice</div><div class="cs-s" data-i18n="c1_s">Consumo masivo · D2C + retail</div></div></div>
-        <p class="cs-d" data-i18n="c1_d">Marca de alimentos vendiendo por e-commerce propio, Éxito, Carulla, Rappi, tiendas naturistas y exportación a Costa Rica y EE.UU. Cada canal tenía su propia verdad.</p>
-        <div class="cs-mods"><span class="mt">12 módulos</span><span class="mt" data-i18n="cm_sellout">Sell-out por canal</span><span class="mt" data-i18n="cm_exp">Expansión</span></div>
-        <div class="cs-out" data-i18n-html="c1_o">Una sola vista de <b>sell-in vs sell-out</b> a través de 7 canales y 3 países, con precio por canal y rentabilidad real por referencia.</div>
-      </div>
-      <div class="cs rv">
-        <div class="cs-top"><div class="cs-ic">🧴</div><div><div class="cs-n">CIMPA</div><div class="cs-s" data-i18n="c2_s">Envases y empaques · Grupo empresarial</div></div></div>
-        <p class="cs-d" data-i18n="c2_d">30 años de operación, más de 2.000 insumos, 6 sucursales y tres empresas del mismo grupo que nunca se habían visto consolidadas en un solo tablero.</p>
-        <div class="cs-mods"><span class="mt">10 módulos</span><span class="mt" data-i18n="cm_group">Consolidado de grupo</span><span class="mt" data-i18n="cm_auth">Acceso con login</span></div>
-        <div class="cs-out" data-i18n-html="c2_o">Inventario <b>multi-bodega</b> y cartera unificados, más una vista consolidada de las tres empresas del grupo en tiempo real.</div>
-      </div>
-      <div class="cs rv">
-        <div class="cs-top"><div class="cs-ic">🏨</div><div><div class="cs-n" data-i18n="c3_n">Hoteles El Poblado</div><div class="cs-s" data-i18n="c3_s">Hotelería · Medellín</div></div></div>
-        <p class="cs-d" data-i18n="c3_d">Operación hotelera donde la decisión de tarifa se tomaba con la ocupación de ayer y una hoja de cálculo que se actualizaba a mano.</p>
-        <div class="cs-mods"><span class="mt">12 módulos</span><span class="mt">RevPAR / ADR</span><span class="mt" data-i18n="cm_chan">Canales OTA</span></div>
-        <div class="cs-out" data-i18n-html="c3_o">Ocupación, <b>ADR y RevPAR</b> por día y por canal, con costo de comisión OTA visible antes de decidir la tarifa.</div>
-      </div>
       <div class="cs rv">
         <div class="cs-top"><div class="cs-ic">🏭</div><div><div class="cs-n">FibraTECH</div><div class="cs-s" data-i18n="c4_s">Manufactura PRFV · Fibra de vidrio</div></div></div>
         <p class="cs-d" data-i18n="c4_d">Manufactura por proyecto: cada orden es distinta, con materias primas, mano de obra y márgenes propios. El costo real solo se sabía al cerrar.</p>
@@ -778,10 +784,10 @@ main,nav,footer{position:relative;z-index:1}
       </div>
     </div>
   </div>
-</section>
+  </div>
 
-<!-- ══ INDUSTRIES ═══════════════════════════════════════════════ -->
-<section class="sec" id="industrias" style="border-top:1px solid var(--line)">
+  <!-- ══ INDUSTRIES ═══════════════════════════════════════════════ -->
+  <div class="tabpanel" data-tab="industrias" id="industrias" hidden>
   <div class="wrap">
     <div class="sec-hd rv">
       <span class="lbl" data-i18n="i_lbl">Industrias</span>
@@ -789,6 +795,7 @@ main,nav,footer{position:relative;z-index:1}
       <p class="sub" data-i18n="i_sub">Un hotel no mide lo mismo que una fábrica. Por eso no vendemos plantillas: adaptamos los módulos y el agente a los indicadores que de verdad mueven tu industria. Toca cualquiera para verlo en el demo.</p>
     </div>
     <div class="inds" id="indCards"></div>
+  </div>
   </div>
 </section>
 
@@ -1773,6 +1780,8 @@ const EN = {
   page_title:"Calybrat — AI business intelligence for companies",
   /* nav */
   n_demo:"Live demo", n_prod:"Product", n_cases:"Case studies", n_ind:"Industries",
+  tab_studio:"Live demo", tab_problema:"The problem", tab_producto:"How it works",
+  tab_modulos:"Modules", tab_casos:"Case studies", tab_industrias:"Industries",
   n_pri:"Pricing", n_mod:"Modules", n_cta:"Free assessment",
   /* hero */
   h_eye:"Business intelligence + AI agent · Colombia and LATAM",
@@ -2054,7 +2063,8 @@ function buildIndCards(){
     </div>`).join('');
   box.querySelectorAll('.ind').forEach(c=>c.addEventListener('click',()=>{
     renderIndustry(c.dataset.ind);
-    Q('#studio').scrollIntoView({behavior:'smooth',block:'start'});
+    showTab('studio');
+    Q('#explora').scrollIntoView({behavior: prefersReduced() ? 'auto' : 'smooth', block:'start'});
   }));
 }
 
@@ -2074,6 +2084,18 @@ function buildSectorSelect(){
     + IND.map(i=>`<option value="${L(i.name)}">${i.ico}  ${L(i.name)}</option>`).join('')
     + `<option value="Otro">${lang==='es'?'Otro':'Other'}</option>`;
   if (keep) sel.value = keep;
+}
+
+const TAB_IDS = ['studio','problema','producto','modulos','casos','industrias'];
+
+/* switch the visible panel inside the merged #explora tab section */
+function showTab(name){
+  if (!TAB_IDS.includes(name)) return;
+  document.querySelectorAll('.tabpanel').forEach(p=>{ p.hidden = p.dataset.tab !== name; });
+  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.toggle('on', b.dataset.tab === name));
+  /* elements inside a hidden panel never intersect, so the scroll-reveal
+     observer never fires for them — reveal them immediately on tab-in */
+  document.querySelectorAll('.tabpanel[data-tab="'+name+'"] .rv').forEach(el=>el.classList.add('in'));
 }
 
 /* paint the center dashboard panel for one module of an industry.
@@ -2236,6 +2258,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     mob.classList.remove('open'); burger.classList.remove('x');
   }));
   addEventListener('resize', ()=>{ if (innerWidth > 960){ mob.classList.remove('open'); burger.classList.remove('x'); } });
+
+  /* explore tabs */
+  document.querySelectorAll('.tabbtn').forEach(b=>b.addEventListener('click', ()=>showTab(b.dataset.tab)));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    const id = a.getAttribute('href').slice(1);
+    if (!TAB_IDS.includes(id)) return;
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      showTab(id);
+      Q('#explora').scrollIntoView({behavior: prefersReduced() ? 'auto' : 'smooth', block:'start'});
+    });
+  });
 
   /* contact form */
   const form = Q('#cform');
