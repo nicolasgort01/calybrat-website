@@ -29,7 +29,7 @@
     </ul>
     <div class="nav-cta">
       <button class="lang" id="langBtn" onclick="toggleLang()" aria-label="Language">EN</button>
-      <a href="#contacto" class="btn btn-p" data-i18n="n_cta">Diagnóstico gratis</a>
+      <a href="contacto/" class="btn btn-p" data-i18n="n_cta">Diagnóstico gratis</a>
     </div>
     <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -39,7 +39,7 @@
     <a href="#casos" data-i18n="n_cases">Casos</a>
     <a href="#industrias" data-i18n="n_ind">Industrias</a>
     <a href="precios/" data-i18n="n_pri">Precios</a>
-    <a href="#contacto" class="btn btn-p" data-i18n="n_cta">Diagnóstico gratis</a>
+    <a href="contacto/" class="btn btn-p" data-i18n="n_cta">Diagnóstico gratis</a>
     <button class="lang" style="align-self:flex-start" onclick="toggleLang()">EN / ES</button>
   </div>
 </nav>
@@ -55,7 +55,7 @@
       <p class="hero-sub rv" data-i18n="h_sub">Conectamos los datos que hoy viven dispersos en Excel, tu software contable y WhatsApp — y los convertimos en un panel en tiempo real. Encima le montamos un agente de IA entrenado con tu operación: le preguntas en español y te responde en segundos, con las cifras reales de tu negocio.</p>
       <div class="hero-btns rv">
         <a href="demo/" class="btn btn-p btn-lg" data-i18n="h_cta1">Probar el demo con tu industria</a>
-        <a href="#contacto" class="btn btn-g btn-lg" data-i18n="h_cta2">Agendar diagnóstico</a>
+        <a href="contacto/" class="btn btn-g btn-lg" data-i18n="h_cta2">Agendar diagnóstico</a>
       </div>
       <div class="hero-meta rv"><span class="pulse"></span><span data-i18n-html="h_meta">Diagnóstico sin costo · Panel operativo en <b>48 horas</b> · Sin contratos largos</span></div>
       <div class="tagline rv">
@@ -106,7 +106,7 @@
     <a href="#explora" class="sn-lk" data-spy="explora" data-i18n="tab_producto">Cómo funciona</a>
     <a href="precios/" class="sn-lk" data-spy="precios" data-i18n="n_pri">Precios</a>
     <a href="#testimonios" class="sn-lk" data-spy="testimonios" data-i18n="te_lbl">Testimonios</a>
-    <a href="#contacto" class="sn-lk" data-spy="contacto" data-i18n="sn_contact">Contacto</a>
+    <a href="contacto/" class="sn-lk" data-spy="contacto" data-i18n="sn_contact">Contacto</a>
   </div>
 </div>
 
@@ -269,35 +269,37 @@
 </section>
 
 <!-- ══ DEMO TEASER (links out to the full interactive demo) ═══ -->
-<div class="demo-teaser rv">
-  <div class="dt-copy">
-    <span class="lbl" data-i18n="st_lbl">Demo interactivo</span>
-    <h2 class="h2" data-i18n-html="st_h2">Mira cómo se vería <span class="gold">tu</span> empresa</h2>
-    <p class="sub" data-i18n="st_sub">Elige tu industria y armamos en vivo un panel de ejemplo con los módulos, indicadores y alertas que realmente importan en ese sector. Luego pregúntale al agente de IA — igual que lo harías con tus datos reales.</p>
-    <a href="demo/" class="btn btn-p btn-lg" data-i18n="dt_cta">Abrir el demo interactivo →</a>
-  </div>
-  <div class="dt-shot">
-    <div class="frame">
-      <div class="frame-top">
-        <div class="fdots"><i class="fdot" style="background:#e5616b"></i><i class="fdot" style="background:#e0a94e"></i><i class="fdot" style="background:#4ec98a"></i></div>
-        <div class="furl">app.calybrat.com/demo</div>
-        <div class="flive"><span class="pulse"></span>DEMO</div>
-      </div>
-      <div class="mini">
-        <div class="mini-kpis">
-          <div class="mk"><div class="mk-l" data-i18n="k_sales">Ventas del mes</div><div class="mk-v g">$389M</div><div class="mk-d d-ok">↑ 12.4%</div></div>
-          <div class="mk"><div class="mk-l" data-i18n="k_ar">Cartera vencida</div><div class="mk-v e">$11M</div><div class="mk-d d-err" data-i18n="k_ar_d">3 clientes</div></div>
+<section class="sec" style="border-top:1px solid var(--line)">
+  <div class="wrap demo-teaser rv">
+    <div class="dt-copy">
+      <span class="lbl" data-i18n="st_lbl">Demo interactivo</span>
+      <h2 class="h2" data-i18n-html="st_h2">Mira cómo se vería <span class="gold">tu</span> empresa</h2>
+      <p class="sub" data-i18n="st_sub">Elige tu industria y armamos en vivo un panel de ejemplo con los módulos, indicadores y alertas que realmente importan en ese sector. Luego pregúntale al agente de IA — igual que lo harías con tus datos reales.</p>
+      <a href="demo/" class="btn btn-p btn-lg" data-i18n="dt_cta">Abrir el demo interactivo →</a>
+    </div>
+    <div class="dt-shot">
+      <div class="frame">
+        <div class="frame-top">
+          <div class="fdots"><i class="fdot" style="background:#e5616b"></i><i class="fdot" style="background:#e0a94e"></i><i class="fdot" style="background:#4ec98a"></i></div>
+          <div class="furl">app.calybrat.com/demo</div>
+          <div class="flive"><span class="pulse"></span>DEMO</div>
         </div>
-        <div class="chart-hd"><span class="chart-t" data-i18n="k_chart">Ventas por semana</span></div>
-        <div class="bars">
-          <i class="bar" style="--h:52%"></i><i class="bar" style="--h:70%"></i><i class="bar" style="--h:44%"></i>
-          <i class="bar" style="--h:86%"></i><i class="bar" style="--h:58%"></i><i class="bar" style="--h:78%"></i>
-          <i class="bar hi" style="--h:96%"></i>
+        <div class="mini">
+          <div class="mini-kpis">
+            <div class="mk"><div class="mk-l" data-i18n="k_sales">Ventas del mes</div><div class="mk-v g">$389M</div><div class="mk-d d-ok">↑ 12.4%</div></div>
+            <div class="mk"><div class="mk-l" data-i18n="k_ar">Cartera vencida</div><div class="mk-v e">$11M</div><div class="mk-d d-err" data-i18n="k_ar_d">3 clientes</div></div>
+          </div>
+          <div class="chart-hd"><span class="chart-t" data-i18n="k_chart">Ventas por semana</span></div>
+          <div class="bars">
+            <i class="bar" style="--h:52%"></i><i class="bar" style="--h:70%"></i><i class="bar" style="--h:44%"></i>
+            <i class="bar" style="--h:86%"></i><i class="bar" style="--h:58%"></i><i class="bar" style="--h:78%"></i>
+            <i class="bar hi" style="--h:96%"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ══ METRICS ══════════════════════════════════════════════════ -->
 <section class="sec" style="border-top:1px solid var(--line);padding:0">
@@ -359,49 +361,10 @@
       <h2 class="cta-h" data-i18n-html="cta_h">Con datos en tiempo real,<br><span class="gold">los lunes cambian.</span></h2>
       <p class="cta-s" data-i18n="cta_s">Abres el panel antes de la reunión y ya sabes cómo cerró la semana, qué cliente hay que llamar hoy y qué referencia está perdiendo margen. No llamas a nadie. No esperas al día 8. Decides.</p>
       <div class="cta-b">
-        <a href="#contacto" class="btn btn-p btn-lg" data-i18n="cta_b1">Agendar diagnóstico gratis</a>
+        <a href="contacto/" class="btn btn-p btn-lg" data-i18n="cta_b1">Agendar diagnóstico gratis</a>
         <a href="https://wa.me/573018827017" target="_blank" rel="noopener" class="btn btn-g btn-lg">WhatsApp</a>
       </div>
       <p class="cta-n" data-i18n="cta_n">Respondemos en menos de 4 horas hábiles · Sin costo · Sin compromiso</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CONTACT ══════════════════════════════════════════════════ -->
-<section class="sec" id="contacto" style="border-top:1px solid var(--line)">
-  <div class="wrap contact">
-    <div class="rv">
-      <span class="lbl" data-i18n="co_lbl">Contacto</span>
-      <h2 class="h2" data-i18n="co_h2">Cuéntanos cómo funciona tu empresa</h2>
-      <p class="sub" data-i18n="co_sub">Una llamada de una hora nos basta para decirte qué se puede automatizar, qué deberías estar midiendo y cómo se vería tu panel. Sin costo y sin compromiso.</p>
-      <div class="chs">
-        <a href="https://wa.me/573018827017" target="_blank" rel="noopener" class="ch"><span class="ch-i">💬</span><div><b>WhatsApp</b><span>+57 301 882 7017</span></div></a>
-        <a href="mailto:contact@calybrat.com" class="ch"><span class="ch-i">✉</span><div><b data-i18n="ch_mail">Correo</b><span>contact@calybrat.com</span></div></a>
-        <a href="https://www.linkedin.com/company/calybrat/" target="_blank" rel="noopener" class="ch"><span class="ch-i">in</span><div><b>LinkedIn</b><span>@calybrat</span></div></a>
-      </div>
-    </div>
-    <div class="rv">
-      <div class="form">
-        <p class="fok" id="fok" data-i18n="f_ok">✓ ¡Mensaje enviado! Te contactamos muy pronto.</p>
-        <form id="cform" action="https://formsubmit.co/nicolasgort@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Nueva consulta desde calybrat.com">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
-          <div class="frow">
-            <div class="fg"><label data-i18n="f_name">Nombre</label><input type="text" name="nombre" data-i18n-placeholder="f_ph_name" placeholder="Tu nombre" required></div>
-            <div class="fg"><label data-i18n="f_co">Empresa</label><input type="text" name="empresa" data-i18n-placeholder="f_ph_co" placeholder="Nombre de tu empresa"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label data-i18n="f_email">Correo</label><input type="email" name="email" placeholder="correo@empresa.com" required></div>
-            <div class="fg"><label data-i18n="f_wa">WhatsApp</label><input type="tel" name="whatsapp" placeholder="+57 300 000 0000"></div>
-          </div>
-          <div class="fg"><label data-i18n="f_sec">¿En qué sector estás?</label><select name="sector" id="fSector"></select></div>
-          <div class="fg"><label data-i18n="f_msg">¿Qué te gustaría poder ver o decidir mejor?</label><textarea name="mensaje" rows="4" data-i18n-placeholder="f_ph_msg" placeholder="Ej: quiero saber cada día cuánto vendimos por canal y qué clientes están en mora, sin pedirle el reporte a nadie." required></textarea></div>
-          <button type="submit" class="btn btn-p btn-full btn-lg" data-i18n="f_send">Enviar mensaje</button>
-          <p style="font-size:12px;color:var(--m);margin-top:12px;text-align:center" data-i18n="f_note">Respondemos en menos de 4 horas hábiles</p>
-        </form>
-      </div>
     </div>
   </div>
 </section>
@@ -444,7 +407,7 @@
           <a href="https://wa.me/573018827017" target="_blank" rel="noopener">+57 301 882 7017</a>
           <a href="mailto:contact@calybrat.com">contact@calybrat.com</a>
           <a href="https://www.instagram.com/calybrat" target="_blank" rel="noopener">Instagram</a>
-          <a href="#contacto" data-i18n="ft_diag">Diagnóstico gratis</a>
+          <a href="contacto/" data-i18n="ft_diag">Diagnóstico gratis</a>
         </div>
       </div>
     </div>

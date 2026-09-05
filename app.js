@@ -1242,7 +1242,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   document.querySelectorAll('.rv').forEach(el=>revObs.observe(el));
   document.querySelectorAll('.count[data-target]').forEach(el=>cntObs.observe(el));
-  ['problema','explora','testimonios','contacto'].forEach(id=>{
+  ['problema','explora','testimonios'].forEach(id=>{
     const el = document.getElementById(id);
     if (el) spyObs.observe(el);
   });
@@ -1273,9 +1273,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   /* a cross-page link like ../index.html#modulos should land on that tab, not just the tab bar */
   if (location.hash && TAB_IDS.includes(location.hash.slice(1))) showTab(location.hash.slice(1));
 
-  /* contact form */
+  /* contact form (only the dedicated /contacto/ page has one now) */
   const form = Q('#cform');
-  form.addEventListener('submit', async ev=>{
+  if (form) form.addEventListener('submit', async ev=>{
     ev.preventDefault();
     const btn = form.querySelector('button[type=submit]');
     const old = btn.textContent;
