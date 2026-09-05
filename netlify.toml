@@ -1,6 +1,5 @@
-# Calybrat — static single-file site.
-# The whole page (CSS, JS, logo) lives inside index.html, so there is
-# nothing to build: Netlify just publishes the repository root.
+# Calybrat — static multi-page site (home, /demo/, /precios/), no
+# build step. Shared styles.css and app.js are edited in place.
 
 [build]
   publish = "."
@@ -13,8 +12,28 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# The page is edited in place and must never be served stale.
+# HTML/CSS/JS are edited in place and must never be served stale.
 [[headers]]
   for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/demo/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/precios/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/app.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
