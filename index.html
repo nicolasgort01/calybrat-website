@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calybrat — Copiloto IA para tu empresa</title>
+<meta name="description" content="El copiloto de IA que pone ventas, cartera, producción y nómina en tiempo real. Más de 240 empresas colombianas ya deciden con datos.">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAALV0lEQVR4nO3dMW5bRxSGUStwpca9d5FtZUHZVnaRPg2rAA7ogLBEUeTjfTPz5t45p0gRIAoT0PPxnyfZL18Kev32/cfRrwHg2umfv1++FJL6P0YogApOScOS6kULBrCCU5KgTP8iRQNY2WnimEz7woQDYO6QTPWCRAMgT0ymeBHCAZAvJIf+y4UDIG9IfvtyEPEAyH2eDq+WcADUWCNDF4h4ANQ5Z4eUSjgA6q2R7gtEPACO0fv87RoQ8QA4Vs9zuMu8EQ6A+ldazReIeADMqfX53DQg4gEwt5bndLOAiAdADq3O6yYBEQ+AXFqc27sDIh4AOe09v3cFRDwActtzjocDIh4ANUTP88N+N14AcgsFxPoAqCVyrj8dEPEAqOnZ8/2pgIgHQG2vT0TEMxAAQjYHxPoAWMPrxhWyKSDiAbCW1w0RcYUFQMjDgFgfAGt6fbBC7gZEPADW9nonIq6wAAj5NCDWBwD3emCBABByMyDWBwCPumCBABAiIAC0CYjrKwBuue6DBQJAyLuAWB8A3PO2ExYIACECAsC+gLi+AmCLSy8sEABCBASAEAEBIOTl/BfPPwB4lgUCQIiAABAiIACECAgAIQICQMhvvgMLgAgLBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEK+xv4xyOvrn391+9r//vF7t68Ns3nxJxJSTc9A7CUwVCIgpDVzKJ4lLGQkIKRRKRiPCAoZCAjTWikYjwgKMxIQpiEY2wkKMxAQDiUa+4kJRxEQhhONfsSEkQSEIURjPDGhNwGhK+E4npDQi4DQnGjMS0xoSUBoRjjyEBJaEBB2E468hIQ9BIQw4ahDSIgQEJ4mHHUJCc8QEDYTjnUICVsICA8Jx7qEhHsEhE8JBxdCwi3+SFtuEg+8H3jEAuEd4eARa4QLAeEn4eBZQoIrLMSDEB86sEAW5gCgFWtkTRbIosQD7yf2EpAFiQfeV7TgCmshwsEorrTWYIEsQjzwfqM1AVmAeOB9Rw+usAoTDmbhSqsmC6Qo8WAm3o81fT36BdCeX6zj+YTNiiyQYsQDGEVAChEPYCRXWAUIB3AECyQ58QCOYoEkJh77ePAN+whIUuKxjUhAPwKSkHjcJhYwloAkIx6/CAYcS0ASEQ/RgJkISBIrx8PSgDkJSAIrxkM0YH4CMrnV4iEckIeATGyVeIgG5CQgHEY4IDcBmVTl9SEcUIOATKhqPIQDahGQyVSMh3BATX433omIB5CJBTKJavGwOqA+AaEp4YB1uMKaQJX1IR6wFgE5mHgAWbnCOvJ/foHlYXXAuiwQwsQD1iYgB8m+PsQDcIV1gMzxEA7gwgIZTDyAKgSETSwP4JqADJR1fYgHcIuADCIeQDUCwqcsD+AeARkg4/oQD+ARAeED8QC2EJDOsq0P8QC2EpCOxAOoTED4yfIAniUgnWRaH+IBRAjI4sQDiBKQhdeHeAB7CMiixAPYS0AWXR8AewnIgqwPoAUBWWx9iAfQioAsRDyAlgRkofUB0JKALML6AFoTkAXWh3gAPQhIceIB9CIgxdcHQC8CUpj1AfQkIACECEjR6yvrA+hNQAoSD2AEASm4PgBGEJBirA9gFAEBIERACl1fWR/ASAICQIiAFGF9AKMJSJHrK4DRBKQA6wM4goAAECIgT3B9BfCLgCTn+go4ioAAECIgiVkfwJEEZCPPPwDeExAAQgQkKddXwNEEBIAQAdnA8w+AjwQkIddXwAwEBIAQAQEgRECSPf9wfQXMQkAACBEQAEIEBIAQAUnE8w9gJgICQIiAJPoOLICZCAgAIQICQIiAJOEBOjAbAQEgREAACBEQAEIEBIAQAfmEnwEBuE9AAAgRkAR8Cy8wIwEBIERAAAgREABCBASAEAEBIERAAAgREABCBASAEAEBIERAAAgREABCBASAEAEBIERAAAgREABCBASAEAEBIERAAAgRkAS+/vnX0S8B4AMBASBEQD7x7x+/x/6PAixCQAAIERAAQgQEgBABASBEQJLwrbzAbAQEgBABASBEQO7wsyAAnxMQAEIEJBEP0oGZCAgAIQICQIiAABAiIMm+E8tzEGAWAgJAiIAAECIgCbnGAmYgIAmfgwDMQEAACBGQpFxjAUcTEABCBGQjz0EA3hOQxFxjAUcSEABCBCQ5KwQ4ioA8wXMQgF8EBIAQASnANRZwBAF5kmssgP8JSBFWCDCagAAQIiCFrrGsEGAkAQEgRECKsUKAUQSk2DUWwCgCUpAVAowgIEVXiIgAvQkIACECUpgVAvQkIIWvsQB6EpDirBCgFwFZYIWICNCDgCxCRIDWBGSRFQLQmoAsxAoBWhKQxVaIiACtCMiCRARoQUAWXCEALQjIoqwQYC8BWXiFiAiwh4AsTkSAKAFZfIWciQgQISD8JCKAgEwk0wo5ExHgGRZIZyICVCUgfGCJAFsIyADZVsiZiACPCAifEhHgHgEZJOMKORMR4DMCMpCIAJUICJtYIsA1ARks6wo5ExHgrZfXb99/vPs7DJH9MM4cQqANC+Qg2Q/g7AEE9hMQwkQE1uYK62BVDuHsiwp4ngVysCoHb5UQAtsJyAREBMhIQGi+RKwRWINnIBOpePBWWVfARxbIRCoethWjCPzPAplQ1UO3YiBhZQIyqaoRORMSqEFAJlY5ImdCArl5BsJhfMcW5GaBTK76CrlmlUAeApLAahE5ExKYn4AksWJELsQE5iQgiawckQsxgXkISDIi8ouYwLEEJCERuU1QYCwBSUpEthEV6EdAEhORfcQF9hGQ5ERkDmLEivwkenIOLuAoAlIkIkICjCYghYgIMJKAFCMiwCgeohfl4Tqz8eGmHgukKL9YmYn3Y00WyAKsEY4iHLVZIAvwixjvO3oQkEWICN5vtOYKa0GutOjFB5W1WCAL8osc7ytaEJBFiQjeT+zlCgtXWoT5ILI2CwSHACHigQXCOx6w84hwcCEg3CQkXBMOrrnC4iaHBd4PPGKB8JA1si4fJLhHQNhMSNYhHGwhIDxNSOoSDp4hIIQJSR3CQYSAsJuQ5CUc7CEgNCMkeQgHLQgIzQnJvISDlgSErsTkeKJBLwLCEEIynnDQm4AwnJj0IxqMJCAcSkz2Ew2OIiBMQ0y2Ew1mICBMS1B+EQxmJCCksVJQBIMMBIS0KgVFMMhIQChn5rAIBZUICMvpGRiBYCUCAkCIP9IWgBABASBEQAAIERAAQgQEgBABASBEQAAIERAAQgQEgBABASBEQAAIERAAQgQEgBABASBEQAAIERAAQn47/fP3S+wfBWBlFggAIQICQIiAABAiIACECAgA8YD4TiwAnnHuhgUCQIiAABAiIADsC4jnIABscemFBQJAiIAAsD8grrEAuOdtJywQAEI+BMQKAeCW6z5YIACECAgA7QLiGguAR12wQAAI+TQgVggA93pggQAQcjcgVgjA2k6frI9NC0REANZ0uhOPM1dYAIRsCogVArCW04P18dQCERGANZw2xOPMFRYAIU8FxAoBqO20cX2EFoiIANT07PkeusISEYBaIue6ZyAAhIQDYoUA1BA9z3ctEBEByG3POb77CktEAHLae343eQYiIgC5tDi3mz1EFxGAHFqd102/C0tEAObW8pxu/m28IgIwp9bnc9Mvdu312/cfPb8+AMd9sO/6g4TWCMCxep7D3X8SXUQAjtH7/O36xa+50gLob9QH96G/F5Y1AlDnnB26QN6yRgByf0A/7HfjtUYAcp+nhy2Qt6wRgHwfxKcIyIWQAMwfjospXsQtYgIwXzTemu4FXRMSYGWnCcNxMe0Lu0VMgBWcJo7GWyle5GcEBajglCQY1/4DhwRPRWDY0SQAAAAASUVORK5CYII=">
+<style>
+:root {
+  --ink:#07111f; --s1:#0e1b2c; --s2:#162540;
+  --sky:#0ea5e9; --sky-d:rgba(14,165,233,0.14); --sky-b:rgba(14,165,233,0.22);
+  --amb:#f59e0b; --amb-d:rgba(245,158,11,0.13);
+  --ok:#22c55e; --err:#ef4444;
+  --t:#e8f1f8; --m:#6b91b0;
+  --border:rgba(148,163,184,0.1);
+  --r:10px; --rl:18px;
+  --f:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --max:1160px;
+}
+@media(prefers-color-scheme:light){:root{--ink:#f0f6fc;--s1:#fff;--s2:#e4eef8;--t:#08192e;--m:#4a6a8a;--border:rgba(14,165,233,0.15);--sky-d:rgba(14,165,233,0.09);--amb-d:rgba(245,158,11,0.09);}}
+:root[data-theme=light]{--ink:#f0f6fc;--s1:#fff;--s2:#e4eef8;--t:#08192e;--m:#4a6a8a;--border:rgba(14,165,233,0.15);--sky-d:rgba(14,165,233,0.09);--amb-d:rgba(245,158,11,0.09);}
+:root[data-theme=dark]{--ink:#07111f;--s1:#0e1b2c;--s2:#162540;--t:#e8f1f8;--m:#6b91b0;--border:rgba(148,163,184,0.1);--sky-d:rgba(14,165,233,0.14);--amb-d:rgba(245,158,11,0.13);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--ink);color:var(--t);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+img{max-width:100%;display:block}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.dots{background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:32px 32px}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);display:block;margin-bottom:12px}
+.h2{font-size:clamp(26px,3.8vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;text-wrap:balance;color:var(--t)}
+.sub{font-size:17px;color:var(--m);line-height:1.7;margin-top:14px}
+.sky{color:var(--sky)} .amb{color:var(--amb)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:12px 24px;border-radius:var(--r);transition:all .18s;white-space:nowrap;font-family:var(--f)}
+.btn-p{background:var(--sky);color:#fff}
+.btn-p:hover{background:#38bdf8;transform:translateY(-1px);box-shadow:0 8px 24px rgba(14,165,233,.32)}
+.btn-g{background:transparent;color:var(--t);border:1px solid var(--border)}
+.btn-g:hover{border-color:var(--sky);color:var(--sky)}
+.btn-lg{font-size:16px;padding:14px 30px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,backdrop-filter .3s}
+.nav.on{background:rgba(7,17,31,.9);backdrop-filter:blur(16px);border-color:var(--border)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:800;letter-spacing:-.03em;color:var(--t)}
+.logo span{color:var(--sky)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--m);transition:color .2s}
+.nav-links a:hover{color:var(--t)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.burger{display:none;flex-direction:column;gap:5px;padding:4px}
+.burger span{width:22px;height:2px;background:var(--t);border-radius:2px;transition:all .2s}
+.mob{display:none;position:absolute;top:64px;left:0;right:0;background:var(--s1);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;gap:16px}
+.mob.open{display:flex}
+.mob a{font-size:16px;font-weight:500;color:var(--t)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 68% 42%,rgba(14,165,233,.1) 0%,transparent 70%);pointer-events:none}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero-eye{display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.25)}}
+.hero-eye-t{font-size:12px;font-weight:600;color:var(--m);letter-spacing:.04em}
+.h1{font-size:clamp(38px,5.8vw,66px);font-weight:900;line-height:1.07;letter-spacing:-.03em;text-wrap:balance;margin-bottom:18px}
+.h1 em{font-style:normal;color:var(--sky)}
+.hero-sub{font-size:18px;color:var(--m);line-height:1.65;max-width:460px;margin-bottom:34px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.stats-row{display:flex;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--s1)}
+.stat{flex:1;padding:14px 18px;text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:20px;font-weight:800;letter-spacing:-.02em;color:var(--t);font-variant-numeric:tabular-nums;display:block}
+.stat-n.a{color:var(--amb)}
+.stat-l{font-size:11px;color:var(--m);font-weight:500;display:block;margin-top:1px}
+
+/* DASHBOARD MOCKUP */
+.hero-vis{position:relative}
+.dash{background:var(--s1);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.5);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.db-top{background:var(--s2);padding:11px 15px;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--border)}
+.db-dots{display:flex;gap:5px}
+.db-dot{width:10px;height:10px;border-radius:50%}
+.db-url{flex:1;text-align:center;font-size:11px;font-weight:600;color:var(--m)}
+.db-body{padding:14px}
+.db-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.db-k{background:var(--s2);border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.db-kl{font-size:9px;color:var(--m);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.db-kv{font-size:17px;font-weight:800;color:var(--amb);letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:3px}
+.db-kd{font-size:9px;font-weight:600;margin-top:1px}
+.db-chart-lbl{font-size:9px;color:var(--m);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.db-bars{display:flex;gap:4px;align-items:flex-end;height:56px;margin-bottom:12px}
+.db-bar{flex:1;background:var(--sky-d);border-radius:3px 3px 0 0;position:relative}
+.db-bar::after{content:'';position:absolute;bottom:0;left:0;right:0;background:var(--sky);border-radius:3px 3px 0 0;animation:bg 1.4s ease-out forwards}
+@keyframes bg{from{height:0}to{height:var(--h)}}
+.db-bar:nth-child(1)::after{--h:55%;animation-delay:.1s}
+.db-bar:nth-child(2)::after{--h:72%;animation-delay:.18s}
+.db-bar:nth-child(3)::after{--h:46%;animation-delay:.26s}
+.db-bar:nth-child(4)::after{--h:88%;animation-delay:.34s}
+.db-bar:nth-child(5)::after{--h:60%;animation-delay:.42s}
+.db-bar:nth-child(6)::after{--h:80%;animation-delay:.5s}
+.db-bar:nth-child(7)::after{--h:93%;animation-delay:.58s}
+.db-alert{background:var(--amb-d);border:1px solid rgba(245,158,11,.28);border-radius:7px;padding:9px 11px;display:flex;align-items:center;gap:7px;font-size:11px}
+.db-ai{color:var(--amb);font-size:13px;flex-shrink:0}
+.db-alert b{color:var(--amb)}
+.float-badge{position:absolute;background:var(--s1);border:1px solid var(--border);border-radius:9px;padding:9px 13px;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;white-space:nowrap}
+.fb1{bottom:16px;left:-28px;animation:float 5s 1s ease-in-out infinite}
+.fb2{top:24px;right:-20px;animation:float 4s 2s ease-in-out infinite}
+
+/* TRUST */
+.trust{padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.trust-lbl{text-align:center;font-size:11px;font-weight:700;color:var(--m);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.trust-track{display:flex;animation:scroll 26s linear infinite;width:max-content}
+.trust:hover .trust-track{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.trust-item{display:flex;align-items:center;gap:9px;padding:0 34px;border-right:1px solid var(--border);white-space:nowrap;font-size:13px;font-weight:600;color:var(--m);transition:color .2s}
+.trust-item:hover{color:var(--t)}
+.ti-dot{width:5px;height:5px;border-radius:50%;background:var(--sky);flex-shrink:0}
+
+/* PROBLEM */
+.problem{padding:96px 0}
+.prob-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.prob-list{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.prob-item{display:flex;align-items:flex-start;gap:13px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px}
+.prob-ico{width:32px;height:32px;border-radius:8px;background:rgba(239,68,68,.11);color:#ef4444;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.prob-txt{font-size:13px;color:var(--m);line-height:1.55}
+.prob-txt strong{color:var(--t);display:block;margin-bottom:2px;font-size:14px}
+.after-box{background:var(--s1);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.after-hd{background:var(--s2);padding:13px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.after-hd-t{font-size:13px;font-weight:700}
+.live-tag{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--ok)}
+.live-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 5px var(--ok);animation:pulse 2s infinite}
+.after-bd{padding:18px}
+.kpi-row{display:flex;gap:9px;margin-bottom:12px}
+.ak{flex:1;background:var(--s2);border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.ak-l{font-size:9px;color:var(--m);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.ak-v{font-size:15px;font-weight:800;color:var(--amb);margin-top:3px;font-variant-numeric:tabular-nums}
+.ak-s{font-size:9px;font-weight:600;margin-top:2px}
+.chat{display:flex;flex-direction:column;gap:9px}
+.msg{font-size:12px;padding:9px 13px;border-radius:9px;max-width:88%;line-height:1.5}
+.mq{background:var(--s2);color:var(--t);align-self:flex-end;border-bottom-right-radius:3px}
+.ma{background:var(--sky-d);color:var(--t);align-self:flex-start;border-bottom-left-radius:3px;border:1px solid var(--border)}
+.ma strong{color:var(--amb)}
+
+/* MODULES */
+.modules{padding:96px 0}
+.mod-hd{text-align:center;margin-bottom:52px}
+.mod-hd .sub{margin:14px auto 0;max-width:540px}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:var(--rl);overflow:hidden}
+.mod-card{background:var(--s1);padding:26px 24px;transition:background .18s;position:relative;overflow:hidden}
+.mod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--amb));opacity:0;transition:opacity .18s}
+.mod-card:hover{background:var(--s2)}
+.mod-card:hover::before{opacity:1}
+.mod-card.feat{background:var(--sky-d);border:1px solid var(--sky-b)}
+.mod-card.feat .mod-title{color:var(--sky)}
+.mod-ico{width:42px;height:42px;border-radius:11px;background:var(--sky-d);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:19px}
+.mod-title{font-size:15px;font-weight:700;color:var(--t);margin-bottom:7px}
+.mod-desc{font-size:12px;color:var(--m);line-height:1.6}
+.mod-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}
+.mt{font-size:10px;font-weight:600;color:var(--sky);background:var(--sky-d);padding:3px 9px;border-radius:100px;border:1px solid var(--border)}
+
+/* INDUSTRIES */
+.industries{padding:96px 0}
+.ind-hd{margin-bottom:44px}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ind-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--rl);padding:26px 22px;transition:all .2s;cursor:default}
+.ind-card:hover{border-color:var(--sky);transform:translateY(-3px);box-shadow:0 12px 32px rgba(14,165,233,.11)}
+.ind-ico{font-size:30px;margin-bottom:12px}
+.ind-name{font-size:16px;font-weight:700;color:var(--t);margin-bottom:7px}
+.ind-desc{font-size:12px;color:var(--m);line-height:1.6;margin-bottom:14px}
+.ind-ct{font-size:11px;font-weight:600;color:var(--sky);background:var(--sky-d);padding:4px 10px;border-radius:100px;border:1px solid var(--border);display:inline-block}
+
+/* METRICS */
+.metrics{padding:0;background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.met-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{text-align:center;padding:44px 20px;border-right:1px solid var(--border)}
+.metric:last-child{border-right:none}
+.met-n{font-size:46px;font-weight:900;letter-spacing:-.04em;color:var(--amb);display:block;font-variant-numeric:tabular-nums;line-height:1}
+.met-suf{font-size:26px}
+.met-l{font-size:13px;color:var(--m);margin-top:9px;line-height:1.4}
+.met-l strong{color:var(--t);display:block;font-size:14px;margin-bottom:2px}
+
+/* TESTIMONIALS */
+.testimonials{padding:96px 0}
+.test-hd{text-align:center;margin-bottom:52px}
+.test-hd .sub{margin:0 auto}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.test-card{background:var(--s1);border:1px solid var(--border);border-radius:var(--rl);padding:26px;display:flex;flex-direction:column;gap:14px}
+.test-card:first-child{grid-row:span 2}
+.test-stars{color:var(--amb);font-size:13px;letter-spacing:2px}
+.test-q{font-size:14px;color:var(--t);line-height:1.75;flex:1}
+.test-q::before{content:'\201C';font-size:38px;color:var(--sky);line-height:.9;display:block;margin-bottom:6px;font-family:Georgia,serif}
+.test-hl{font-size:12px;font-weight:600;color:var(--amb);background:var(--amb-d);padding:8px 13px;border-radius:7px;border:1px solid rgba(245,158,11,.2)}
+.test-author{display:flex;align-items:center;gap:11px;padding-top:14px;border-top:1px solid var(--border)}
+.ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--amb));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;flex-shrink:0}
+.ava-t{background:linear-gradient(135deg,#14b8a6,#0ea5e9)}
+.ava-r{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.ava-g{background:linear-gradient(135deg,#22c55e,#14b8a6)}
+.au-name{font-size:13px;font-weight:700;color:var(--t)}
+.au-role{font-size:11px;color:var(--m)}
+.au-city{margin-left:auto;font-size:11px;color:var(--m);white-space:nowrap}
+
+/* PROCESS */
+.process{padding:96px 0}
+.proc-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.proc-steps{display:flex;flex-direction:column;gap:0;margin-top:36px}
+.proc-step{display:flex;gap:18px;position:relative;padding-bottom:30px}
+.proc-step:last-child{padding-bottom:0}
+.proc-step::before{content:'';position:absolute;left:17px;top:38px;bottom:0;width:1px;background:var(--border)}
+.proc-step:last-child::before{display:none}
+.proc-num{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:var(--sky-d);border:1px solid var(--sky);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--sky)}
+.proc-c{padding-top:5px}
+.proc-t{font-size:16px;font-weight:700;color:var(--t);margin-bottom:5px}
+.proc-d{font-size:13px;color:var(--m);line-height:1.6}
+.proc-time{display:inline-block;margin-top:7px;font-size:11px;font-weight:600;color:var(--sky);background:var(--sky-d);padding:3px 10px;border-radius:100px}
+.proc-vis{background:var(--s1);border:1px solid var(--border);border-radius:var(--rl);padding:22px}
+.proc-vis-lbl{font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.proc-chat{display:flex;flex-direction:column;gap:9px}
+
+/* PRICING */
+.pricing{padding:96px 0;background:var(--s1);border-top:1px solid var(--border)}
+.price-hd{text-align:center;margin-bottom:52px}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:940px;margin:0 auto}
+.price-card{background:var(--ink);border:1px solid var(--border);border-radius:var(--rl);padding:30px 26px;display:flex;flex-direction:column;gap:18px}
+.price-card.feat{border-color:var(--sky);box-shadow:0 0 0 1px var(--sky),0 16px 48px rgba(14,165,233,.14);position:relative}
+.price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--sky);color:#fff;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 14px;border-radius:100px}
+.price-name{font-size:12px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.09em}
+.price-amount{font-size:34px;font-weight:900;color:var(--t);letter-spacing:-.03em;line-height:1}
+.price-per{font-size:13px;color:var(--m);margin-left:3px}
+.price-desc{font-size:13px;color:var(--m);line-height:1.6}
+.price-feats{display:flex;flex-direction:column;gap:9px;flex:1}
+.pf{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--m);line-height:1.4}
+.pf::before{content:'✓';color:var(--ok);font-weight:700;flex-shrink:0;margin-top:1px}
+.pf.no{opacity:.4}
+.pf.no::before{content:'–';color:var(--m)}
+
+/* CTA */
+.cta{padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(14,165,233,.07) 0%,transparent 70%)}
+.cta-in{position:relative}
+.tag-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);background:var(--sky-d);padding:5px 14px;border-radius:100px;border:1px solid var(--border);margin-bottom:24px}
+.cta-h2{font-size:clamp(30px,5vw,54px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px;text-wrap:balance}
+.cta-sub{font-size:17px;color:var(--m);max-width:460px;margin:0 auto 32px;line-height:1.6}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-note{margin-top:14px;font-size:12px;color:var(--m)}
+
+/* CONTACT FORM */
+.contact-sec{padding:96px 0;background:var(--s1);border-top:1px solid var(--border)}
+.contact-in{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.contact-channels{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.contact-ch{display:flex;align-items:center;gap:14px;background:var(--ink);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;transition:border-color .18s}
+.contact-ch:hover{border-color:var(--sky)}
+.ch-ico{font-size:22px;flex-shrink:0}
+.contact-ch strong{display:block;font-size:14px;font-weight:700;color:var(--t)}
+.contact-ch span{font-size:12px;color:var(--m)}
+.contact-form{background:var(--ink);border:1px solid var(--border);border-radius:var(--rl);padding:32px;display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-g{display:flex;flex-direction:column;gap:6px}
+.form-g label{font-size:12px;font-weight:600;color:var(--m);letter-spacing:.02em}
+.form-g input,.form-g select,.form-g textarea{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:11px 14px;font-size:14px;color:var(--t);font-family:var(--f);transition:border-color .18s;resize:vertical}
+.form-g input:focus,.form-g select:focus,.form-g textarea:focus{outline:none;border-color:var(--sky)}
+.form-g input::placeholder,.form-g textarea::placeholder{color:var(--m)}
+.form-g select option{background:var(--s1);color:var(--t)}
+
+/* FOOTER */
+.footer{padding:44px 0;border-top:1px solid var(--border)}
+.foot-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot-logo{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.foot-logo span{color:var(--sky)}
+.foot-links{display:flex;gap:22px}
+.foot-links a{font-size:13px;color:var(--m);transition:color .18s}
+.foot-links a:hover{color:var(--t)}
+.foot-copy{font-size:12px;color:var(--m)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-in,.prob-in,.proc-in{grid-template-columns:1fr}
+  .hero-vis{display:none}
+  .mod-grid,.ind-grid{grid-template-columns:repeat(2,1fr)}
+  .met-grid{grid-template-columns:repeat(2,1fr)}
+  .metric{border-bottom:1px solid var(--border)}
+  .metric:nth-child(2){border-right:none}
+  .test-grid{grid-template-columns:1fr}
+  .test-card:first-child{grid-row:span 1}
+  .price-grid{grid-template-columns:1fr;max-width:420px}
+  .contact-in{grid-template-columns:1fr}
+  .nav-links,.nav-cta .btn-g{display:none}
+  .burger{display:flex}
+}
+@media(max-width:540px){
+  .form-row{grid-template-columns:1fr}
+  .mod-grid,.ind-grid{grid-template-columns:1fr}
+  .met-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{flex-direction:column}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
+  .stat:last-child{border-bottom:none}
+  .foot-in{flex-direction:column;text-align:center}
+  .foot-links{justify-content:center;flex-wrap:wrap}
+  .kpi-row{flex-direction:column}
+}
+
+/* PROB STATEMENT */
+.prob-stmt{font-size:16px;color:var(--t);line-height:1.65;margin-bottom:20px;border-left:3px solid var(--amb);padding-left:16px;font-style:italic}
+
+/* AI DEMO */
+.ai-demo{padding:80px 0;background:linear-gradient(180deg,var(--ink) 0%,var(--s1) 100%)}
+.demo-app{display:grid;grid-template-columns:220px 1fr;background:var(--s1);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.55);min-height:500px}
+.demo-sb{background:var(--s2);border-right:1px solid var(--border);padding:20px 16px;display:flex;flex-direction:column}
+.demo-sb-brand{font-size:17px;font-weight:800;letter-spacing:-.02em;color:var(--t);margin-bottom:3px}
+.demo-sb-co{font-size:11px;color:var(--sky);margin-bottom:20px}
+.demo-nav{display:flex;flex-direction:column;gap:2px}
+.dn-item{font-size:13px;color:var(--m);padding:8px 10px;border-radius:8px;cursor:default;transition:background .15s}
+.dn-item:hover{background:rgba(148,163,184,.08);color:var(--t)}
+.dn-active{background:var(--sky-d);color:var(--sky)!important;font-weight:600}
+.sb-kpis{margin-top:auto;padding-top:18px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+.sb-kpi{background:var(--ink);border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.sk-l{font-size:9px;color:var(--m);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.sk-v{font-size:15px;font-weight:800;color:var(--amb);margin-top:2px;font-variant-numeric:tabular-nums}
+.sk-d{font-size:10px;font-weight:600;margin-top:1px}
+.demo-main{display:flex;flex-direction:column}
+.demo-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);background:var(--s2)}
+.demo-topbar-l{display:flex;align-items:center;gap:12px}
+.demo-ai-ico{width:36px;height:36px;border-radius:9px;background:var(--sky-d);border:1px solid var(--sky-b);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.demo-msgs{flex:1;padding:20px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;max-height:360px}
+.demo-sys-msg{font-size:10px;color:var(--m);text-align:center;background:var(--s2);border-radius:100px;padding:4px 14px;align-self:center}
+.demo-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:14px 20px;border-top:1px solid var(--border);background:var(--s2)}
+.demo-chip{font-size:12px;font-weight:500;color:var(--sky);background:var(--sky-d);border:1px solid var(--border);border-radius:100px;padding:5px 14px;cursor:pointer;transition:all .15s;font-family:var(--f)}
+.demo-chip:hover{border-color:var(--sky);background:var(--sky-b)}
+
+/* GUIDE */
+.guide{padding:96px 0;background:var(--s1);border-top:1px solid var(--border)}
+.guide-in{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.guide-creds{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--border)}
+.gc{display:flex;flex-direction:column}
+.gc strong{font-size:22px;font-weight:800;color:var(--amb);letter-spacing:-.02em}
+.gc span{font-size:12px;color:var(--m);margin-top:3px}
+.guide-pledge{display:flex;flex-direction:column;gap:18px}
+.gp-item{display:flex;align-items:flex-start;gap:16px;background:var(--ink);border:1px solid var(--border);border-radius:var(--rl);padding:22px;transition:border-color .18s}
+.gp-item:hover{border-color:var(--sky)}
+.gp-ico{width:42px;height:42px;border-radius:11px;background:var(--sky-d);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.gp-item strong{font-size:15px;font-weight:700;color:var(--t);display:block;margin-bottom:6px}
+.gp-item p{font-size:13px;color:var(--m);line-height:1.6;margin:0}
+
+.demo-pane{display:none;flex-direction:column;flex:1;min-height:0}
+.demo-pane.active{display:flex}
+.dn-item{cursor:pointer}
+@media(max-width:900px){
+  .demo-app{grid-template-columns:1fr}
+  .demo-sb{display:none}
+  .guide-in{grid-template-columns:1fr}
+  .guide-creds{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#inicio" class="logo" style="display:flex;align-items:center;gap:9px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAALT0lEQVR4nO3dMW4bRxTHYctwpca9b5Fr5UC5Vm6RPg2rAAnoQLBESeTu25nZeW++r0gRII5hUPPjf5aSn74U9Pz9x9m/BYB3Ln//9aWSpy+JCQVQwSVpWFIFRDCAFVySBGX6gIgGsLLLxDGZNiDCATB3SKYKiGgA5InJFAERDoB8ITk1IMIBkDckX0/5v4oHQPo348MXiNUBUGONDF0g4gFQ55wdskCEA6DeGum+QMQD4By9z9+uAREPgHP1PIe7XGEJB0D9K63mC0Q8AObU+nxuGhDxAJhby3O6WUDEAyCHVud1k4CIB0AuLc7twwERD4Ccjp7fhwIiHgC5HTnHwwERD4Aaouf5aT+NF4DcQgGxPgBqiZzruwMiHgA17T3fdwVEPABqe94REc9AAAjZHBDrA2ANzxtXyKaAiAfAWp43RMQVFgAhDwNifQCs6fnBCrkbEPEAWNvznYi4wgIg5NOAWB8A3OuBBQJAyIcBsT4AeNQFCwSAEAEBoE1AXF8B8JHbPlggAIS8CYj1AcA9rzthgQAQIiAAHAuI6ysAtnjphQUCQIiAABAiIACEPF3/4fkHAHtZIACECAgAIQICQIiAABAiIACEfPUJLAAiLBAAQgQEgBABASBEQAAIERAAQgQEgBABASBEQAAIERAAQgQEgBABASBEQAAIERAAQgQEgBABASBEQAAI+Rb7zyCvb3/8+W+vX/uf33976vVrw2ye/I2EVNMzEEcJDJUICGnNHIq9hIWMBIQ0KgXjEUEhAwFhWisF4xFBYUYCwjQEYztBYQYCwqlE4zgx4SwCwnCi0Y+YMJKAMIRojCcm9CYgdCUc5xMSehEQmhONeYkJLQkIzQhHHkJCCwLCYcKRl5BwhIAQJhx1CAkRAsJuwlGXkLCHgLCZcKxDSNhCQHhIONYlJNwjIHxKOHghJHzEX2nLh8QDrwcesUB4Qzh4xBrhhYDwk3Cwl5DgCgvxIMSbDiyQhTkAaMUaWZMFsijxwOuJowRkQeKB1xUtuMJaiHAwiiutNVggixAPvN5oTUAWIB543dGDK6zChINZuNKqyQIpSjyYiddjTd/O/g3Qni/W8bzDZkUWSDHiAYwiIIWIBzCSK6wChAM4gwWSnHgAZ7FAEhOPYzz4hmMEJCnx2EYkoB8BSUg8PiYWMJaAJCMevwgGnEtAEhEP0YCZCEgSK8fD0oA5CUgCK8ZDNGB+AjK51eIhHJCHgExslXiIBuQkIJxGOCA3AZlU5fUhHFCDgEyoajyEA2oRkMlUjIdwQE1+Gu9ExAPIxAKZRLV4WB1Qn4DQlHDAOlxhTaDK+hAPWIuAnEw8gKxcYZ35h19geVgdsC4LhDDxgLUJyEmyrw/xAFxhnSBzPIQDeGGBDCYeQBUCwiaWB3BLQAbKuj7EA/iIgAwiHkA1AsKnLA/gHgEZIOP6EA/gEQHhHfEAthCQzrKtD/EAthKQjsQDqExA+MnyAPYSkE4yrQ/xACIEZHHiAUQJyMLrQzyAIwRkUeIBHCUgi64PgKMEZEHWB9CCgCy2PsQDaEVAFiIeQEsCstD6AGhJQBZhfQCtCcgC60M8gB4EpDjxAHoRkOLrA6AXASnM+gB6EhAAQgSk6PWV9QH0JiAFiQcwgoAUXB8AIwhIMdYHMIqAABAiIIWur6wPYCQBASBEQIqwPoDRBKTI9RXAaAJSgPUBnEFAAAgRkB1cXwH8IiDJub4CziIgAIQISGLWB3AmAdnI8w+AtwQEgBABScr1FXA2AQEgREA28PwD4D0BScj1FTADAQEgREAACBGQZM8/XF8BsxAQAEIEBIAQAQEgREAS8fwDmImAABAiIIk+gQUwEwEBIERAAAgRkCQ8QAdmIyAAhAgIACECAkCIgAAQIiCf8D0gAPcJCAAhApKAj/ACMxIQAEIEBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEIEBIAQAQEgREAACBEQAEIEBIAQAUng2x9//nv27wHgloAAECIgn/jn99+eYn+kAGsQEABCBASAEAEBIERAAAgRkCR8lBeYjYAAECIgAIQIyB2+FwTgcwICQIiAJOJBOjATAQEgREAACBEQAEIEJNknsTwHAWYhIACECAgAIQKSkGssYAYCkvA5CMAMBASAEAFJyjUWcDYBASBEQDbyHATgLQFJzDUWcCYBASBEQJKzQoCzCMgOnoMA/CIgAIQISAGusYAzCMhOrrEA/icgRVghwGgCAkCIgBS6xrJCgJEEBIAQASnGCgFGEZBi11gAowhIQVYIMIKAFF0hIgL0JiAAhAhIYVYI0JOAFL7GAuhJQIqzQoBeBGSBFSIiQA8CsggRAVoTkEVWCEBrArIQKwRoSUAWWyEiArQiIAsSEaAFAVlwhQC0ICCLskKAowRk4RUiIsARArI4EQGiBGTxFXIlIkCEgPCTiAACMpFMK+RKRIA9LJDORASoSkB4xxIBthCQAbKtkCsRAR4RED4lIsA9AjJIxhVyJSLAZwRkIBEBKhEQNrFEgFsCMljWFXIlIsBrT8/ff7z5F4yR/TDOHEKgDQvkJNkP4OwBBI4TEMJEBNbmCutkVQ7h7IsK2M8COVmVg7dKCIHtBGQCIgJkJCA0XyLWCKzBM5CJVDx4q6wr4D0LZCIVD9uKUQT+Z4FMqOqhWzGQsDIBmVTViFwJCdQgIBOrHJErIYHcPAPhND6xBblZIJOrvkJuWSWQh4AksFpEroQE5icgSawYkRdiAnMSkERWjsgLMYF5CEgyIvKLmMC5BCQhEfmYoMBYApKUiGwjKtCPgCQmIseICxwjIMmJyBzEiBX5TvTkHFzAWQSkSESEBBhNQAoREWAkASlGRIBRPEQvysN1ZuPNTT0WSFG+WJmJ12NNFsgCrBHOIhy1WSAL8EWM1x09CMgiRASvN1pzhbUgV1r04o3KWiyQBfkix+uKFgRkUSKC1xNHucLClRZh3oiszQLBIUCIeGCB8IYH7DwiHLwQED4kJNwSDm65wuJDDgu8HnjEAuEha2Rd3khwj4CwmZCsQzjYQkDYTUjqEg72EBDChKQO4SBCQDhMSPISDo4QEJoRkjyEgxYEhOaEZF7CQUsCQldicj7RoBcBYQghGU846E1AGE5M+hENRhIQTiUmx4kGZxEQpiEm24kGMxAQpiUovwgGMxIQ0lgpKIJBBgJCWpWCIhhkJCCUM3NYhIJKBITl9AyMQLASAQEgxF9pC0CIgAAQIiAAhAgIACECAkCIgAAQIiAAhAgIACECAkCIgAAQIiAAhAgIACECAkCIgAAQIiAAhAgIACFfL3//FfsvAViaBQJAiIAAECIgAIQICAAhAgJAPCA+iQXAHtduWCAAhAgIACECAsCxgHgOAsAWL72wQAAIERAAjgfENRYA97zuhAUCQMi7gFghAHzktg8WCAAhAgJAu4C4xgLgURcsEABCPg2IFQLAvR5YIACE3A2IFQKwtssn62PTAhERgDVd7sTjyhUWACGbAmKFAKzl8mB97FogIgKwhsuGeFy5wgIgZFdArBCA2i4b10dogYgIQE17z/fQFZaIANQSOdc9AwEgJBwQKwSghuh5fmiBiAhAbkfO8cNXWCICkNPR87vJMxARAcilxbnd7CG6iADk0Oq8bvopLBEBmFvLc7r5x3hFBGBOrc/npy8dPX//0fOXB+DEN/Zdv5HQGgE4V89zuPt3oosIwDl6n79dr7BuudIC6G/UG/ehPwvLGgGoc84OXSCvWSMAud+gn/bTeK0RgNzn6WkL5DVrBCDfG/EpAvJCSADmD8eUAXlNTADmi0aKgLwQEmBllwnDkSYgr4kJsILLxNFIG5BbggJUcEkSjFv/AZEmdIA2VAZ9AAAAAElFTkSuQmCC" alt="" width="26" height="26" style="flex-shrink:0">Caly<span>brat</span></a>
+    <ul class="nav-links">
+      <li><a href="#modulos" data-i18n="n_mod">Módulos</a></li>
+      <li><a href="#industrias" data-i18n="n_ind">Industrias</a></li>
+      <li><a href="#testimonios" data-i18n="n_cli">Clientes</a></li>
+      <li><a href="#precios" data-i18n="n_pri">Precios</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="lang-toggle btn btn-g" id="langToggle" onclick="toggleLang()" aria-label="Cambiar idioma" style="padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.04em">EN</button>
+      <a href="#demo" class="btn btn-g" data-i18n="n_demo">Ver demo</a>
+      <a href="#contacto" class="btn btn-p" data-i18n="n_cta">Agendar diagnóstico</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob" id="mobileMenu">
+    <a href="#modulos" data-i18n="n_mod">Módulos</a>
+    <a href="#industrias" data-i18n="n_ind">Industrias</a>
+    <a href="#testimonios" data-i18n="n_cli">Clientes</a>
+    <a href="#precios" data-i18n="n_pri">Precios</a>
+    <a href="#contacto" data-i18n="n_cta_m">Agendar diagnóstico →</a>
+    <button class="lang-toggle" id="langToggleMb" onclick="toggleLang()" style="font-size:15px;font-weight:700;color:var(--sky);text-align:left;padding:0">EN / ES</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero dots" id="inicio">
+  <div class="wrap hero-in">
+    <div>
+      <div class="hero-eye">
+        <div class="live-dot"></div>
+        <span class="hero-eye-t" data-i18n="h_badge">Activo en Colombia · Manufactura · Distribución · Servicios</span>
+      </div>
+      <h1 class="h1" data-i18n-html="h_title">Deja de tomar<br><em>decisiones a ciegas.</em></h1>
+      <p class="hero-sub" data-i18n="h_sub">Tu empresa genera datos todo el día. El problema es que llegan tarde, en Excel o por WhatsApp. Calybrat los conecta en tiempo real y añade un agente de IA que responde cualquier pregunta sobre tu negocio — en segundos.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn btn-p btn-lg" data-i18n="h_cta1">Agendar diagnóstico gratis →</a>
+        <a href="#demo" class="btn btn-g btn-lg" data-i18n="h_cta2">Ver demo en vivo</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-n a"><span class="count" data-target="240">0</span>+</span>
+          <span class="stat-l" data-i18n="s1_l">empresas activas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n" style="font-size:17px">$18.000M</span>
+          <span class="stat-l" data-i18n="s2_l">COP analizados / mes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n a">4.9★</span>
+          <span class="stat-l" data-i18n="s3_l">satisfacción</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n"><span class="count" data-target="48">0</span>h</span>
+          <span class="stat-l" data-i18n="s4_l">implementación</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="dash">
+        <div class="db-top">
+          <div class="db-dots">
+            <div class="db-dot" style="background:#ff5f57"></div>
+            <div class="db-dot" style="background:#febc2e"></div>
+            <div class="db-dot" style="background:#28c840"></div>
+          </div>
+          <div class="db-url">calybrat.com · Dashboard Ejecutivo</div>
+        </div>
+        <div class="db-body">
+          <div class="db-kpis">
+            <div class="db-k"><div class="db-kl">Ventas del mes</div><div class="db-kv">$389 M</div><div class="db-kd" style="color:var(--ok)">↑ 12.4% vs anterior</div></div>
+            <div class="db-k"><div class="db-kl">Cartera total</div><div class="db-kv">$144 M</div><div class="db-kd" style="color:var(--err)">$11M vencida &gt;30d</div></div>
+            <div class="db-k"><div class="db-kl">Margen bruto</div><div class="db-kv">21.7%</div><div class="db-kd" style="color:var(--ok)">↑ 1.3 pp</div></div>
+            <div class="db-k"><div class="db-kl">Nómina mes</div><div class="db-kv">$84 M</div><div class="db-kd" style="color:var(--m)">34 personas</div></div>
+          </div>
+          <div class="db-chart-lbl">Ventas por semana</div>
+          <div class="db-bars">
+            <div class="db-bar"></div><div class="db-bar"></div><div class="db-bar"></div>
+            <div class="db-bar"></div><div class="db-bar"></div><div class="db-bar"></div><div class="db-bar"></div>
+          </div>
+          <div class="db-alert">
+            <div class="db-ai">⚠</div>
+            <div style="font-size:11px">Catalizador A12 en stock crítico — <b>17% disponible</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-badge fb1"><span style="color:var(--ok)">●</span> Sincronizado con Siigo</div>
+      <div class="float-badge fb2"><span style="color:var(--amb)">✦</span> Agente IA activo</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust">
+  <div class="trust-lbl" data-i18n="t_lbl">Empresas que ya toman mejores decisiones con Calybrat</div>
+  <div style="overflow:hidden">
+    <div class="trust-track">
+      <div class="trust-item"><div class="ti-dot"></div>Distribuidora Mejía e Hijos</div>
+      <div class="trust-item"><div class="ti-dot"></div>FibraTECH International</div>
+      <div class="trust-item"><div class="ti-dot"></div>Textilcom S.A.S.</div>
+      <div class="trust-item"><div class="ti-dot"></div>Agropecuaria La Esperanza</div>
+      <div class="trust-item"><div class="ti-dot"></div>Metalmecánica del Caribe</div>
+      <div class="trust-item"><div class="ti-dot"></div>Constructora Espitia &amp; Cía</div>
+      <div class="trust-item"><div class="ti-dot"></div>Laboratorio San Nicolás</div>
+      <div class="trust-item"><div class="ti-dot"></div>Transporte Rápido del Sur</div>
+      <div class="trust-item"><div class="ti-dot"></div>Distribuidora Mejía e Hijos</div>
+      <div class="trust-item"><div class="ti-dot"></div>FibraTECH International</div>
+      <div class="trust-item"><div class="ti-dot"></div>Textilcom S.A.S.</div>
+      <div class="trust-item"><div class="ti-dot"></div>Agropecuaria La Esperanza</div>
+      <div class="trust-item"><div class="ti-dot"></div>Metalmecánica del Caribe</div>
+      <div class="trust-item"><div class="ti-dot"></div>Constructora Espitia &amp; Cía</div>
+      <div class="trust-item"><div class="ti-dot"></div>Laboratorio San Nicolás</div>
+      <div class="trust-item"><div class="ti-dot"></div>Transporte Rápido del Sur</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problema">
+  <div class="wrap prob-in">
+    <div>
+      <span class="lbl" data-i18n="p_lbl">El problema</span>
+      <p class="prob-stmt" data-i18n="p_stmt">No está bien que en 2026, un gerente tenga que esperar hasta el día 8 del mes siguiente para saber cómo cerró el mes anterior.</p>
+      <h2 class="h2" data-i18n-html="p_h2">Así maneja los datos el <span class="amb">92%</span> de las empresas colombianas</h2>
+      <div class="prob-list">
+        <div class="prob-item">
+          <div class="prob-ico">📊</div>
+          <div class="prob-txt"><strong data-i18n="p1_t">Excel desactualizado</strong><span data-i18n="p1_d">Alguien lo actualiza los lunes — si hay tiempo. El miércoles ya nadie sabe si los datos son reales.</span></div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-ico">📱</div>
+          <div class="prob-txt"><strong data-i18n="p2_t">WhatsApp con el contador</strong><span data-i18n="p2_d">"¿Cuánto vendimos?" Esperas 4 horas para que te mande un PDF que no entiendes.</span></div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-ico">🕐</div>
+          <div class="prob-txt"><strong data-i18n="p3_t">Reportes que llegan tarde</strong><span data-i18n="p3_d">El cierre de mes sale el día 8 del siguiente. Para entonces ya tomaste decisiones con información vieja.</span></div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-ico">🎲</div>
+          <div class="prob-txt"><strong data-i18n="p4_t">Decisiones por intuición</strong><span data-i18n="p4_d">"Yo creo que vendemos más los viernes." Tal vez. O tal vez estás perdiendo margen y nadie lo sabe.</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="after-box">
+        <div class="after-hd">
+          <span class="after-hd-t" data-i18n="p_after">Con Calybrat</span>
+          <span class="live-tag" data-i18n="live_rt">En tiempo real</span>
+        </div>
+        <div class="after-bd">
+          <div class="kpi-row">
+            <div class="ak"><div class="ak-l" data-i18n="ak1_l">Ventas hoy</div><div class="ak-v">$18.4 M</div><div class="ak-s" style="color:var(--ok)" data-i18n="ak1_s">↑ 8% vs ayer</div></div>
+            <div class="ak"><div class="ak-l" data-i18n="ak2_l">Cartera vencida</div><div class="ak-v" style="color:var(--err)">$11 M</div><div class="ak-s" style="color:var(--m)" data-i18n="ak2_s">3 clientes · &gt;30 días</div></div>
+          </div>
+          <div class="chat">
+            <div class="msg mq" data-i18n="ab_q1">¿Cuál fue nuestro mejor mes del año?</div>
+            <div class="msg ma" data-i18n-html="ab_a1">Su mejor mes fue <strong>marzo</strong> con <strong>$487M</strong> en ventas y margen del <strong>24.1%</strong>. El driver principal fue Almacenes La 14 (+$62M vs febrero).</div>
+            <div class="msg mq" data-i18n="ab_q2">¿Qué productos tienen más margen?</div>
+            <div class="msg ma" data-i18n-html="ab_a2">Las 3 referencias top son: Aceite Industrial A (<strong>31%</strong>), Catalizador Premium (<strong>28%</strong>) y Resina Base (<strong>26%</strong>). Juntas generan el <strong>41% de sus utilidades</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AI DEMO ─────────────────────────────────────────────────────── -->
+<section class="ai-demo" id="demo">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:52px">
+      <span class="lbl" data-i18n="d_lbl">Demo en vivo</span>
+      <h2 class="h2" data-i18n-html="d_h2">Pregúntale a tu empresa.<br>Responde en segundos.</h2>
+      <p class="sub" data-i18n="d_sub" style="margin:14px auto 0;max-width:520px">Así se ve Calybrat por dentro. El Agente IA lee tus datos en tiempo real y responde cualquier pregunta en lenguaje natural — sin abrir un solo reporte.</p>
+    </div>
+
+    <div class="demo-app">
+      <!-- Sidebar -->
+      <div class="demo-sb">
+        <div class="demo-sb-brand">Caly<span style="color:var(--sky)">brat</span></div>
+        <div class="demo-sb-co">▸ Distribuidora Mejía e Hijos</div>
+        <ul class="demo-nav" id="demoNav">
+          <li class="dn-item" data-pane="dashboard" data-i18n="dn_dash">📊 Dashboard</li>
+          <li class="dn-item" data-pane="ventas" data-i18n="dn_ventas">💰 Ventas</li>
+          <li class="dn-item" data-pane="cartera" data-i18n="dn_cartera">📋 Cartera</li>
+          <li class="dn-item" data-pane="inventario" data-i18n="dn_inv">📦 Inventario</li>
+          <li class="dn-item" data-pane="nomina" data-i18n="dn_nomina">👥 Nómina</li>
+          <li class="dn-item dn-active" data-pane="agente" data-i18n="dn_agente">🤖 Agente IA</li>
+        </ul>
+        <div class="sb-kpis">
+          <div class="sb-kpi"><div class="sk-l" data-i18n="ak1_l">Ventas hoy</div><div class="sk-v">$18.4M</div><div class="sk-d" style="color:var(--ok)" data-i18n="ak1_s">↑ 8% vs ayer</div></div>
+          <div class="sb-kpi"><div class="sk-l" data-i18n="ak2_l">Cartera vencida</div><div class="sk-v" style="color:var(--err)">$11M</div><div class="sk-d" data-i18n="sb_cart_d">3 clientes</div></div>
+          <div class="sb-kpi"><div class="sk-l" data-i18n="margin_l">Margen bruto</div><div class="sk-v">21.7%</div><div class="sk-d" style="color:var(--ok)">↑ 1.3pp</div></div>
+        </div>
+      </div>
+
+      <!-- Main panels -->
+      <div class="demo-main" id="demoMain">
+
+        <!-- DASHBOARD -->
+        <div class="demo-pane" id="pane-dashboard">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">📊</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="dash_title">Dashboard Ejecutivo</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="rt_tag">Tiempo real</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div style="padding:18px;flex:1;overflow-y:auto">
+            <div class="db-kpis">
+              <div class="db-k"><div class="db-kl" data-i18n="sales_month_l">Ventas del mes</div><div class="db-kv">$389M</div><div class="db-kd" style="color:var(--ok)" data-i18n="sales_delta">↑ 12.4% vs anterior</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="ak2_l">Cartera vencida</div><div class="db-kv" style="color:var(--err)">$11M</div><div class="db-kd" data-i18n="cart_mora">3 clientes en mora</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="margin_l">Margen bruto</div><div class="db-kv">21.7%</div><div class="db-kd" style="color:var(--ok)">↑ 1.3 pp</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="payroll_month_l">Nómina mes</div><div class="db-kv">$84M</div><div class="db-kd" data-i18n="n_people34">34 personas</div></div>
+            </div>
+            <div class="db-chart-lbl" data-i18n="sales_week_lbl">Ventas por semana</div>
+            <div class="db-bars">
+              <div class="db-bar" style="--h:55%"></div><div class="db-bar" style="--h:72%"></div><div class="db-bar" style="--h:46%"></div><div class="db-bar" style="--h:88%"></div><div class="db-bar" style="--h:60%"></div><div class="db-bar" style="--h:80%"></div><div class="db-bar" style="--h:93%"></div>
+            </div>
+            <div class="db-alert"><div class="db-ai">⚠</div><div data-i18n-html="alert_cat">Catalizador A12 en stock crítico — <b>17% disponible</b></div></div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:10px;font-size:11px;color:var(--ok)"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n-html="sync_line">Sincronizado con Siigo · <span style="color:var(--sky)">+ Agente IA activo</span></span></div>
+          </div>
+        </div>
+
+        <!-- VENTAS -->
+        <div class="demo-pane" id="pane-ventas">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">💰</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="mod2_t">Ventas y Pedidos</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="rt_tag">Tiempo real</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div style="padding:18px;flex:1;overflow-y:auto">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+              <div><div style="font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.06em;font-weight:700" data-i18n="sales_month_l">Ventas del mes</div><div style="font-size:30px;font-weight:900;color:var(--amb);letter-spacing:-.02em;line-height:1.1">$389M</div><div style="font-size:12px;color:var(--ok);margin-top:3px" data-i18n="sales_delta_sep">↑ 12.4% vs septiembre anterior</div></div>
+              <div style="text-align:right"><div style="font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.06em;font-weight:700" data-i18n="goal_l">Meta</div><div style="font-size:20px;font-weight:800;color:var(--t)">$450M</div><div style="font-size:11px;color:var(--m)" data-i18n="goal_pct">86% alcanzado</div></div>
+            </div>
+            <div style="height:5px;background:var(--s2);border-radius:3px;margin-bottom:16px;overflow:hidden"><div style="height:100%;width:86%;background:linear-gradient(90deg,var(--sky),var(--amb));border-radius:3px"></div></div>
+            <div style="font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px" data-i18n="top_clients">Top clientes este mes</div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--s2);border-radius:8px"><span style="font-size:12px;font-weight:600;color:var(--t)">Almacén El Progreso</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$38.2M</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--s2);border-radius:8px"><span style="font-size:12px;font-weight:600;color:var(--t)">Distribuciones Norte</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$29.7M</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--s2);border-radius:8px"><span style="font-size:12px;font-weight:600;color:var(--t)">Industrias Castillo</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$22.1M</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--s2);border-radius:8px"><span style="font-size:12px;font-weight:600;color:var(--t)">Mercados del Sur</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$17.4M</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--s2);border-radius:8px"><span style="font-size:12px;font-weight:600;color:var(--t)">Ferretería Central</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$14.9M</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARTERA -->
+        <div class="demo-pane" id="pane-cartera">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">📋</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="mod3_t">Cartera y Cobros</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="rt_tag">Tiempo real</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div style="padding:18px;flex:1;overflow-y:auto">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px">
+              <div class="db-k"><div class="db-kl" data-i18n="cart_total_l">Cartera total</div><div class="db-kv">$144M</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="cart_current_l">Al día</div><div class="db-kv" style="color:var(--ok)">$133M</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="cart_overdue_l">Vencida</div><div class="db-kv" style="color:var(--err)">$11M</div></div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px" data-i18n="clients_mora">Clientes en mora</div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="padding:10px 12px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:8px"><div style="display:flex;justify-content:space-between"><span style="font-size:12px;font-weight:600;color:var(--t)">La Villa del Norte</span><span style="font-size:13px;font-weight:800;color:var(--err)">$3.1M</span></div><div style="font-size:10px;color:var(--m);margin-top:3px" data-i18n="cart_row1">62 días vencido · Última compra: ago 2</div></div>
+              <div style="padding:10px 12px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:8px"><div style="display:flex;justify-content:space-between"><span style="font-size:12px;font-weight:600;color:var(--t)">Tienda Central</span><span style="font-size:13px;font-weight:800;color:var(--err)">$1.8M</span></div><div style="font-size:10px;color:var(--m);margin-top:3px" data-i18n="cart_row2">48 días vencido · Última compra: ago 18</div></div>
+              <div style="padding:10px 12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:8px"><div style="display:flex;justify-content:space-between"><span style="font-size:12px;font-weight:600;color:var(--t)">Mercado Popular</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$940K</span></div><div style="font-size:10px;color:var(--m);margin-top:3px" data-i18n="cart_row3">31 días vencido · Pago parcial recibido</div></div>
+              <div style="padding:10px 12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:8px"><div style="display:flex;justify-content:space-between"><span style="font-size:12px;font-weight:600;color:var(--t)">Autopartes Rápidas</span><span style="font-size:13px;font-weight:800;color:var(--amb)">$680K</span></div><div style="font-size:10px;color:var(--m);margin-top:3px" data-i18n="cart_row4">28 días vencido · En negociación</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INVENTARIO -->
+        <div class="demo-pane" id="pane-inventario">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">📦</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="inv_title">Inventario</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="rt_tag">Tiempo real</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div style="padding:18px;flex:1;overflow-y:auto">
+            <div class="db-alert" style="margin-bottom:16px"><div class="db-ai">⚠</div><div data-i18n-html="inv_alert"><b>2 referencias</b> bajo mínimo — revisar orden de compra</div></div>
+            <div style="font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px" data-i18n="stock_levels">Niveles de stock</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)">Aceite Industrial A</span><span style="color:var(--ok)">78%</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:78%;background:var(--ok);border-radius:3px"></div></div><div style="font-size:10px;color:var(--m);margin-top:2px" data-i18n="inv_row1">1,240 und · Mínimo: 300</div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)">Catalizador A12</span><span style="color:var(--err)">17%</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:17%;background:var(--err);border-radius:3px"></div></div><div style="font-size:10px;color:var(--err);margin-top:2px" data-i18n="inv_row2">⚠ 85 und · Mínimo: 200</div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)">Resina Base R-40</span><span style="color:var(--ok)">61%</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:61%;background:var(--ok);border-radius:3px"></div></div><div style="font-size:10px;color:var(--m);margin-top:2px" data-i18n="inv_row3">920 und · Mínimo: 400</div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)">Solvente Premium</span><span style="color:var(--amb)">22%</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:22%;background:var(--amb);border-radius:3px"></div></div><div style="font-size:10px;color:var(--amb);margin-top:2px" data-i18n="inv_row4">⚠ 110 und · Mínimo: 150</div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)">Catalizador Premium</span><span style="color:var(--ok)">54%</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:54%;background:var(--ok);border-radius:3px"></div></div><div style="font-size:10px;color:var(--m);margin-top:2px" data-i18n="inv_row5">432 und · Mínimo: 200</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NÓMINA -->
+        <div class="demo-pane" id="pane-nomina">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">👥</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="mod6_t">Nómina y RRHH</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="rt_tag">Tiempo real</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div style="padding:18px;flex:1;overflow-y:auto">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+              <div class="db-k"><div class="db-kl" data-i18n="payroll_total_l">Nómina total</div><div class="db-kv">$84M</div><div class="db-kd" style="color:var(--ok)" data-i18n="payroll_vs">Vs $81M anterior</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="employees_l">Empleados</div><div class="db-kv">34</div><div class="db-kd" data-i18n="new_month">2 nuevos este mes</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="benefits_l">Prestaciones</div><div class="db-kv">$21M</div><div class="db-kd" data-i18n="pct_cost">25% del costo</div></div>
+              <div class="db-k"><div class="db-kl" data-i18n="vac_pend">Vacaciones pend.</div><div class="db-kv">8</div><div class="db-kd" data-i18n="people_word">personas</div></div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px" data-i18n="cost_area">Costo por área</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)" data-i18n="area1">Ventas (12 personas)</span><span style="font-weight:700;color:var(--t)">$29M</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:72%;background:var(--sky);border-radius:3px"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)" data-i18n="area2">Operaciones (9 personas)</span><span style="font-weight:700;color:var(--t)">$24M</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:57%;background:var(--sky);border-radius:3px"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)" data-i18n="area3">Administración (8 personas)</span><span style="font-weight:700;color:var(--t)">$19M</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:45%;background:var(--sky);border-radius:3px"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--t)" data-i18n="area4">Logística (5 personas)</span><span style="font-weight:700;color:var(--t)">$12M</span></div><div style="height:5px;background:var(--s2);border-radius:3px;overflow:hidden"><div style="height:100%;width:28%;background:var(--sky);border-radius:3px"></div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AGENTE IA -->
+        <div class="demo-pane active" id="pane-agente">
+          <div class="demo-topbar">
+            <div class="demo-topbar-l"><div class="demo-ai-ico">🤖</div><div><div style="font-size:13px;font-weight:700;color:var(--t)" data-i18n="mod9_t">Agente IA</div><div style="font-size:11px;color:var(--ok);display:flex;align-items:center;gap:4px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block"></span><span data-i18n="connected_data">Conectado a tus datos</span></div></div></div>
+            <span style="font-size:11px;color:var(--m)">Sep 2026</span>
+          </div>
+          <div class="demo-msgs">
+            <div class="demo-sys-msg" data-i18n="sys_msg">Conectado a SIESA · Datos al 04/09/2026 · Última sincronización: hace 3 min</div>
+            <div class="msg mq" data-i18n="ag_q1">¿Cuánto vendimos esta semana vs la anterior?</div>
+            <div class="msg ma" data-i18n-html="ag_a1">Esta semana: <strong>$94.3M</strong> — un <strong>+7.2%</strong> vs la semana pasada. El canal de mayor crecimiento fue ventas directas (+$11M). El cliente más activo: Almacén El Progreso con 14 pedidos.</div>
+            <div class="msg mq" data-i18n="ag_q2">¿Qué clientes tienen cartera vencida?</div>
+            <div class="msg ma" data-i18n-html="ag_a2"><strong>3 clientes</strong> llevan más de 45 días sin pagar:<br>· La Villa del Norte — <strong>$3.1M</strong><br>· Tienda Central — <strong>$1.8M</strong><br>· Mercado Popular — <strong>$940K</strong><br>Total en riesgo alto: <strong style="color:var(--err)">$5.84M</strong></div>
+            <div class="msg mq" data-i18n="ag_q3">¿Cuál producto tiene mejor margen?</div>
+            <div class="msg ma" data-i18n-html="ag_a3">Las 3 referencias más rentables:<br>1. Aceite Industrial A — <strong>31% de margen</strong><br>2. Catalizador Premium — <strong>28%</strong><br>3. Resina Base — <strong>26%</strong><br>Juntas generan el <strong>41% de sus utilidades</strong> con solo el 18% del volumen.</div>
+          </div>
+          <div class="demo-chips">
+            <span style="font-size:11px;color:var(--m);white-space:nowrap" data-i18n="try_asking">Prueba preguntar:</span>
+            <button class="demo-chip" data-i18n="d_c1">¿Alcanzamos la meta del mes?</button>
+            <button class="demo-chip" data-i18n="d_c2">¿Qué línea creció más?</button>
+            <button class="demo-chip" data-i18n="d_c3">¿Cuánto es la nómina este mes?</button>
+          </div>
+        </div>
+
+      </div><!-- /demo-main -->
+    </div><!-- /demo-app -->
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules" id="modulos">
+  <div class="wrap">
+    <div class="mod-hd">
+      <span class="lbl" data-i18n="m_lbl">Módulos</span>
+      <h2 class="h2" data-i18n="m_h2">14 módulos. Una sola plataforma.</h2>
+      <p class="sub" data-i18n="m_sub">Cada módulo está diseñado para el negocio colombiano: nómina con prestaciones, tributario DIAN, exportaciones y más.</p>
+    </div>
+    <div class="mod-grid">
+      <div class="mod-card"><div class="mod-ico">📊</div><div class="mod-title" data-i18n="mod1_t">Dashboard Ejecutivo</div><div class="mod-desc" data-i18n="mod1_d">Vista unificada de todos los KPIs. Lo más importante de tu negocio en 30 segundos.</div><div class="mod-tags"><span class="mt" data-i18n="mt_rt">Tiempo real</span><span class="mt">KPIs</span></div></div>
+      <div class="mod-card"><div class="mod-ico">💰</div><div class="mod-title" data-i18n="mod2_t">Ventas y Pedidos</div><div class="mod-desc" data-i18n="mod2_d">Facturación diaria, clientes top, productos estrella y tendencias de venta.</div><div class="mod-tags"><span class="mt" data-i18n="mt_client">Por cliente</span><span class="mt" data-i18n="mt_hist">Historial</span></div></div>
+      <div class="mod-card"><div class="mod-ico">📋</div><div class="mod-title" data-i18n="mod3_t">Cartera y Cobros</div><div class="mod-desc" data-i18n="mod3_d">Cartera al día, vencida y crítica. Alertas automáticas por cliente en mora.</div><div class="mod-tags"><span class="mt" data-i18n="mt_alert">Alertas</span><span class="mt" data-i18n="mt_client">Por cliente</span></div></div>
+      <div class="mod-card"><div class="mod-ico">🏭</div><div class="mod-title" data-i18n="mod4_t">Producción y Proyectos</div><div class="mod-desc" data-i18n="mod4_d">Avance de órdenes de producción, proyectos activos y tiempos de entrega.</div><div class="mod-tags"><span class="mt">OPs</span><span class="mt" data-i18n="mt_prog">Progreso</span></div></div>
+      <div class="mod-card"><div class="mod-ico">📦</div><div class="mod-title" data-i18n="mod5_t">Materias Primas</div><div class="mod-desc" data-i18n="mod5_d">Stock, mínimos críticos y proyección de consumo por línea de producción.</div><div class="mod-tags"><span class="mt" data-i18n="mt_min">Alertas mínimos</span><span class="mt" data-i18n="mt_rot">Rotación</span></div></div>
+      <div class="mod-card"><div class="mod-ico">👥</div><div class="mod-title" data-i18n="mod6_t">Nómina y RRHH</div><div class="mod-desc" data-i18n="mod6_d">Costo laboral real, vacaciones, prestaciones y carga por área o proyecto.</div><div class="mod-tags"><span class="mt" data-i18n="mt_prest">Prestaciones</span><span class="mt" data-i18n="mt_area">Por área</span></div></div>
+      <div class="mod-card"><div class="mod-ico">🌍</div><div class="mod-title" data-i18n="mod7_t">Exportaciones</div><div class="mod-desc" data-i18n="mod7_d">Despachos internacionales, documentos, plazos y seguimiento por destino.</div><div class="mod-tags"><span class="mt" data-i18n="mt_multi">Multi-país</span><span class="mt" data-i18n="mt_log">Logística</span></div></div>
+      <div class="mod-card"><div class="mod-ico">🧾</div><div class="mod-title" data-i18n="mod8_t">Tributario DIAN</div><div class="mod-desc" data-i18n="mod8_d">Calendario de obligaciones, IVA, retenciones y recordatorios con anticipación.</div><div class="mod-tags"><span class="mt">DIAN</span><span class="mt" data-i18n="mt_rem">Recordatorios</span></div></div>
+      <div class="mod-card feat"><div class="mod-ico" style="background:rgba(14,165,233,.25)">🤖</div><div class="mod-title" data-i18n="mod9_t">Agente IA</div><div class="mod-desc" data-i18n="mod9_d">Pregúntale al negocio en lenguaje natural. Analiza, cruza datos y responde en segundos.</div><div class="mod-tags"><span class="mt" data-i18n="mt_nl">Lenguaje natural</span><span class="mt">Claude AI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries" id="industrias">
+  <div class="wrap">
+    <div class="ind-hd">
+      <span class="lbl" data-i18n="i_lbl">Industrias</span>
+      <h2 class="h2" data-i18n="i_h2">Construido para el negocio colombiano real</h2>
+      <p class="sub" data-i18n="i_sub">Cada sector tiene su propia lógica. Calybrat se adapta a los datos y procesos de tu industria específica.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card"><div class="ind-ico">🏭</div><div class="ind-name" data-i18n="i1_n">Manufactura e Industria</div><div class="ind-desc" data-i18n="i1_d">Órdenes de producción, materias primas, calidad, exportaciones y costos por línea.</div><span class="ind-ct" data-i18n="i1_ct">+48 empresas</span></div>
+      <div class="ind-card"><div class="ind-ico">🚛</div><div class="ind-name" data-i18n="i2_n">Distribución y Comercio</div><div class="ind-desc" data-i18n="i2_d">Ventas por pedido, cartera, inventario de producto terminado y rutas de entrega.</div><span class="ind-ct" data-i18n="i2_ct">+67 empresas</span></div>
+      <div class="ind-card"><div class="ind-ico">🌱</div><div class="ind-name" data-i18n="i3_n">Agropecuario</div><div class="ind-desc" data-i18n="i3_d">Cosechas, costos de producción, comercialización y seguimiento por predio o cultivo.</div><span class="ind-ct" data-i18n="i3_ct">+23 empresas</span></div>
+      <div class="ind-card"><div class="ind-ico">🏗️</div><div class="ind-name" data-i18n="i4_n">Construcción</div><div class="ind-desc" data-i18n="i4_d">Proyectos en paralelo, presupuesto vs real, avance de obra y nómina por proyecto.</div><span class="ind-ct" data-i18n="i4_ct">+31 empresas</span></div>
+      <div class="ind-card"><div class="ind-ico">💊</div><div class="ind-name" data-i18n="i5_n">Salud y Farmacéutico</div><div class="ind-desc" data-i18n="i5_d">Pacientes, servicios, facturación a EPS, glosas y costos por especialidad.</div><span class="ind-ct" data-i18n="i5_ct">+19 empresas</span></div>
+      <div class="ind-card"><div class="ind-ico">⚙️</div><div class="ind-name" data-i18n="i6_n">Servicios Empresariales</div><div class="ind-desc" data-i18n="i6_d">Contratos, horas por cliente, rentabilidad por servicio y proyección de ingresos.</div><span class="ind-ct" data-i18n="i6_ct">+52 empresas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="wrap">
+    <div class="met-grid">
+      <div class="metric"><span class="met-n"><span class="count" data-target="240">0</span><span class="met-suf">+</span></span><div class="met-l"><strong data-i18n="met1_s">Empresas colombianas</strong><span data-i18n="met1_d">usando Calybrat hoy</span></div></div>
+      <div class="metric"><span class="met-n">$18.000M</span><div class="met-l"><strong data-i18n="met2_s">COP analizados</strong><span data-i18n="met2_d">en tiempo real cada mes</span></div></div>
+      <div class="metric"><span class="met-n"><span class="count" data-target="48">0</span><span class="met-suf">h</span></span><div class="met-l"><strong data-i18n="met3_s">Tiempo de implementación</strong><span data-i18n="met3_d">promedio desde el diagnóstico</span></div></div>
+      <div class="metric"><span class="met-n"><span class="count" data-target="23">0</span><span class="met-suf">%</span></span><div class="met-l"><strong data-i18n="met4_s">Reducción de costos</strong><span data-i18n="met4_d">reportada por nuestros clientes</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="wrap">
+    <div class="test-hd">
+      <span class="lbl" data-i18n="te_lbl">Testimonios</span>
+      <h2 class="h2" data-i18n="te_h2">Lo que dicen las empresas que ya lo usan</h2>
+      <p class="sub" data-i18n="te_sub">Empresarios colombianos que cambiaron el Excel por un copiloto real.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">Antes del copiloto, los lunes eran caóticos. Reunión con ventas, con bodega, con el contador — y aun así no teníamos claridad de cómo cerró la semana. Ahora entro, abro Calybrat y en 30 segundos ya sé exactamente qué pasó: ventas, cartera pendiente, qué clientes debo llamar. Llevamos 8 meses y no imagino la operación sin esto.</div>
+        <div class="test-hl">💡 Detectamos $8.4M en cartera vencida que nadie estaba cobrando — en la primera semana.</div>
+        <div class="test-author">
+          <div class="ava">CM</div>
+          <div><div class="au-name">Carlos Andrés Mejía Torres</div><div class="au-role">Gerente General · Distribuidora Mejía e Hijos S.A.S.</div></div>
+          <div class="au-city">📍 Medellín</div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">Lo que más me sorprendió fue el agente IA. Le pregunté qué referencia nos generaba más margen y me dio el análisis completo en segundos. Antes eso era dos días con el contador y el jefe de bodega sentados juntos.</div>
+        <div class="test-author">
+          <div class="ava ava-t">SP</div>
+          <div><div class="au-name">Sandra Puentes Ruiz</div><div class="au-role">Directora Operativa · Textilcom S.A.S.</div></div>
+          <div class="au-city">📍 Bogotá</div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">Tenemos proyectos en Barranquilla, Bogotá y Medellín al mismo tiempo. Veo el avance de cada uno, las materias primas que van a faltar y el costo de nómina por proyecto — desde el celular. Control total sin llamar a nadie.</div>
+        <div class="test-author">
+          <div class="ava ava-r">RS</div>
+          <div><div class="au-name">Rodrigo Sánchez Bermúdez</div><div class="au-role">CEO · Metalmecánica del Caribe</div></div>
+          <div class="au-city">📍 Barranquilla</div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-q">En 48 horas teníamos la herramienta funcionando con nuestros datos reales. El equipo de Calybrat entiende cómo funciona un negocio colombiano: en la primera reunión ya nos propusieron módulos que nosotros ni habíamos pensado pedir.</div>
+        <div class="test-author">
+          <div class="ava ava-g">MO</div>
+          <div><div class="au-name">María Fernanda Ospina</div><div class="au-role">Gerente General · Agropecuaria La Esperanza</div></div>
+          <div class="au-city">📍 Cali</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GUIDE ───────────────────────────────────────────────────────── -->
+<section class="guide">
+  <div class="wrap guide-in">
+    <div>
+      <span class="lbl" data-i18n="g_lbl">Tu guía, no tu proveedor</span>
+      <h2 class="h2" data-i18n="g_h2">Entendemos lo que se siente gerenciar sin datos reales</h2>
+      <p style="font-size:16px;color:var(--m);line-height:1.75;margin-top:18px" data-i18n="g_p1">El cierre del mes llega al día 8. El informe que pediste ya está desactualizado. Tomas decisiones importantes con información de hace dos semanas. No es falta de dedicación — es falta de las herramientas correctas.</p>
+      <p style="font-size:16px;color:var(--m);line-height:1.75;margin-top:12px" data-i18n="g_p2">Por eso construimos Calybrat: para que cualquier empresa colombiana, sin importar su tamaño, tenga el mismo nivel de inteligencia que antes solo podían pagar las grandes.</p>
+      <div class="guide-creds">
+        <div class="gc"><strong>240+</strong><span>empresas activas</span></div>
+        <div class="gc"><strong>$18.000M</strong><span>COP analizados / mes</span></div>
+        <div class="gc"><strong>4.9★</strong><span>satisfacción</span></div>
+      </div>
+    </div>
+    <div class="guide-pledge">
+      <div class="gp-item">
+        <div class="gp-ico">🎯</div>
+        <div><strong data-i18n="gp1_t">Empezamos con un piloto</strong><p data-i18n="gp1_d">No pedimos que confíes sin ver resultados. Tres semanas, datos reales, entregable concreto — antes de cualquier compromiso.</p></div>
+      </div>
+      <div class="gp-item">
+        <div class="gp-ico">🔒</div>
+        <div><strong data-i18n="gp2_t">Sin dependencia técnica</strong><p data-i18n="gp2_d">No construimos algo que solo nosotros podemos manejar. Te entregamos las herramientas y el conocimiento para que tengas el control.</p></div>
+      </div>
+      <div class="gp-item">
+        <div class="gp-ico">🇨🇴</div>
+        <div><strong data-i18n="gp3_t">Entendemos el negocio colombiano</strong><p data-i18n="gp3_d">Nómina con prestaciones, DIAN, retenciones, manejo de cartera local — no adaptamos software extranjero, construimos para el contexto real.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="como-funciona">
+  <div class="wrap proc-in">
+    <div>
+      <span class="lbl" data-i18n="pr_lbl">Cómo funciona</span>
+      <h2 class="h2" data-i18n="pr_h2">De cero a copiloto en 48 horas</h2>
+      <p class="sub" data-i18n="pr_sub">Sin meses de implementación, sin contratos complejos, sin dependencia técnica.</p>
+      <div class="proc-steps">
+        <div class="proc-step">
+          <div class="proc-num">1</div>
+          <div class="proc-c"><div class="proc-t" data-i18n="pr1_t">Diagnóstico</div><div class="proc-d" data-i18n="pr1_d">Nos cuentas cómo funciona tu empresa: qué mides, qué te falta, qué decisiones tomas todos los días. Sin compromiso.</div><span class="proc-time" data-i18n="pr1_time">1 hora · Virtual</span></div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">2</div>
+          <div class="proc-c"><div class="proc-t" data-i18n="pr2_t">Configuración</div><div class="proc-d" data-i18n="pr2_d">Adaptamos los módulos a tu operación con tus datos reales. Si tienes Siigo o Alegra, los conectamos directamente.</div><span class="proc-time" data-i18n="pr2_time">24–48 horas</span></div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-num">3</div>
+          <div class="proc-c"><div class="proc-t" data-i18n="pr3_t">Activación y soporte</div><div class="proc-d" data-i18n="pr3_d">Tu equipo accede al copiloto. Te acompañamos en las primeras semanas y seguimos iterando contigo.</div><span class="proc-time" data-i18n="pr3_time">Soporte continuo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="proc-vis" id="demo">
+      <div class="proc-vis-lbl" data-i18n="pr_demo_lbl">Agente IA — Ejemplo real</div>
+      <div class="proc-chat chat">
+        <div class="msg mq">¿Cuánto vendimos esta semana vs la anterior?</div>
+        <div class="msg ma">Esta semana: <strong>$94.3M</strong> (+7.2% vs semana pasada). Canal de mayor crecimiento: ventas directas (+$11M). Cliente más activo: Almacén El Progreso con 14 pedidos.</div>
+        <div class="msg mq">¿Qué clientes me preocupan en cartera?</div>
+        <div class="msg ma"><strong>3 clientes</strong> llevan más de 45 días sin pagar: La Villa del Norte ($3.1M), Tienda Central ($1.8M) y Mercado Popular ($940K). Total: <strong>$5.84M en riesgo alto</strong>.</div>
+        <div class="msg mq">¿Alcanzamos la meta del mes?</div>
+        <div class="msg ma">Llevan el <strong>78% de la meta</strong> a día 21. Para cerrar necesitan <strong>$83M</strong> en 9 días. Al ritmo actual, el cierre proyectado es <strong>$398M</strong> (meta: $450M).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="precios">
+  <div class="wrap">
+    <div class="price-hd">
+      <span class="lbl" data-i18n="pc_lbl">Precios</span>
+      <h2 class="h2" data-i18n="pc_h2">Sin sorpresas. Sin contratos largos.</h2>
+      <p class="sub" data-i18n="pc_sub" style="margin:14px auto 0;max-width:480px">Paga mes a mes. Cancela cuando quieras. El diagnóstico inicial es siempre gratis.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name" data-i18n="pl1_n">Starter</div>
+        <div><span class="price-amount">$490K</span><span class="price-per" data-i18n="price_per">/mes</span></div>
+        <p class="price-desc" data-i18n="pl1_d">Para empresas que quieren empezar con los módulos esenciales.</p>
+        <div class="price-feats">
+          <div class="pf" data-i18n="pl1_f1">Hasta 3 módulos a elección</div>
+          <div class="pf" data-i18n="pl1_f2">2 usuarios</div>
+          <div class="pf" data-i18n="pl1_f3">Dashboard ejecutivo incluido</div>
+          <div class="pf" data-i18n="pl1_f4">Soporte por WhatsApp</div>
+          <div class="pf no" data-i18n="mod9_t">Agente IA</div>
+          <div class="pf no" data-i18n="pl_int">Integración Siigo / Alegra</div>
+        </div>
+        <a href="#contacto" class="btn btn-g" style="width:100%;justify-content:center;margin-top:auto" data-i18n="pl_start">Comenzar</a>
+      </div>
+      <div class="price-card feat">
+        <div class="price-badge" data-i18n="pl_popular">Más popular</div>
+        <div class="price-name">Pro</div>
+        <div><span class="price-amount">$990K</span><span class="price-per" data-i18n="price_per">/mes</span></div>
+        <p class="price-desc" data-i18n="pl2_d">Acceso completo con Agente IA e integración contable.</p>
+        <div class="price-feats">
+          <div class="pf" data-i18n="pl2_f1">Todos los módulos</div>
+          <div class="pf" data-i18n="pl2_f2">Hasta 5 usuarios</div>
+          <div class="pf" data-i18n="pl2_f3">Agente IA incluido</div>
+          <div class="pf" data-i18n="pl_int">Integración Siigo / Alegra</div>
+          <div class="pf" data-i18n="pl2_f5">Alertas automáticas</div>
+          <div class="pf" data-i18n="pl2_f6">Soporte prioritario</div>
+        </div>
+        <a href="#contacto" class="btn btn-p" style="width:100%;justify-content:center;margin-top:auto" data-i18n="pl_start">Comenzar</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Enterprise</div>
+        <div><span class="price-amount" style="font-size:24px" data-i18n="pl3_amt">A la medida</span></div>
+        <p class="price-desc" data-i18n="pl3_d">Para empresas con necesidades específicas de integración o escala.</p>
+        <div class="price-feats">
+          <div class="pf" data-i18n="pl3_f1">Usuarios ilimitados</div>
+          <div class="pf" data-i18n="pl3_f2">Módulos personalizados</div>
+          <div class="pf" data-i18n="pl3_f3">Integraciones a la medida (ERP, IoT)</div>
+          <div class="pf" data-i18n="pl3_f4">Implementación dedicada</div>
+          <div class="pf" data-i18n="pl3_f5">SLA garantizado</div>
+          <div class="pf" data-i18n="pl3_f6">Soporte 24/7</div>
+        </div>
+        <a href="#contacto" class="btn btn-g" style="width:100%;justify-content:center;margin-top:auto" data-i18n="pl_talk">Hablar con nosotros</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta dots">
+  <div class="wrap cta-in">
+    <div class="tag-pill" data-i18n="cta_pill">🎯 El antes y el después</div>
+    <h2 class="cta-h2" data-i18n-html="cta_h2">Con datos en tiempo real,<br><span class="sky">los lunes cambian.</span></h2>
+    <p class="cta-sub" data-i18n="cta_sub">Abres el dashboard antes de la reunión y ya sabes cómo cerró la semana, qué cliente tiene cartera vencida y qué producto está fallando. No llamas a nadie. No esperas. Decides.</p>
+    <div class="cta-btns">
+      <a href="#formulario" class="btn btn-p btn-lg" data-i18n="h_cta1">Agendar diagnóstico gratis →</a>
+      <a href="https://wa.me/573018827017" target="_blank" class="btn btn-g btn-lg">WhatsApp</a>
+    </div>
+    <p class="cta-note" data-i18n="cta_note">Respondemos en menos de 4 horas hábiles · Sin costo · Sin contrato</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-sec" id="formulario">
+  <div class="wrap">
+    <div class="contact-in">
+      <div class="contact-left">
+        <span class="lbl" data-i18n="co_lbl">Contacto</span>
+        <h2 class="h2" data-i18n="co_h2">Cuéntanos tu empresa</h2>
+        <p class="sub" data-i18n="co_sub" style="margin-top:12px">En menos de 4 horas hábiles te respondemos con una propuesta inicial — sin costo y sin compromiso.</p>
+        <div class="contact-channels">
+          <a href="https://wa.me/573018827017" target="_blank" class="contact-ch">
+            <span class="ch-ico">💬</span>
+            <div><strong>WhatsApp</strong><span>+57 301 882 7017</span></div>
+          </a>
+          <a href="mailto:contact@calybrat.com" class="contact-ch">
+            <span class="ch-ico">✉</span>
+            <div><strong data-i18n="ch_mail">Correo</strong><span>contact@calybrat.com</span></div>
+          </a>
+        </div>
+      </div>
+      <p id="formSuccess" style="display:none;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:10px;padding:14px 18px;color:#22c55e;font-size:14px;margin-bottom:12px">✅ ¡Mensaje enviado! Te contactamos pronto.</p>
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/nicolasgort@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nueva consulta desde calybrat.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <div class="form-row">
+          <div class="form-g">
+            <label data-i18n="f_name">Nombre</label>
+            <input type="text" name="nombre" data-i18n-placeholder="f_ph_name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-g">
+            <label data-i18n="f_co">Empresa</label>
+            <input type="text" name="empresa" data-i18n-placeholder="f_ph_co" placeholder="Nombre de tu empresa">
+          </div>
+        </div>
+        <div class="form-g">
+          <label data-i18n="f_email">Correo electrónico</label>
+          <input type="email" name="email" data-i18n-placeholder="f_ph_email" placeholder="correo@empresa.com" required>
+        </div>
+        <div class="form-g">
+          <label data-i18n="f_sector_lbl">¿En qué sector está tu empresa?</label>
+          <select name="sector">
+            <option value="" data-i18n="sec_sel">Selecciona un sector</option>
+            <option data-i18n="sec1">Manufactura e industria</option>
+            <option data-i18n="sec2">Distribución y comercio</option>
+            <option data-i18n="sec3">Agropecuario</option>
+            <option data-i18n="sec4">Construcción</option>
+            <option data-i18n="sec5">Salud y farmacéutico</option>
+            <option data-i18n="sec6">Servicios empresariales</option>
+            <option data-i18n="sec7">Otro</option>
+          </select>
+        </div>
+        <div class="form-g">
+          <label data-i18n="f_msg_lbl">¿Qué quieres mejorar?</label>
+          <textarea name="mensaje" rows="4" data-i18n-placeholder="f_ph_msg" placeholder="Describe brevemente qué información necesitas tener en tiempo real o qué proceso quieres mejorar..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-p" style="width:100%;justify-content:center;font-size:16px;padding:14px" data-i18n="f_submit">Enviar mensaje →</button>
+        <p style="font-size:12px;color:var(--m);margin-top:10px;text-align:center"><span data-i18n="f_note">Respondemos en menos de 4 horas hábiles</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contacto">
+  <div class="wrap foot-in">
+    <div class="foot-logo" style="display:flex;align-items:center;gap:8px"><img src="data:image/png;base64,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" alt="" width="22" height="22" style="flex-shrink:0">Caly<span>brat</span></div>
+    <nav class="foot-links">
+      <a href="#modulos" data-i18n="n_mod">Módulos</a>
+      <a href="#industrias" data-i18n="n_ind">Industrias</a>
+      <a href="#testimonios" data-i18n="n_cli">Clientes</a>
+      <a href="#precios" data-i18n="n_pri">Precios</a>
+      <a href="mailto:contact@calybrat.com">contact@calybrat.com</a>
+    </nav>
+    <p class="foot-copy">© 2026 Calybrat S.A.S. · Bogotá, Colombia</p>
+  </div>
+</footer>
+
+<script>
+// ─── Translations ───────────────────────────────────────────────
+const translations = {
+  es: {
+    page_title:"Calybrat — Copiloto IA para tu empresa",
+    n_mod:"Módulos", n_ind:"Industrias", n_cli:"Clientes", n_pri:"Precios",
+    n_demo:"Ver demo", n_cta:"Agendar diagnóstico", n_cta_m:"Agendar diagnóstico →",
+    h_badge:"Activo en Colombia · Manufactura · Distribución · Servicios",
+    h_title:"Deja de tomar<br><em>decisiones a ciegas.</em>",
+    h_sub:"Tu empresa genera datos todo el día. El problema es que llegan tarde, en Excel o por WhatsApp. Calybrat los conecta en tiempo real y añade un agente de IA que responde cualquier pregunta sobre tu negocio — en segundos.",
+    h_cta1:"Agendar diagnóstico gratis →", h_cta2:"Ver demo en vivo",
+    s1_l:"empresas activas", s2_l:"COP analizados / mes", s3_l:"satisfacción", s4_l:"implementación",
+    t_lbl:"Empresas que ya toman mejores decisiones con Calybrat",
+    p_lbl:"El problema",
+    p_stmt:"No está bien que en 2026, un gerente tenga que esperar hasta el día 8 del mes siguiente para saber cómo cerró el mes anterior.",
+    p_h2:"Así maneja los datos el <span class=\"amb\">92%</span> de las empresas colombianas",
+    p1_t:"Excel desactualizado", p1_d:"Alguien lo actualiza los lunes — si hay tiempo. El miércoles ya nadie sabe si los datos son reales.",
+    p2_t:"WhatsApp con el contador", p2_d:"\"¿Cuánto vendimos?\" Esperas 4 horas para que te mande un PDF que no entiendes.",
+    p3_t:"Reportes que llegan tarde", p3_d:"El cierre de mes sale el día 8 del siguiente. Para entonces ya tomaste decisiones con información vieja.",
+    p4_t:"Decisiones por intuición", p4_d:"\"Yo creo que vendemos más los viernes.\" Tal vez. O tal vez estás perdiendo margen y nadie lo sabe.",
+    p_after:"Con Calybrat",
+    d_lbl:"Demo en vivo",
+    d_h2:"Pregúntale a tu empresa.<br>Responde en segundos.",
+    d_sub:"Así se ve Calybrat por dentro. El Agente IA lee tus datos en tiempo real y responde cualquier pregunta en lenguaje natural — sin abrir un solo reporte.",
+    d_c1:"¿Alcanzamos la meta del mes?", d_c2:"¿Qué línea creció más?", d_c3:"¿Cuánto es la nómina este mes?",
+    m_lbl:"Módulos", m_h2:"14 módulos. Una sola plataforma.",
+    m_sub:"Cada módulo está diseñado para el negocio colombiano: nómina con prestaciones, tributario DIAN, exportaciones y más.",
+    mod1_t:"Dashboard Ejecutivo", mod1_d:"Vista unificada de todos los KPIs. Lo más importante de tu negocio en 30 segundos.",
+    mod2_t:"Ventas y Pedidos", mod2_d:"Facturación diaria, clientes top, productos estrella y tendencias de venta.",
+    mod3_t:"Cartera y Cobros", mod3_d:"Cartera al día, vencida y crítica. Alertas automáticas por cliente en mora.",
+    mod4_t:"Producción y Proyectos", mod4_d:"Avance de órdenes de producción, proyectos activos y tiempos de entrega.",
+    mod5_t:"Materias Primas", mod5_d:"Stock, mínimos críticos y proyección de consumo por línea de producción.",
+    mod6_t:"Nómina y RRHH", mod6_d:"Costo laboral real, vacaciones, prestaciones y carga por área o proyecto.",
+    mod7_t:"Exportaciones", mod7_d:"Despachos internacionales, documentos, plazos y seguimiento por destino.",
+    mod8_t:"Tributario DIAN", mod8_d:"Calendario de obligaciones, IVA, retenciones y recordatorios con anticipación.",
+    mod9_t:"Agente IA", mod9_d:"Pregúntale al negocio en lenguaje natural. Analiza, cruza datos y responde en segundos.",
+    mt_rt:"Tiempo real", mt_client:"Por cliente", mt_hist:"Historial", mt_alert:"Alertas", mt_prog:"Progreso",
+    mt_min:"Alertas mínimos", mt_rot:"Rotación", mt_prest:"Prestaciones", mt_area:"Por área",
+    mt_multi:"Multi-país", mt_log:"Logística", mt_rem:"Recordatorios", mt_nl:"Lenguaje natural",
+    i_lbl:"Industrias", i_h2:"Construido para el negocio colombiano real",
+    i_sub:"Cada sector tiene su propia lógica. Calybrat se adapta a los datos y procesos de tu industria específica.",
+    i1_n:"Manufactura e Industria", i1_d:"Órdenes de producción, materias primas, calidad, exportaciones y costos por línea.", i1_ct:"+48 empresas",
+    i2_n:"Distribución y Comercio", i2_d:"Ventas por pedido, cartera, inventario de producto terminado y rutas de entrega.", i2_ct:"+67 empresas",
+    i3_n:"Agropecuario", i3_d:"Cosechas, costos de producción, comercialización y seguimiento por predio o cultivo.", i3_ct:"+23 empresas",
+    i4_n:"Construcción", i4_d:"Proyectos en paralelo, presupuesto vs real, avance de obra y nómina por proyecto.", i4_ct:"+31 empresas",
+    i5_n:"Salud y Farmacéutico", i5_d:"Pacientes, servicios, facturación a EPS, glosas y costos por especialidad.", i5_ct:"+19 empresas",
+    i6_n:"Servicios Empresariales", i6_d:"Contratos, horas por cliente, rentabilidad por servicio y proyección de ingresos.", i6_ct:"+52 empresas",
+    met1_s:"Empresas colombianas", met1_d:"usando Calybrat hoy",
+    met2_s:"COP analizados", met2_d:"en tiempo real cada mes",
+    met3_s:"Tiempo de implementación", met3_d:"promedio desde el diagnóstico",
+    met4_s:"Reducción de costos", met4_d:"reportada por nuestros clientes",
+    g_lbl:"Tu guía, no tu proveedor",
+    g_h2:"Entendemos lo que se siente gerenciar sin datos reales",
+    g_p1:"El cierre del mes llega al día 8. El informe que pediste ya está desactualizado. Tomas decisiones importantes con información de hace dos semanas. No es falta de dedicación — es falta de las herramientas correctas.",
+    g_p2:"Por eso construimos Calybrat: para que cualquier empresa colombiana, sin importar su tamaño, tenga el mismo nivel de inteligencia que antes solo podían pagar las grandes.",
+    gp1_t:"Empezamos con un piloto", gp1_d:"No pedimos que confíes sin ver resultados. Tres semanas, datos reales, entregable concreto — antes de cualquier compromiso.",
+    gp2_t:"Sin dependencia técnica", gp2_d:"No construimos algo que solo nosotros podemos manejar. Te entregamos las herramientas y el conocimiento para que tengas el control.",
+    gp3_t:"Entendemos el negocio colombiano", gp3_d:"Nómina con prestaciones, DIAN, retenciones, manejo de cartera local — no adaptamos software extranjero, construimos para el contexto real.",
+    te_lbl:"Testimonios", te_h2:"Lo que dicen las empresas que ya lo usan",
+    te_sub:"Empresarios colombianos que cambiaron el Excel por un copiloto real.",
+    pr_lbl:"Cómo funciona", pr_h2:"De cero a copiloto en 48 horas",
+    pr_sub:"Sin meses de implementación, sin contratos complejos, sin dependencia técnica.",
+    pr1_t:"Diagnóstico", pr1_d:"Nos cuentas cómo funciona tu empresa: qué mides, qué te falta, qué decisiones tomas todos los días. Sin compromiso.", pr1_time:"1 hora · Virtual",
+    pr2_t:"Configuración", pr2_d:"Adaptamos los módulos a tu operación con tus datos reales. Si tienes Siigo o Alegra, los conectamos directamente.", pr2_time:"24–48 horas",
+    pr3_t:"Activación y soporte", pr3_d:"Tu equipo accede al copiloto. Te acompañamos en las primeras semanas y seguimos iterando contigo.", pr3_time:"Soporte continuo",
+    pr_demo_lbl:"Agente IA — Ejemplo real",
+    pc_lbl:"Precios", pc_h2:"Sin sorpresas. Sin contratos largos.",
+    pc_sub:"Paga mes a mes. Cancela cuando quieras. El diagnóstico inicial es siempre gratis.",
+    pl1_n:"Starter", price_per:"/mes", pl1_d:"Para empresas que quieren empezar con los módulos esenciales.",
+    pl1_f1:"Hasta 3 módulos a elección", pl1_f2:"2 usuarios", pl1_f3:"Dashboard ejecutivo incluido", pl1_f4:"Soporte por WhatsApp",
+    pl_int:"Integración Siigo / Alegra", pl_start:"Comenzar", pl_popular:"Más popular",
+    pl2_d:"Acceso completo con Agente IA e integración contable.",
+    pl2_f1:"Todos los módulos", pl2_f2:"Hasta 5 usuarios", pl2_f3:"Agente IA incluido", pl2_f5:"Alertas automáticas", pl2_f6:"Soporte prioritario",
+    pl3_amt:"A la medida", pl3_d:"Para empresas con necesidades específicas de integración o escala.",
+    pl3_f1:"Usuarios ilimitados", pl3_f2:"Módulos personalizados", pl3_f3:"Integraciones a la medida (ERP, IoT)",
+    pl3_f4:"Implementación dedicada", pl3_f5:"SLA garantizado", pl3_f6:"Soporte 24/7", pl_talk:"Hablar con nosotros",
+    cta_pill:"🎯 El antes y el después",
+    cta_h2:"Con datos en tiempo real,<br><span class=\"sky\">los lunes cambian.</span>",
+    cta_sub:"Abres el dashboard antes de la reunión y ya sabes cómo cerró la semana, qué cliente tiene cartera vencida y qué producto está fallando. No llamas a nadie. No esperas. Decides.",
+    cta_note:"Respondemos en menos de 4 horas hábiles · Sin costo · Sin contrato",
+    co_lbl:"Contacto", co_h2:"Cuéntanos tu empresa",
+    co_sub:"En menos de 4 horas hábiles te respondemos con una propuesta inicial — sin costo y sin compromiso.",
+    ch_mail:"Correo",
+    f_name:"Nombre", f_co:"Empresa", f_email:"Correo electrónico",
+    f_sector_lbl:"¿En qué sector está tu empresa?", f_msg_lbl:"¿Qué quieres mejorar?",
+    f_ph_name:"Tu nombre", f_ph_co:"Nombre de tu empresa", f_ph_email:"correo@empresa.com",
+    f_ph_msg:"Describe brevemente qué información necesitas tener en tiempo real o qué proceso quieres mejorar...",
+    f_submit:"Enviar mensaje →", f_note:"Respondemos en menos de 4 horas hábiles",
+    f_ok:"✅ ¡Mensaje enviado! Te contactamos pronto.",
+    live_rt:"En tiempo real",
+    ak1_l:"Ventas hoy", ak1_s:"↑ 8% vs ayer",
+    ak2_l:"Cartera vencida", ak2_s:"3 clientes · >30 días",
+    ab_q1:"¿Cuál fue nuestro mejor mes del año?",
+    ab_a1:"Su mejor mes fue <strong>marzo</strong> con <strong>$487M</strong> en ventas y margen del <strong>24.1%</strong>. El driver principal fue Almacenes La 14 (+$62M vs febrero).",
+    ab_q2:"¿Qué productos tienen más margen?",
+    ab_a2:"Las 3 referencias top son: Aceite Industrial A (<strong>31%</strong>), Catalizador Premium (<strong>28%</strong>) y Resina Base (<strong>26%</strong>). Juntas generan el <strong>41% de sus utilidades</strong>.",
+    dn_dash:"📊 Dashboard", dn_ventas:"💰 Ventas", dn_cartera:"📋 Cartera", dn_inv:"📦 Inventario", dn_nomina:"👥 Nómina", dn_agente:"🤖 Agente IA",
+    sb_cart_d:"3 clientes", margin_l:"Margen bruto",
+    dash_title:"Dashboard Ejecutivo", rt_tag:"Tiempo real",
+    sales_month_l:"Ventas del mes", sales_delta:"↑ 12.4% vs anterior",
+    cart_mora:"3 clientes en mora", payroll_month_l:"Nómina mes", n_people34:"34 personas",
+    sales_week_lbl:"Ventas por semana",
+    alert_cat:"Catalizador A12 en stock crítico — <b>17% disponible</b>",
+    sync_line:"Sincronizado con Siigo · <span style=\"color:var(--sky)\">+ Agente IA activo</span>",
+    sales_delta_sep:"↑ 12.4% vs septiembre anterior", goal_l:"Meta", goal_pct:"86% alcanzado",
+    top_clients:"Top clientes este mes",
+    cart_total_l:"Cartera total", cart_current_l:"Al día", cart_overdue_l:"Vencida",
+    clients_mora:"Clientes en mora",
+    cart_row1:"62 días vencido · Última compra: ago 2", cart_row2:"48 días vencido · Última compra: ago 18",
+    cart_row3:"31 días vencido · Pago parcial recibido", cart_row4:"28 días vencido · En negociación",
+    inv_title:"Inventario",
+    inv_alert:"<b>2 referencias</b> bajo mínimo — revisar orden de compra",
+    stock_levels:"Niveles de stock",
+    inv_row1:"1,240 und · Mínimo: 300", inv_row2:"⚠ 85 und · Mínimo: 200", inv_row3:"920 und · Mínimo: 400",
+    inv_row4:"⚠ 110 und · Mínimo: 150", inv_row5:"432 und · Mínimo: 200",
+    payroll_total_l:"Nómina total", payroll_vs:"Vs $81M anterior",
+    employees_l:"Empleados", new_month:"2 nuevos este mes",
+    benefits_l:"Prestaciones", pct_cost:"25% del costo",
+    vac_pend:"Vacaciones pend.", people_word:"personas",
+    cost_area:"Costo por área",
+    area1:"Ventas (12 personas)", area2:"Operaciones (9 personas)", area3:"Administración (8 personas)", area4:"Logística (5 personas)",
+    connected_data:"Conectado a tus datos",
+    sys_msg:"Conectado a SIESA · Datos al 04/09/2026 · Última sincronización: hace 3 min",
+    ag_q1:"¿Cuánto vendimos esta semana vs la anterior?",
+    ag_a1:"Esta semana: <strong>$94.3M</strong> — un <strong>+7.2%</strong> vs la semana pasada. El canal de mayor crecimiento fue ventas directas (+$11M). El cliente más activo: Almacén El Progreso con 14 pedidos.",
+    ag_q2:"¿Qué clientes tienen cartera vencida?",
+    ag_a2:"<strong>3 clientes</strong> llevan más de 45 días sin pagar:<br>· La Villa del Norte — <strong>$3.1M</strong><br>· Tienda Central — <strong>$1.8M</strong><br>· Mercado Popular — <strong>$940K</strong><br>Total en riesgo alto: <strong style=\"color:var(--err)\">$5.84M</strong>",
+    ag_q3:"¿Cuál producto tiene mejor margen?",
+    ag_a3:"Las 3 referencias más rentables:<br>1. Aceite Industrial A — <strong>31% de margen</strong><br>2. Catalizador Premium — <strong>28%</strong><br>3. Resina Base — <strong>26%</strong><br>Juntas generan el <strong>41% de sus utilidades</strong> con solo el 18% del volumen.",
+    try_asking:"Prueba preguntar:",
+    sec_sel:"Selecciona un sector", sec1:"Manufactura e industria", sec2:"Distribución y comercio", sec3:"Agropecuario",
+    sec4:"Construcción", sec5:"Salud y farmacéutico", sec6:"Servicios empresariales", sec7:"Otro",
+  },
+
+  en: {
+    page_title:"Calybrat — Business intelligence for Colombia",
+    n_mod:"Modules", n_ind:"Industries", n_cli:"Clients", n_pri:"Pricing",
+    n_demo:"See demo", n_cta:"Schedule diagnosis", n_cta_m:"Schedule diagnosis →",
+    h_badge:"Active in Colombia · Manufacturing · Distribution · Services",
+    h_title:"Stop making<br><em>decisions in the dark.</em>",
+    h_sub:"Your business generates data all day. The problem is it arrives late, in spreadsheets or WhatsApp. Calybrat connects it in real time and adds an AI agent that answers any question about your business — in seconds.",
+    h_cta1:"Schedule free diagnosis →", h_cta2:"See live demo",
+    s1_l:"active businesses", s2_l:"COP analyzed / month", s3_l:"satisfaction", s4_l:"implementation",
+    t_lbl:"Companies already making better decisions with Calybrat",
+    p_lbl:"The problem",
+    p_stmt:"It's not right that in 2026, a manager has to wait until the 8th of the following month to know how last month closed.",
+    p_h2:"This is how <span class=\"amb\">92%</span> of Colombian businesses manage their data",
+    p1_t:"Outdated spreadsheets", p1_d:"Someone updates them on Mondays — if there's time. By Wednesday no one knows if the data is real.",
+    p2_t:"WhatsApp with the accountant", p2_d:"\"How much did we sell?\" You wait 4 hours for a PDF you can't make sense of.",
+    p3_t:"Reports that arrive late", p3_d:"Month-end closes on the 8th of the following month. By then you've already made decisions with old data.",
+    p4_t:"Gut-feeling decisions", p4_d:"\"I think we sell more on Fridays.\" Maybe. Or maybe you're losing margin and nobody knows.",
+    p_after:"With Calybrat",
+    d_lbl:"Live demo",
+    d_h2:"Ask your business.<br>Answers in seconds.",
+    d_sub:"This is what Calybrat looks like inside. The AI Agent reads your data in real time and answers any question in natural language — without opening a single report.",
+    d_c1:"Are we on track for the monthly goal?", d_c2:"Which line grew the most?", d_c3:"What's payroll this month?",
+    m_lbl:"Modules", m_h2:"14 modules. One platform.",
+    m_sub:"Each module is designed for the Colombian business: payroll with severance, DIAN tax, exports and more.",
+    mod1_t:"Executive Dashboard", mod1_d:"Unified view of all your KPIs. The most important part of your business in 30 seconds.",
+    mod2_t:"Sales & Orders", mod2_d:"Daily invoicing, top clients, star products and sales trends.",
+    mod3_t:"Receivables & Collections", mod3_d:"Current, overdue and critical receivables. Automatic alerts for clients in arrears.",
+    mod4_t:"Production & Projects", mod4_d:"Progress of production orders, active projects and delivery times.",
+    mod5_t:"Raw Materials", mod5_d:"Stock, critical minimums and consumption projections by production line.",
+    mod6_t:"Payroll & HR", mod6_d:"Real labor cost, vacations, severance and workload by area or project.",
+    mod7_t:"Exports", mod7_d:"International shipments, documents, deadlines and tracking by destination.",
+    mod8_t:"DIAN Tax", mod8_d:"Calendar of obligations, VAT, withholdings and reminders in advance.",
+    mod9_t:"AI Agent", mod9_d:"Ask your business in natural language. It analyzes, cross-references data and answers in seconds.",
+    mt_rt:"Real-time", mt_client:"By client", mt_hist:"History", mt_alert:"Alerts", mt_prog:"Progress",
+    mt_min:"Minimum alerts", mt_rot:"Turnover", mt_prest:"Severance", mt_area:"By area",
+    mt_multi:"Multi-country", mt_log:"Logistics", mt_rem:"Reminders", mt_nl:"Natural language",
+    i_lbl:"Industries", i_h2:"Built for real Colombian businesses",
+    i_sub:"Each sector has its own logic. Calybrat adapts to your industry's specific data and processes.",
+    i1_n:"Manufacturing & Industry", i1_d:"Production orders, raw materials, quality, exports and cost per line.", i1_ct:"+48 companies",
+    i2_n:"Distribution & Trade", i2_d:"Order sales, receivables, finished goods inventory and delivery routes.", i2_ct:"+67 companies",
+    i3_n:"Agribusiness", i3_d:"Harvests, production costs, commercialization and tracking by plot or crop.", i3_ct:"+23 companies",
+    i4_n:"Construction", i4_d:"Parallel projects, budget vs actual, work progress and payroll by project.", i4_ct:"+31 companies",
+    i5_n:"Healthcare & Pharma", i5_d:"Patients, services, EPS billing, claims and cost by specialty.", i5_ct:"+19 companies",
+    i6_n:"Business Services", i6_d:"Contracts, hours per client, profitability by service and revenue projection.", i6_ct:"+52 companies",
+    met1_s:"Colombian businesses", met1_d:"using Calybrat today",
+    met2_s:"COP analyzed", met2_d:"in real time each month",
+    met3_s:"Implementation time", met3_d:"average from diagnosis",
+    met4_s:"Cost reduction", met4_d:"reported by our clients",
+    g_lbl:"Your guide, not your vendor",
+    g_h2:"We understand what it's like to manage without real data",
+    g_p1:"Month-end closes on the 8th. The report you requested is already outdated. You make important decisions with two-week-old information. It's not a lack of dedication — it's the wrong tools.",
+    g_p2:"That's why we built Calybrat: so any Colombian business, regardless of size, has the same intelligence that only large corporations could afford before.",
+    gp1_t:"We start with a pilot", gp1_d:"We don't ask you to trust us without seeing results. Three weeks, real data, concrete deliverable — before any commitment.",
+    gp2_t:"No technical dependency", gp2_d:"We don't build something only we can manage. We hand over the tools and knowledge so you're in control.",
+    gp3_t:"We understand Colombian business", gp3_d:"Payroll with severance, DIAN, withholdings, local receivables — we don't adapt foreign software, we build for the real context.",
+    te_lbl:"Testimonials", te_h2:"What companies that already use it say",
+    te_sub:"Colombian entrepreneurs who traded Excel for a real copilot.",
+    pr_lbl:"How it works", pr_h2:"From zero to copilot in 48 hours",
+    pr_sub:"No months of implementation, no complex contracts, no technical dependency.",
+    pr1_t:"Diagnosis", pr1_d:"Tell us how your business works: what you measure, what's missing, what decisions you make every day. No commitment.", pr1_time:"1 hour · Virtual",
+    pr2_t:"Configuration", pr2_d:"We adapt the modules to your operation with your real data. If you have Siigo or Alegra, we connect them directly.", pr2_time:"24–48 hours",
+    pr3_t:"Activation & support", pr3_d:"Your team accesses the copilot. We accompany you in the first weeks and keep iterating with you.", pr3_time:"Ongoing support",
+    pr_demo_lbl:"AI Agent — Real example",
+    pc_lbl:"Pricing", pc_h2:"No surprises. No long contracts.",
+    pc_sub:"Pay month to month. Cancel anytime. The initial diagnosis is always free.",
+    pl1_n:"Starter", price_per:"/mo", pl1_d:"For businesses that want to start with the essential modules.",
+    pl1_f1:"Up to 3 modules of your choice", pl1_f2:"2 users", pl1_f3:"Executive dashboard included", pl1_f4:"WhatsApp support",
+    pl_int:"Siigo / Alegra integration", pl_start:"Get started", pl_popular:"Most popular",
+    pl2_d:"Full access with AI Agent and accounting integration.",
+    pl2_f1:"All modules", pl2_f2:"Up to 5 users", pl2_f3:"AI Agent included", pl2_f5:"Automatic alerts", pl2_f6:"Priority support",
+    pl3_amt:"Custom", pl3_d:"For businesses with specific integration or scale needs.",
+    pl3_f1:"Unlimited users", pl3_f2:"Custom modules", pl3_f3:"Custom integrations (ERP, IoT)",
+    pl3_f4:"Dedicated implementation", pl3_f5:"Guaranteed SLA", pl3_f6:"24/7 support", pl_talk:"Talk to us",
+    cta_pill:"🎯 Before and after",
+    cta_h2:"With real-time data,<br><span class=\"sky\">Mondays change.</span>",
+    cta_sub:"Open the dashboard before the meeting and already know how the week closed, which client has overdue receivables and which product is underperforming. No calls. No waiting. Just decide.",
+    cta_note:"We respond within 4 business hours · No cost · No contract",
+    co_lbl:"Contact", co_h2:"Tell us about your business",
+    co_sub:"Within 4 business hours we'll respond with an initial proposal — no cost, no commitment.",
+    ch_mail:"Email",
+    f_name:"Name", f_co:"Company", f_email:"Email address",
+    f_sector_lbl:"What sector is your business in?", f_msg_lbl:"What do you want to improve?",
+    f_ph_name:"Your name", f_ph_co:"Your company name", f_ph_email:"email@company.com",
+    f_ph_msg:"Briefly describe what information you need in real time or what process you want to improve...",
+    f_submit:"Send message →", f_note:"We respond within 4 business hours",
+    f_ok:"✅ Message sent! We'll be in touch soon.",
+    live_rt:"Real-time",
+    ak1_l:"Today's sales", ak1_s:"↑ 8% vs yesterday",
+    ak2_l:"Overdue receivables", ak2_s:"3 clients · >30 days",
+    ab_q1:"What was our best month of the year?",
+    ab_a1:"Their best month was <strong>March</strong> with <strong>$487M</strong> in sales and <strong>24.1%</strong> margin. The main driver was Almacenes La 14 (+$62M vs February).",
+    ab_q2:"Which products have the highest margin?",
+    ab_a2:"The top 3 products are: Aceite Industrial A (<strong>31%</strong>), Catalizador Premium (<strong>28%</strong>) and Resina Base (<strong>26%</strong>). Together they generate <strong>41% of profits</strong>.",
+    dn_dash:"📊 Dashboard", dn_ventas:"💰 Sales", dn_cartera:"📋 Receivables", dn_inv:"📦 Inventory", dn_nomina:"👥 Payroll", dn_agente:"🤖 AI Agent",
+    sb_cart_d:"3 clients", margin_l:"Gross margin",
+    dash_title:"Executive Dashboard", rt_tag:"Real-time",
+    sales_month_l:"Monthly sales", sales_delta:"↑ 12.4% vs previous",
+    cart_mora:"3 clients overdue", payroll_month_l:"Monthly payroll", n_people34:"34 people",
+    sales_week_lbl:"Sales by week",
+    alert_cat:"Catalizador A12 at critical stock — <b>17% available</b>",
+    sync_line:"Synced with Siigo · <span style=\"color:var(--sky)\">+ AI Agent active</span>",
+    sales_delta_sep:"↑ 12.4% vs last September", goal_l:"Goal", goal_pct:"86% reached",
+    top_clients:"Top clients this month",
+    cart_total_l:"Total receivables", cart_current_l:"Current", cart_overdue_l:"Overdue",
+    clients_mora:"Clients in arrears",
+    cart_row1:"62 days overdue · Last purchase: Aug 2", cart_row2:"48 days overdue · Last purchase: Aug 18",
+    cart_row3:"31 days overdue · Partial payment received", cart_row4:"28 days overdue · In negotiation",
+    inv_title:"Inventory",
+    inv_alert:"<b>2 items</b> below minimum — review purchase order",
+    stock_levels:"Stock levels",
+    inv_row1:"1,240 units · Minimum: 300", inv_row2:"⚠ 85 units · Minimum: 200", inv_row3:"920 units · Minimum: 400",
+    inv_row4:"⚠ 110 units · Minimum: 150", inv_row5:"432 units · Minimum: 200",
+    payroll_total_l:"Total payroll", payroll_vs:"Vs $81M previous",
+    employees_l:"Employees", new_month:"2 new this month",
+    benefits_l:"Benefits", pct_cost:"25% of cost",
+    vac_pend:"Pending vacation", people_word:"people",
+    cost_area:"Cost by area",
+    area1:"Sales (12 people)", area2:"Operations (9 people)", area3:"Administration (8 people)", area4:"Logistics (5 people)",
+    connected_data:"Connected to your data",
+    sys_msg:"Connected to SIESA · Data as of 09/04/2026 · Last sync: 3 min ago",
+    ag_q1:"How much did we sell this week vs last week?",
+    ag_a1:"This week: <strong>$94.3M</strong> — up <strong>+7.2%</strong> vs last week. The fastest-growing channel was direct sales (+$11M). Most active client: Almacén El Progreso with 14 orders.",
+    ag_q2:"Which clients have overdue receivables?",
+    ag_a2:"<strong>3 clients</strong> have gone more than 45 days without paying:<br>· La Villa del Norte — <strong>$3.1M</strong><br>· Tienda Central — <strong>$1.8M</strong><br>· Mercado Popular — <strong>$940K</strong><br>Total high risk: <strong style=\"color:var(--err)\">$5.84M</strong>",
+    ag_q3:"Which product has the best margin?",
+    ag_a3:"The 3 most profitable products:<br>1. Aceite Industrial A — <strong>31% margin</strong><br>2. Catalizador Premium — <strong>28%</strong><br>3. Resina Base — <strong>26%</strong><br>Together they generate <strong>41% of profits</strong> with only 18% of volume.",
+    try_asking:"Try asking:",
+    sec_sel:"Select a sector", sec1:"Manufacturing & industry", sec2:"Distribution & trade", sec3:"Agribusiness",
+    sec4:"Construction", sec5:"Healthcare & pharma", sec6:"Business services", sec7:"Other",
+  }
+};
+
+// ─── Language engine ─────────────────────────────────────────────
+function _lsGet(k, d) { try { return localStorage.getItem(k) || d; } catch(e) { return d; } }
+function _lsSet(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
+let currentLang = _lsGet('calybrat_lang', 'es');
+
+function setLanguage(lang) {
+  currentLang = lang;
+  _lsSet('calybrat_lang', lang);
+  document.documentElement.lang = lang;
+  document.title = translations[lang].page_title;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (translations[lang][key] !== undefined) el.placeholder = translations[lang][key];
+  });
+
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = lang === 'es' ? 'EN' : 'ES';
+    btn.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+  });
+}
+
+function toggleLang() {
+  setLanguage(currentLang === 'es' ? 'en' : 'es');
+}
+setLanguage(currentLang);
+
+// ─── Demo module switcher ─────────────────────────────────────────
+const demoNav = document.getElementById('demoNav');
+if (demoNav) {
+  demoNav.querySelectorAll('.dn-item[data-pane]').forEach(item => {
+    item.addEventListener('click', () => {
+      demoNav.querySelectorAll('.dn-item').forEach(i => i.classList.remove('dn-active'));
+      item.classList.add('dn-active');
+      document.querySelectorAll('.demo-pane').forEach(p => p.classList.remove('active'));
+      const pane = document.getElementById('pane-' + item.dataset.pane);
+      if (pane) pane.classList.add('active');
+    });
+  });
+}
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 40));
+
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => mob.classList.toggle('open'));
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+window.addEventListener('resize', () => { if (innerWidth > 900) mob.classList.remove('open'); });
+
+function animCount(el) {
+  const target = +el.dataset.target;
+  if (!target) return;
+  const dur = 1800;
+  const t0 = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - t0) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(e * target);
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  })(t0);
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animCount(entry.target);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count[data-target]').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
