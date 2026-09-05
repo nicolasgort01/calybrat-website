@@ -2071,8 +2071,8 @@ function buildIndCards(){
 function buildMarquee(){
   const box = Q('#marq'); if(!box) return;
   const items = lang === 'es'
-    ? ['Paranice · Consumo masivo','CIMPA · Envases y empaques','Hoteles El Poblado · Hotelería','FibraTECH · Manufactura PRFV','Nutriva · Distribución de alimentos','De Gouden Lepel · Restaurante (NL)','Confía Control · Grupo empresarial','Vasanico · Distribución']
-    : ['Paranice · Consumer goods','CIMPA · Packaging','El Poblado Hotels · Hospitality','FibraTECH · FRP manufacturing','Nutriva · Food distribution','De Gouden Lepel · Restaurant (NL)','Confía Control · Business group','Vasanico · Distribution'];
+    ? ['FibraTECH · Manufactura PRFV','Nutriva · Distribución de alimentos','De Gouden Lepel · Restaurante (NL)']
+    : ['FibraTECH · FRP manufacturing','Nutriva · Food distribution','De Gouden Lepel · Restaurant (NL)'];
   const row = items.map(t=>`<span class="tm"><i></i>${t}</span>`).join('');
   box.innerHTML = row + row;
 }
