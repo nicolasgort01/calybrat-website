@@ -634,10 +634,6 @@ main,nav,footer{position:relative;z-index:1}
             </div>
           </div>
           <div class="ai-body" id="aiBody"></div>
-          <div class="ai-ask">
-            <div class="ai-ask-l" data-i18n="ai_try">Prueba preguntar</div>
-            <div class="qchips" id="qchips"></div>
-          </div>
         </aside>
       </div>
     </div>
@@ -2154,10 +2150,6 @@ function renderIndustry(id, keepScroll, modIx){
   showTyping();
   typeTimer = setTimeout(()=>{ hideTyping(); addMsg('ma', L(d.qa[0].a)); }, 950);
 
-  Q('#qchips').innerHTML = d.qa.slice(1).map((q,ix)=>
-    `<button class="qc" data-q="${ix+1}">${L(q.q)}</button>`).join('');
-  Q('#qchips').querySelectorAll('.qc').forEach(b=>b.addEventListener('click',()=>ask(b)));
-
   if (!keepScroll && !prefersReduced()) {
     Q('#studioFrame').animate(
       [{opacity:.45,transform:'translateY(8px)'},{opacity:1,transform:'none'}],
@@ -2182,17 +2174,6 @@ function showTyping(){
   Q('#aiBody').scrollTop = Q('#aiBody').scrollHeight;
 }
 function hideTyping(){ const t = Q('#typing'); if (t) t.remove(); }
-
-function ask(btn){
-  const d = getInd(currentInd);
-  const qa = d.qa[+btn.dataset.q];
-  if (!qa) return;
-  btn.disabled = true;
-  addMsg('mq', L(qa.q));
-  showTyping();
-  clearTimeout(typeTimer);
-  typeTimer = setTimeout(()=>{ hideTyping(); addMsg('ma', L(qa.a)); }, 1000);
-}
 
 function customIndustry(e){
   e.preventDefault();
