@@ -95,15 +95,6 @@ main,nav,footer{position:relative;z-index:1}
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:70px;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
 .nav.on{background:rgba(5,11,18,.78);backdrop-filter:blur(20px) saturate(1.4);border-bottom-color:var(--line)}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-
-/* Sticky scroll-spy sub-nav: lets people jump straight to a section
-   instead of scrolling a long page linearly. */
-.subnav{position:sticky;top:70px;z-index:150;background:rgba(5,11,18,.92);backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid var(--line)}
-.subnav-in{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:11px 26px}
-.subnav-in::-webkit-scrollbar{display:none}
-.sn-lk{flex-shrink:0;font-family:var(--fd);font-size:12.5px;font-weight:600;color:var(--m);padding:7px 15px;border-radius:100px;transition:all .18s var(--ease);white-space:nowrap}
-.sn-lk:hover{color:var(--t)}
-.sn-lk.on{background:var(--gold-t);color:var(--gold-b)}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--fd);font-size:20px;font-weight:500;letter-spacing:.17em;color:var(--t)}
 .logo .brand-mark{width:34px;height:34px}
 .nav-links{display:flex;align-items:center;gap:30px}

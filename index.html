@@ -23,9 +23,9 @@
     <a href="#top" class="logo"><span class="brand-mark"></span>CALYBRAT</a>
     <ul class="nav-links">
       <li><a href="demo/" data-i18n="n_demo">Demo en vivo</a></li>
-      <li><a href="#producto" data-i18n="n_prod">Producto</a></li>
-      <li><a href="#casos" data-i18n="n_cases">Casos</a></li>
       <li><a href="precios/" data-i18n="n_pri">Precios</a></li>
+      <li><a href="nosotros/" data-i18n="n_about">Nosotros</a></li>
+      <li><a href="contacto/" data-i18n="n_cta_lk">Contacto</a></li>
     </ul>
     <div class="nav-cta">
       <button class="lang" id="langBtn" onclick="toggleLang()" aria-label="Language">EN</button>
@@ -35,10 +35,9 @@
   </div>
   <div class="mob" id="mob">
     <a href="demo/" data-i18n="n_demo">Demo en vivo</a>
-    <a href="#producto" data-i18n="n_prod">Producto</a>
-    <a href="#casos" data-i18n="n_cases">Casos</a>
-    <a href="#industrias" data-i18n="n_ind">Industrias</a>
     <a href="precios/" data-i18n="n_pri">Precios</a>
+    <a href="nosotros/" data-i18n="n_about">Nosotros</a>
+    <a href="contacto/" data-i18n="n_cta_lk">Contacto</a>
     <a href="contacto/" class="btn btn-p" data-i18n="n_cta">Diagnóstico gratis</a>
     <button class="lang" style="align-self:flex-start" onclick="toggleLang()">EN / ES</button>
   </div>
@@ -98,19 +97,6 @@
     </div>
   </div>
 </section>
-
-<!-- ══ SUBNAV (sticky scroll-spy) ═══════════════════════════════ -->
-<div class="subnav" id="subnav">
-  <div class="wrap subnav-in">
-    <a href="#problema" class="sn-lk" data-spy="problema" data-i18n="sn_problem">El problema</a>
-    <a href="#explora" class="sn-lk" data-spy="explora" data-i18n="tab_producto">Cómo funciona</a>
-    <a href="precios/" class="sn-lk" data-spy="precios" data-i18n="n_pri">Precios</a>
-    <a href="#testimonios" class="sn-lk" data-spy="testimonios" data-i18n="te_lbl">Testimonios</a>
-    <a href="contacto/" class="sn-lk" data-spy="contacto" data-i18n="sn_contact">Contacto</a>
-  </div>
-</div>
-
-
 
 <!-- ══ TRUST ════════════════════════════════════════════════════ -->
 <section class="trust">
@@ -301,42 +287,6 @@
   </div>
 </section>
 
-<!-- ══ METRICS ══════════════════════════════════════════════════ -->
-<section class="sec" style="border-top:1px solid var(--line);padding:0">
-  <div class="wrap" style="padding-top:0;padding-bottom:0">
-    <div class="mets rv" style="border-radius:0;border-left:none;border-right:none;border-top:none">
-      <div class="met"><span class="met-n"><span class="count" data-target="48">48</span>h</span><span class="met-s" data-i18n="me1_s">Del diagnóstico al panel</span><span class="met-d" data-i18n="me1_d">funcionando con datos reales</span></div>
-      <div class="met"><span class="met-n c"><span class="count" data-target="15">15</span>+</span><span class="met-s" data-i18n="me2_s">Módulos disponibles</span><span class="met-d" data-i18n="me2_d">más los que construyamos para ti</span></div>
-      <div class="met"><span class="met-n"><span class="count" data-target="9">9</span></span><span class="met-s" data-i18n="me3_s">Industrias implementadas</span><span class="met-d" data-i18n="me3_d">de manufactura a hotelería</span></div>
-      <div class="met"><span class="met-n c">24/7</span><span class="met-s" data-i18n="me4_s">El agente no descansa</span><span class="met-d" data-i18n="me4_d">responde a cualquier hora</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TESTIMONIALS ═════════════════════════════════════════════ -->
-<section class="sec" id="testimonios">
-  <div class="wrap">
-    <div class="sec-hd rv">
-      <span class="lbl tl" data-i18n="te_lbl">Testimonios</span>
-      <h2 class="h2" data-i18n="te_h2">Lo que cambia cuando el dato llega a tiempo</h2>
-    </div>
-    <div class="tests">
-      <div class="tc rv">
-        <div class="tc-st">★★★★★</div>
-        <p class="tc-q" data-i18n="tq1">Antes, los lunes eran caóticos: reunión con ventas, con bodega, con el contador — y aun así salíamos sin claridad de cómo cerró la semana. Ahora abro el panel y en 30 segundos sé qué pasó, qué clientes debo llamar y qué producto se está quedando quieto. La reunión pasó de dos horas a veinte minutos.</p>
-        <div class="tc-hl" data-i18n-html="th1">💡 <b>$8.4M en cartera vencida</b> que nadie estaba cobrando — detectados en la primera semana.</div>
-        <div class="tc-a"><div class="av">CM</div><div><div class="av-n">Carlos Andrés Mejía</div><div class="av-r" data-i18n="tr1">Gerente General · Distribución</div></div><div class="av-city">📍 Medellín</div></div>
-      </div>
-      <div class="tc rv">
-        <div class="tc-st">★★★★★</div>
-        <p class="tc-q" data-i18n="tq2">Lo que más me sorprendió fue el agente. Le pregunté qué referencia nos daba más margen y me respondió con el análisis completo en segundos, cruzando ventas con costos de producción. Antes eso eran dos días con el contador y el jefe de bodega sentados juntos armando un Excel.</p>
-        <div class="tc-hl" data-i18n-html="th2">💡 Descubrimos que el <b>18% del volumen generaba el 41% de la utilidad</b>.</div>
-        <div class="tc-a"><div class="av c">SP</div><div><div class="av-n">Sandra Puentes</div><div class="av-r" data-i18n="tr2">Directora Operativa · Manufactura</div></div><div class="av-city">📍 Bogotá</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ PRICING TEASER (links out to the full pricing page) ═══ -->
 <section class="sec" id="precios-teaser" style="border-top:1px solid var(--line)">
   <div class="wrap">
@@ -397,7 +347,7 @@
         <div class="ft-l">
           <a href="#casos" data-i18n="n_cases">Casos</a>
           <a href="#industrias" data-i18n="n_ind">Industrias</a>
-          <a href="#testimonios" data-i18n="ft_test">Testimonios</a>
+          <a href="nosotros/" data-i18n="n_about">Nosotros</a>
           <a href="https://www.linkedin.com/company/calybrat/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
