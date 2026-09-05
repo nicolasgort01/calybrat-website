@@ -1,0 +1,20 @@
+# Calybrat — static single-file site.
+# The whole page (CSS, JS, logo) lives inside index.html, so there is
+# nothing to build: Netlify just publishes the repository root.
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# The page is edited in place and must never be served stale.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
